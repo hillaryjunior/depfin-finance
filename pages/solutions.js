@@ -1,18 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import HomeLayout from '../Layouts/HomeLayout'
+import Head from 'next/head';
+import React from 'react'
+import SolutionsLayout from '../Layouts/SolutionsLayout';
 
-
-export default function Home() {
+function solutions() {
   return (
-    <div className = "app">
+    <div>
       <Head>
         <title>
-        Loans from R30 000 to R10 Million | Apply Now - Depfin Finance
+          Loans to help you meet your financial goals | Depfin Finance
         </title>
         <meta
           name="description"
-          content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
+          content="At Depfin Finance we offer a variety of loans the help you meet financial obligations at a competitive interest rate. Apply for a loan today!"
         />
         {/* viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +24,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
+          content="at Depfin Finance we offer a variety of loans the help you meet financial obligations at a competitive interest rate. Apply for a loan today!"
         />
         <meta
           property="og:image"
@@ -35,13 +34,9 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Depfin Finance" />
       </Head>
-
-     
-
-      <main>
-       <HomeLayout />
-
-      </main>
+      <SolutionsLayout />
     </div>
   );
 }
+
+export default solutions

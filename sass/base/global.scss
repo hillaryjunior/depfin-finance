@@ -1,0 +1,53 @@
+@use "../abstracts/variables.scss" as variables;
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        accent-color: variables.$teal;
+         transition: all 0.3s ease-in-out;
+
+}
+
+.app{
+        display: grid;
+        gap: 10px;
+}
+.css-187mznn-MuiSlider-root{
+        color: #01C5C4 !important;
+}
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root .css-1hwfws3-MuiOutlinedInput-input{
+        color: #01C5C4 !important;
+}
+.contact{
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        height : 400px;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+
+
+        
+
+        h2{
+                font-family: variables.$PoppinsBold;
+                color: variables.$dark;
+                font-size: 2.5rem;
+                text-align: center;
+
+
+        }
+}
+
+.terms__link{
+        color: #000;
+
+        span{
+                color: #01C5C4;
+        }
+}
+
+

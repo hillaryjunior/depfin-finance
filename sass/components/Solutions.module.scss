@@ -1,0 +1,48 @@
+@use "../abstracts/variables.scss" as variables;
+
+.solutions {
+  .solutions__container {
+    max-width: 1250px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    font-family: variables.$PoppinsRegular;
+
+    .solution__info,
+    .solution__info__additional {
+      width: 80%;
+      display: grid;
+      gap: 10px;
+
+      @media screen and (max-width: 769px) {
+        width: 100%;
+      }
+
+      p {
+        font-size: 1rem;
+        font-family: variables.$PoppinsRegular;
+
+        line-height: 25px;
+        font-weight: 400;
+      }
+      h2 {
+        font-size: 3rem;
+        font-family: variables.$PoppinsBold;
+        color: variables.$dark;
+
+        @media screen and (max-width: 769px) {
+          font-size: 2rem;
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+        font-family: variables.$PoppinsBold;
+        color: variables.$dark;
+      }
+    }
+  }
+}

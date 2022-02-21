@@ -1,15 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import HomeLayout from '../Layouts/HomeLayout'
+import React from "react";
+import Header from "../components/Header";
+import Head from "next/head";
+import Image from "next/image";
+import AboutLayout from "../Layouts/AboutLayout";
 
-
-export default function Home() {
+function about() {
   return (
-    <div className = "app">
+    <div>
       <Head>
         <title>
-        Loans from R30 000 to R10 Million | Apply Now - Depfin Finance
+          A personilsed loan application experience | Depfin Finance
         </title>
+
+        {/* write meta description */}
+        
         <meta
           name="description"
           content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
@@ -35,13 +39,9 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Depfin Finance" />
       </Head>
-
-     
-
-      <main>
-       <HomeLayout />
-
-      </main>
+      <AboutLayout />
     </div>
   );
 }
+
+export default about;

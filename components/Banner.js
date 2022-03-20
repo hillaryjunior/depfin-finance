@@ -5,13 +5,40 @@ import { Slider } from '@mui/material';
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import { useRouter } from 'next/router';
+import { calculateLoanRepaymentMonthly } from "../services/Calculation";
+import { useDispatch } from 'react-redux';
+import { setRepayment } from '../redux/slices';
 function Banner() {
         const [value, setValue] = useState(30000);
   const [terms, setTerms] = useState(2);
   const router = useRouter()
+  const rate = 6;
 
-         const handleChange = (event, newValue) => {
-           setValue(newValue);
+  const dispatch = useDispatch();
+  
+ 
+
+  
+  const monthlyRepayment = calculateLoanRepaymentMonthly(value, rate, terms);
+   const addLoanDetails = () => {
+     dispatch(
+       setRepayment({
+         amount: value,
+         terms: terms,
+         rate: rate,
+         monthly: monthlyRepayment,
+
+       })
+     );
+     router.push("/apply");
+   };
+
+
+  // console.log(monthlyRepayment)
+
+
+         const handleChange = (e) => {
+           setValue(e.target.value);
          };
         const increase = () => {
                 setTerms(terms + 1);
@@ -41,16 +68,15 @@ function Banner() {
                       <label>Loan Amount</label>
                       <p>{`R${value}`}</p>
                     </div>
-                    <Slider
-                      className={styles.input}
-                      aria-label="Volume"
+                    <input
+                      className={styles.loan__input}
+                      type="number"
                       value={value}
-                      max={10000000}
-                      min={30000}
-                      step ={50}
-                      defaultValue={30000}
                       onChange={handleChange}
+                      placeholder="Enter Required Loan Amount (R 30000)"
+                      
                     />
+                
                   </div>
                   <div className={styles.repayment}>
                     <div className={styles.item}>
@@ -75,11 +101,11 @@ function Banner() {
                     <div className={styles.item}>
                       <label>Monthly payment</label>
                       <div className={styles.years__item}>
-                        <p>R {value}</p>
+                        <p>R {monthlyRepayment}</p>
                       </div>
                     </div>
                   </div>
-                  <button onClick={() =>router.push('/apply')}>Apply online</button>
+                  <button onClick={addLoanDetails}>Apply online</button>
                   <div>
                     <small>*Loans are calculated at a 6% interest rate</small>
                   </div>

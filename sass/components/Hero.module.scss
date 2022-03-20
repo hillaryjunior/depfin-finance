@@ -24,6 +24,11 @@
                 margin: 0 auto;
                 text-align: center;
 
+                @media (max-width:769px){
+                        width : 100%;
+                        padding: 0 2px;
+                }
+
                 h1{
                         font-family: variables.$PoppinsBold;
                         color: variables.$dark;

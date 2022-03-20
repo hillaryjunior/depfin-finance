@@ -113,6 +113,17 @@ background: linear-gradient(270deg, variables.$teal, variables.$light);
         text-align: center;
         margin-bottom: 20px;
       }
+          .loan__input{
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: #fff;
+        font-family: variables.$PoppinsRegular;
+        font-size: 1rem;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
 
       .loan__amount {
         display: flex;

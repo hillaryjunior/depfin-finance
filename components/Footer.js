@@ -11,20 +11,20 @@ function Footer() {
         <div className={styles.quick__links}>
           <h6>Quick Links</h6>
           <ul>
-            <Link href="">
+            <Link href="/">
               <a>Home</a>
             </Link>
-            <Link href="">
+            <Link href="/apply">
               <a>Apply online</a>
             </Link>
-            <Link href="">
+            <Link href="/about">
               <a>about</a>
             </Link>
-            <Link href="">
+            <Link href="/solutions">
               <a>Solutions</a>
             </Link>
 
-            <Link href="">
+            <Link href="contact">
               <a>Contact</a>
             </Link>
           </ul>
@@ -32,16 +32,16 @@ function Footer() {
         <div className={styles.quick__links}>
           <h6>Resources</h6>
           <ul>
-            <Link href="">
+            {/* <Link href="/blogs">
               <a>Blogs</a>
-            </Link>
-            <Link href="">
+            </Link> */}
+            <Link href="/terms">
               <a>Terms & Conditions</a>
             </Link>
-            <Link href="">
+            <Link href="/faqs">
               <a>FAQs</a>
             </Link>
-            <Link href="">
+            <Link href="privacypolicy">
               <a>Privacy Policy</a>
             </Link>
           </ul>

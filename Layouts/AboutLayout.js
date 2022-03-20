@@ -116,6 +116,7 @@ function AboutLayout() {
         </section>
       </div>
       <Queries image="https://res.cloudinary.com/de0gawheh/image/upload/v1645266909/pexels-photo-7658355_1_xlhtdc.jpg" />
+  
       <Footer />
     </div>
   );

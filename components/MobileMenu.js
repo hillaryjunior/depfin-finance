@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styles from '../sass/components/Header.module.scss';
 
 function MobileMenu() {
+  const router =  useRouter()
         return (
           <div className={styles.mobile__menu}>
             <nav>
@@ -19,14 +21,14 @@ function MobileMenu() {
                 <Link href="/solutions">
                   <a>Solutions</a>
                 </Link>
-                <Link href="/blogs">
+                {/* <Link href="/blogs">
                   <a>Blogs</a>
-                </Link>
+                </Link> */}
                 <Link href="/contact">
                   <a>Contact us</a>
                 </Link>
               </ul>
-              <button>Login</button>
+              <button onClick={() => router.push("/auth/login")}>Login</button>
             </nav>
           </div>
         );

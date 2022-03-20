@@ -20,6 +20,7 @@ function Header() {
   const mobile = useMediaQuery("(max-width:769px)");
   const [open, setOpen] = useState(false);
   const user = useSelector(selectUser);
+  console.log(user);
    const [anchorEl, setAnchorEl] = useState(null);
    const openMenu = Boolean(anchorEl);
    const handleClick = (event) => {

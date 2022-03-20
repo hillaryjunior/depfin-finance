@@ -13,8 +13,10 @@ export default function Home() {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      console.log("user", user);
       getData(user.uid)
         .then((data) => {
+          console.log("data", data);
           if (!data.error) {
            
          
@@ -25,8 +27,9 @@ export default function Home() {
           }
         })
         .catch((err) => {
+          console.log(err);
           dispatch(logout());
-          signOut();
+          
         });
     }
   });

@@ -95,7 +95,7 @@ function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
           />
           <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+            sitekey="6LcoOvYeAAAAAPqz2GvBd_D2Jr0l7C6uZ1LqU0Zt"
             onChange={(e) => setIsVerified(!isVerified)}
           />
           ,

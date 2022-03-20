@@ -40,11 +40,11 @@ function Queries({ image , contact }) {
                 <span>
                   <LocalPhoneRoundedIcon />
                 </span>
-                <Link href="tel:00000">
+                <Link href="tel:065 850 5579">
                   {mobile ? (
                     <a target="_blank">call</a>
                   ) : (
-                    <a target="_blank"> 0566834783</a>
+                    <a target="_blank">0658505579</a>
                   )}
                 </Link>
               </div>
@@ -52,7 +52,7 @@ function Queries({ image , contact }) {
                 <span>
                   <WhatsAppIcon />
                 </span>
-                <Link href="https://api.whatsapp.com/send?phone=0626422837">
+                <Link href="https://api.whatsapp.com/send?phone=0658505579">
                   {mobile ? (
                     <a target="_blank">chat</a>
                   ) : (
@@ -68,7 +68,7 @@ function Queries({ image , contact }) {
                   {mobile ? (
                     <a target="_blank">mail</a>
                   ) : (
-                    <a target="_blank"> info@mail.com</a>
+                    <a target="_blank"> info@depfin.co.za</a>
                   )}
                 </Link>
               </div>

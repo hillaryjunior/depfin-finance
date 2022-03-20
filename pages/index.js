@@ -1,14 +1,41 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import HomeLayout from '../Layouts/HomeLayout'
-
+import Head from "next/head";
+import Image from "next/image";
+import HomeLayout from "../Layouts/HomeLayout";
+import { SITE_URL } from "../constants";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../redux/slices";
+import { getData } from "../services/Auth";
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      getData(user.uid)
+        .then((data) => {
+          if (!data.error) {
+           
+         
+              dispatch(login(data));
+           
+          } else {
+            dispatch(logout());
+          }
+        })
+        .catch((err) => {
+          dispatch(logout());
+          signOut();
+        });
+    }
+  });
+
   return (
-    <div className = "app">
+    <div className="app">
       <Head>
         <title>
-        Loans from R30 000 to R10 Million | Apply Now - Depfin Finance
+          Loans from R30 000 to R10 Million | Apply Now - Depfin Finance
         </title>
         <meta
           name="description"
@@ -27,20 +54,12 @@ export default function Home() {
           property="og:description"
           content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
         />
-        <meta
-          property="og:image"
-          content="https://depfin.com.au/static/media/logo.png"
-        />
-        <meta property="og:url" content="https://depfin.com.au/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Depfin Finance" />
+
+       
       </Head>
 
-     
-
       <main>
-       <HomeLayout />
-
+        <HomeLayout />
       </main>
     </div>
   );

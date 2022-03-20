@@ -6,7 +6,8 @@ function contact() {
   return (
           <div>
                   <Head>
-                        <title>Contact</title>
+        <title>Contact</title>
+       
                   </Head>
                   <ContactLayout />
     </div>

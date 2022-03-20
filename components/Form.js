@@ -1,29 +1,20 @@
 
-import React, { useState ,useMemo } from "react";
+import React from "react";
 import styles from "../sass/components/Forms.module.scss";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
-import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
-import countryList from "react-select-country-list";
+
 import RegisterForm from "./RegisterForm";
+import { useSelector } from "react-redux";
+import { selectUser } from "../redux/slices";
+import Application from "../Forms/Application";
 
 
 function Form() {
-   const [terms, setTerms] = useState(2);
- const [value, setValue] = useState("");
- const options = useMemo(() => countryList().getData(), []);
-
- const changeHandler = (value) => {
-   setValue(value);
- };
-   const increase = () => {
-     setTerms(terms + 1);
-   };
-   const decrease = () => {
-     terms > 1 ? setTerms(terms - 1) : setTerms(terms);
-   };
+  const user = useSelector(selectUser)
+  
   return (
     <div className={styles.apply__from}>
-     <RegisterForm />
+      {user ? <Application /> : <RegisterForm />}
+     
     </div>
   );
 }

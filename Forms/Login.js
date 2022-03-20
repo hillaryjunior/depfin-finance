@@ -26,7 +26,8 @@ function Login() {
 
           if (!res.error) {
             toast.success("Login Successful");
-             setLoading(false);
+            setLoading(false);
+            dispatch(login(res.data));
            router.push("/");
            
             

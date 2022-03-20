@@ -36,6 +36,10 @@ class MyDocument extends Document {
           <meta property="og:url" content={SITE_URL} />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Depfin Finance" />
+          <meta
+            name="google-site-verification"
+            content="o2c09wBxSEGBC_spdIgsJCtzSmxyeti2XTly5wM9pSc"
+          />
         </Head>
 
         <body>

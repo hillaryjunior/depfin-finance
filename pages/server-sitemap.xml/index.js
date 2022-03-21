@@ -1,13 +1,12 @@
-
+import React from "react";
 import fs from "fs";
-import { SITE_URL } from "../../constants";
 
 const Sitemap = () => {};
 
 export const getServerSideProps = ({ res }) => {
   const baseUrl = {
     development: "http://localhost:3000",
-    production: SITE_URL,
+    production: "http://depfinance.co.za",
   }[process.env.NODE_ENV];
 
   const staticPages = fs
@@ -16,17 +15,12 @@ export const getServerSideProps = ({ res }) => {
       return ![
         "_app.js",
         "_document.js",
-        "500.js",
-        "404.js",
-        
-        "payment",
         "auth",
-       
         "api",
-        "_error.js",
-        "account.js",
-        "sitemap.xml.js",
+        "post",
         "server-sitemap.xml",
+        "_error.js",
+        "sitemap.xml.js",
       ].includes(staticPage);
     })
     .map((staticPagePath) => {

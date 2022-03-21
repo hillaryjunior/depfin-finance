@@ -108,6 +108,7 @@ function Application() {
               value={employmentStatus}
               onChange={(e) => setEmployeeStatus(e.target.value)}
             >
+              <option value="">Select</option>
               <option value="Employed">Employed</option>
               <option value="unemployed">unemployed</option>
               <option value="self emplopyed">Self employed</option>
@@ -186,6 +187,7 @@ function Application() {
               value={loanType}
               onChange={(e) => setLoanType(e.target.value)}
             >
+              <option value="">Select</option>
               <option value="Personal loan">Personal Loan</option>
               <option value="Business loan">Business Loan</option>
               <option value="Consolidation loan">Consolidation Loan</option>
@@ -262,7 +264,7 @@ function Application() {
           <div>
             <div className={styles.terms}>
               <input defaultChecked type="checkbox" />
-              <Link href="/">
+              <Link href="/terms">
                 <a className="terms__link">
                   Accept <span>terms and conditions</span>
                 </a>

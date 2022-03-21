@@ -44,7 +44,7 @@ function Queries({ image , contact }) {
                   {mobile ? (
                     <a target="_blank">call</a>
                   ) : (
-                    <a target="_blank">+27630884404</a>
+                    <a target="_blank">0630884404</a>
                   )}
                 </Link>
               </div>

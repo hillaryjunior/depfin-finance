@@ -13,10 +13,10 @@ function about() {
         </title>
 
         {/* write meta description */}
-        
+
         <meta
           name="description"
-          content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
+          content="Get a personal loan today! Get instant approval when you apply online  and choose the loan repayment terms that best suit your needs."
         />
         {/* viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

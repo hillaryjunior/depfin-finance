@@ -480,7 +480,8 @@ function privacypolicy() {
   return (
     <div>
       <Head>
-        <title>Depfin Finance Privacy Policy</title>
+              <title>Depfin Finance Privacy Policy</title>
+                <meta name="description" content="Depfin Finance Privacy Policy" />
       </Head>
       <PolicyLayout title = "Privacy Policy" content={html} />
     </div>

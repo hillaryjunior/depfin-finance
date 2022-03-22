@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import styles from "../sass/components/Faq.module.scss";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
-import FAQs from "../components/FAQS";
+
+import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Queries from "../components/Queries";
-import { depfinFaqs } from "../data";
+import { faqSchema } from "../data";
 
 function Faqs() {
   const [open, setOpen] = useState(false);
@@ -157,8 +158,20 @@ You can contact our customer care branch in order to give you a loan statement.
 
   return (
     <div>
+      <Head>
+        <title>Frequently Asked Questions</title>
+        <meta
+          name="description"
+          content="Depfin finance is a financial services company in South Africa. We offer a range of financial products and services to individuals and businesses."
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: faqSchema }}
+        />
+      </Head>
       <Header />
       <Hero content="Read through all the frequently asked questions about Depfin Finance." />
+
       <div className="contact">
         <h2>Frequently asked questions</h2>
         <div className={styles.accordion}>

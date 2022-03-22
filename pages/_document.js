@@ -40,6 +40,10 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="o2c09wBxSEGBC_spdIgsJCtzSmxyeti2XTly5wM9pSc"
           />
+          <meta
+            name="keywords"
+            content="depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"
+          />
         </Head>
 
         <body>

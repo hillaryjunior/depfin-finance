@@ -41,7 +41,7 @@ function ProfileLayout() {
                 <input type="text" readOnly defaultValue={user?.idNumber} />
                 <input type="text" defaultValue={user?.phoneNumber} />
               </div>
-              <button>Save Profile</button>
+              {/* <button>Save Profile</button> */}
             </form>
           </div>
 

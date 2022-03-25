@@ -1,7 +1,7 @@
 // firebase user sign
 
 import { auth, db } from "../firebase";
-import { collection, addDoc, doc, setDoc, getDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc, getDoc, query, where, onSnapshot, getDocs } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import {
   signInWithEmailAndPassword,
@@ -222,7 +222,54 @@ export const getApplications = async (uid) => {
   };
 };
 
+export const getLoans = async (loan_type,uid) => {
 
+  try {
+  const citiesRef = collection(db, loan_type);
+
+  const q = query(
+    citiesRef,
+    where("uid", "==", uid)
+  );
+    let querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      return {
+        data: [],
+      };
+    }
+    let data = [];
+    querySnapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        data: doc.data(),
+      });
+    }
+    );
+    return {
+      data,
+    };
+    
+    
+  }
+  catch (error) {
+    console.log(error);
+  }
+
+
+  // const q = query(
+  //   collection(db, "Approved loans"),
+  //   where("uid", "==", "8pe75lCNR7fKR65PbtIBLOoEkG73")
+  // );
+  // const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  //   const cities = [];
+  //   querySnapshot.forEach((doc) => {
+  //     cities.push(doc.data().name);
+  //   });
+  //   console.log("Current : ", cities.join(", "));
+  // });
+
+  // return unsubscribe;
+}
 
 
 

@@ -8,6 +8,10 @@ import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
 import LoansTable from "./Table";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/slices";
+import LoanCard from "./LoanCard";
+import DeclinedCard from "./DeclinedCard";
+
+
 
 const blue = {
   50: "#F0F7FF",
@@ -78,6 +82,9 @@ const TabsList = styled(TabsListUnstyled)`
 `;
 
 export default function Tabs() {
+
+  const user = useSelector(selectUser);
+  const uid = user?.uid;
        
   return (
     <div className="tabs">
@@ -90,8 +97,12 @@ export default function Tabs() {
         <TabPanel value={0}>
           <LoansTable />
         </TabPanel>
-        <TabPanel value={1}>Approved</TabPanel>
-        <TabPanel value={2}>Declined</TabPanel>
+        <TabPanel value={1}>
+          <LoanCard uid={uid} />
+        </TabPanel>
+        <TabPanel value={2}>
+          <DeclinedCard uid={uid} />
+        </TabPanel>
       </TabsUnstyled>
     </div>
   );

@@ -151,7 +151,7 @@ export default function LoansTable({ type }) {
   return (
     <div className="table_con">
       <div>
-        {businessRows && (
+        {businessRows?.length && (
           <div className="table">
             <h6>Business Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -164,7 +164,7 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {personalRows && (
+        {personalRows?.length && (
           <div className="table">
             <h6>Personal Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -177,7 +177,7 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {mortageRows && (
+        {mortageRows?.length && (
           <div className="table">
             <h6>Mortage Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -190,9 +190,9 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {generalRows && (
+        {generalRows?.length && (
           <div className="table">
-            <h6>General  Loans</h6>
+            <h6>General Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
               <DataGrid
                 rows={gRow}
@@ -203,9 +203,9 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {consolidationRows && (
+        {consolidationRows?.length && (
           <div className="table">
-            <h6>Consolidation  Loans</h6>
+            <h6>Consolidation Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
               <DataGrid
                 rows={cRow}

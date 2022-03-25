@@ -74,7 +74,7 @@ function Header() {
           </ul>
         </nav>
         <div className={styles.cta}>
-          <Link href="tel:00000">
+          <Link href="tel:0630884404">
             {mobile ? (
               <a>
                 {" "}

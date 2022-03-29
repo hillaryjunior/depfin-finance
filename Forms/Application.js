@@ -11,6 +11,7 @@ import Link from "next/link";
 import { applyForLoan } from "../services/Auth";
 import { ThreeCircles } from "react-loader-spinner";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 function Application() {
   const userData = useSelector(selectUser);
   const [isVerified, setIsVerified] = useState(false);
@@ -36,6 +37,23 @@ function Application() {
   const decrease = () => {
     terms > 1 ? setTerms(terms - 1) : setTerms(terms);
   };
+
+  const sendEmail = () => {
+    try {
+      axios.get(`/api/sendmail?email=${userData.email}`).then((res) => {
+        console.log(res);
+      }
+      ).catch((err) => {
+        console.log(err);
+      }
+      );
+      
+    }catch(err){
+      toast.error("Something went wrong");
+      console.log(err);
+      setLoading(false)
+    }
+  }
 
   const applicationData = {
     first_name: userData.firstName,
@@ -77,10 +95,11 @@ function Application() {
     setLoading(true);
     await applyForLoan(userData.uid, loanType, applicationData)
       .then((res) => {
-        console.log(res.error);
+      
 
         if (!res.error) {
           toast.success("Loan application submitted successfully");
+          sendEmail();
           setLoading(false);
           router.push("/auth/profile");
         } else {

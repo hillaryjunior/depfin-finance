@@ -6,7 +6,7 @@ const Sitemap = () => {};
 export const getServerSideProps = ({ res }) => {
   const baseUrl = {
     development: "http://localhost:3000",
-    production: "http://depfinance.co.za",
+    production: "https://depfinance.co.za",
   }[process.env.NODE_ENV];
 
   const staticPages = fs
@@ -20,7 +20,7 @@ export const getServerSideProps = ({ res }) => {
         "post",
         "server-sitemap.xml",
         "_error.js",
-        "sitemap.xml.js",
+      
       ].includes(staticPage);
     })
     .map((staticPagePath) => {

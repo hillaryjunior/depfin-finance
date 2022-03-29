@@ -39,7 +39,7 @@ export default function DeclinedCard({uid}) {
                   Rate : 6%
                 </Typography>
                 <Typography gutterBottom variant="p" component="div">
-                  Loan Term : {item?.data?.term} Years
+                  Loan Term : {item?.data?.terms} Years
                 </Typography>
                 <Typography gutterBottom variant="p" component="div">
                   Message: {item?.data?.message}

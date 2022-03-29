@@ -9,7 +9,7 @@ import styles from '../sass/components/Profile.module.scss'
 
 function ProfileLayout() {
   const user = useSelector(selectUser)
-  console.log(user)
+  
   return (
     <div>
       <Header />

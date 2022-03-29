@@ -8,7 +8,7 @@ import nodemailer from "nodemailer";
 
 export default function handler(req, res) {
   const {
-    query: { email, name,phone,message },
+    query: { email },
   } = req;
 
   let declinedTemplate = `<!DOCTYPE html>
@@ -22,7 +22,12 @@ export default function handler(req, res) {
     <title></title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
- 
+    <!--[if mso
+      ]><xml
+        ><o:OfficeDocumentSettings
+          ><o:PixelsPerInch>96</o:PixelsPerInch
+          ><o:AllowPNG /></o:OfficeDocumentSettings></xml
+    ><![endif]-->
     <style>
       * {
         box-sizing: border-box;
@@ -281,16 +286,85 @@ export default function handler(req, res) {
                                       "
                                     >
                                       <p style="margin: 0; font-size: 12px">
-                                        new message from ${name}, Phone: ${phone}  ,<br>
-                                       Message :  ${message}
-                                        
+                                        Hello , you have a new loan application
                                       </p>
                                     </div>
                                   </div>
                                 </td>
                               </tr>
                             </table>
-                        
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="button_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td
+                                  style="
+                                    padding-bottom: 50px;
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    padding-top: 10px;
+                                    text-align: center;
+                                  "
+                                >
+                                  <div align="center">
+                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://www.example.com/" style="height:52px;width:236px;v-text-anchor:middle;" arcsize="12%" stroke="false" fillcolor="#000000"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><!
+                                    [endif]--><a
+                                      href="https://depfin-admin.vercel.app/"
+                                      style="
+                                        text-decoration: none;
+                                        display: inline-block;
+                                        color: #ffffff;
+                                        background-color: #000000;
+                                        border-radius: 6px;
+                                        width: auto;
+                                        border-top: 1px solid #000000;
+                                        border-right: 1px solid #000000;
+                                        border-bottom: 1px solid #000000;
+                                        border-left: 1px solid #000000;
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                        font-family: Open Sans, Helvetica Neue,
+                                          Helvetica, Arial, sans-serif;
+                                        text-align: center;
+                                        mso-border-alt: none;
+                                        word-break: keep-all;
+                                      "
+                                      target="_blank"
+                                      ><span
+                                        style="
+                                          padding-left: 55px;
+                                          padding-right: 55px;
+                                          font-size: 16px;
+                                          display: inline-block;
+                                          letter-spacing: normal;
+                                        "
+                                        ><span
+                                          style="
+                                            font-size: 16px;
+                                            line-height: 2;
+                                            word-break: break-word;
+                                            mso-line-height-alt: 32px;
+                                          "
+                                          ><strong
+                                            >View Application</strong
+                                          ></span
+                                        ></span
+                                      ></a
+                                    >
+                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
                             <table
                               border="0"
                               cellpadding="0"
@@ -311,9 +385,7 @@ export default function handler(req, res) {
                                     padding-left: 0px;
                                   "
                                 >
-                                  <div align="center" style="line-height: 10px">
-                                 
-                                  </div>
+                                
                                 </td>
                               </tr>
                             </table>
@@ -372,78 +444,7 @@ export default function handler(req, res) {
                             "
                             width="100%"
                           >
-                            <table
-                              border="0"
-                              cellpadding="10"
-                              cellspacing="0"
-                              class="text_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td>
-                                  <div style="font-family: sans-serif">
-                                    <div
-                                      style="
-                                        font-size: 12px;
-                                        mso-line-height-alt: 18px;
-                                        color: #a6a4a2;
-                                        line-height: 1.5;
-                                        font-family: Open Sans, Helvetica Neue,
-                                          Helvetica, Arial, sans-serif;
-                                      "
-                                    >
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          font-size: 14px;
-                                          text-align: center;
-                                          mso-line-height-alt: 18px;
-                                        "
-                                      >
-                                        <span style="font-size: 12px"
-                                          >This message was sent from
-                                          <a
-                                            href="mailto:${email}"
-                                            style="
-                                              text-decoration: none;
-                                              color: #a6a4a2;
-                                            "
-                                            title="${email}"
-                                            >${email}</a
-                                          ></span
-                                        >
-                                      </p>
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          font-size: 14px;
-                                          text-align: center;
-                                          mso-line-height-alt: 18px;
-                                        "
-                                      >
-                                         
-                                      </p>
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          font-size: 14px;
-                                          text-align: center;
-                                          mso-line-height-alt: 18px;
-                                        "
-                                      >
-                                        <span style="font-size: 12px">I</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
+                       
                             <table
                               border="0"
                               cellpadding="10"
@@ -705,8 +706,8 @@ export default function handler(req, res) {
     });
     let mailOptions = {
       from: "depfinloan@yahoo.com",
-      to: " info@depfinfinance.co.za",
-      subject: `New message from ${name}`,
+      to: "info@depfinfinance.co.za",
+      subject: `New message from Loan Application from ${email}`,
 
       html: declinedTemplate,
     };

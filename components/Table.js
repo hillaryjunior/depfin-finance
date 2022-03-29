@@ -151,7 +151,7 @@ export default function LoansTable({ type }) {
   return (
     <div className="table_con">
       <div>
-        {businessRows?.length && (
+        {businessRows && (
           <div className="table">
             <h6>Business Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -164,7 +164,7 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {personalRows?.length && (
+        {personalRows && (
           <div className="table">
             <h6>Personal Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -177,7 +177,7 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {mortageRows?.length && (
+        {mortageRows ? (
           <div className="table">
             <h6>Mortage Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -189,8 +189,15 @@ export default function LoansTable({ type }) {
               />
             </div>
           </div>
+        ) : (
+          <div className="table">
+            <h6>Mortage Loans</h6>
+            <div style={{ height: 200, width: "100%" }}>
+              <p>No mortgage loans applications</p>
+            </div>
+          </div>
         )}
-        {generalRows?.length && (
+        {generalRows && (
           <div className="table">
             <h6>General Loans</h6>
             <div style={{ height: 200, width: "100%" }}>
@@ -203,7 +210,7 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
-        {consolidationRows?.length && (
+        {consolidationRows && (
           <div className="table">
             <h6>Consolidation Loans</h6>
             <div style={{ height: 200, width: "100%" }}>

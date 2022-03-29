@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import styles from '../sass/components/Forms.module.scss'
-import { init } from "@emailjs/browser";
-import emailjs from "@emailjs/browser";
+
+import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify';
 import { ThreeCircles } from 'react-loader-spinner';
 import ReCAPTCHA from 'react-google-recaptcha';
-init(process.env.NEXT_PUBLIC_USER_ID);
+
 
 function ContactForm() {
-        const form = useRef();
+       
         const [name, setName] = useState('');
         const [email, setEmail] = useState('');
         const [message, setMessage] = useState('');
@@ -17,49 +17,37 @@ function ContactForm() {
         const [isVerified,setIsVerified] = useState(false);
         
        
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (!name || !email || !phone || !message)
+      return toast.error("Please fill in all fields");
+    setLoading(true);
 
+    try {
+      
 
-        const sendEmail = (e) => {
-                
-                  
-                e.preventDefault();
-                if (!name || !email || !phone) return toast.error('Please fill in all fields');
-                setLoading(true);
+      axios
+        .get(`/api/hello?email=${email}&name=${name}&phone=${phone}&&messsage=${message}`)
+        .then((res) => {
+          setLoading(false);
+          toast.success("Your message has been sent successfully");
+          setLoading(false);
+          setName("");
+          setEmail("");
+          setMessage("");
+          setPhone("");
 
-            emailjs
-              .send(
-                "service_qexluw5",
-                "template_xj1glb5",
-                {
-                  from_name: name,
-                  from_email: email,
-                  to_name: "Depfin Finance",
-                  message: message,
-                  reply_to: email,
-                },
-                process.env.NEXT_PUBLIC_USER_ID
-              )
-              .then(
-                (result) => {
-                  console.log(result.text);
-                  toast.success("Enquiry has been sent , an agent will get back to you shortly");
-                              setLoading(false);
-                              setName('');
-                              setEmail('');
-                              setMessage('');
-                                setPhone('');
-                },
-                (error) => {
-                  console.log(error.text);
-                  toast.error("could not send enquiry at this time, please try again later");
-                        setLoading(false);
-                        setName("");
-                        setEmail("");
-                        setMessage("");
-                        setPhone("");
-                }
-              );
-          };
+          console.log("response", res);
+        });
+    } catch (err) {
+      toast.error("Something went wrong");
+      console.log(err);
+      setLoading(false)
+    }
+  };
+  
+
+       
 
   return (
     <div className={styles.contact}>

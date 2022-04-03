@@ -128,24 +128,26 @@ export const getData = async (uid) => {
 
 // submit loan application
 
-export const applyForLoan = async (uid, loan_type, data) => {
+export const applyForLoan = async (uid,loan_type, data) => {
   try {
     let docRef = doc(db, loan_type, uid);
     const docSnapshot = await getDoc(docRef);
-    if (docSnapshot.exists()) {
-      let data = docSnapshot.data();
-      if (data?.uid === uid && data?.status === "pending") {
-        return {
-          message: " application pending",
-        };
-      }
-    } else {
+    if (!docSnapshot.exists()) {
+   
       await setDoc(doc(db, loan_type, uid), data);
-
       return {
-        message: "appliation submitted",
+        message: "Loan application submitted",
+      };
+    } else {
+      return {
+        message: "Loan application already submitted",
       };
     }
+
+
+
+     
+    
   } catch (error) {
     console.log(error);
   }
@@ -222,6 +224,63 @@ export const getApplications = async (uid) => {
   };
 };
 
+export const getLoanApplications = async (uid) => {
+   try {
+    
+      let businessDocRef = collection(db, "Business loan");
+      let personalDocRef = collection(db, "Business loan");
+      let consolidationDocRef = collection(db, "Consolidation loan");
+      let mortageDocRef = collection(db, "Mortage loan");
+      let generalDocRef = collection(db, "General loan");
+
+     const personalQuery = query(personalDocRef, where("uid", "==", uid));
+     const businessQuery = query(businessDocRef, where("uid", "==", uid));
+     const consolidationQuery = query(consolidationDocRef, where("uid", "==", uid));
+     const mortageQuery = query(mortageDocRef, where("uid", "==", uid));
+     const generalQuery = query(generalDocRef, where("uid", "==", uid));
+     
+     let personalQuerySnapshot = await getDocs(personalQuery);
+     let businessQuerySnapshot = await getDocs(businessQuery);
+     let consolidationQuerySnapshot = await getDocs(consolidationQuery);
+     let mortageQuerySnapshot = await getDocs(mortageQuery);
+     let generalQuerySnapshot = await getDocs(generalQuery);
+
+     if (personalQuerySnapshot.empty) {
+       return {
+          data: [],
+       }
+     }
+
+     let Personaldata = []
+     personalQuerySnapshot.forEach(doc => {
+       Personaldata.push({
+         id: doc.id,
+         data: doc.data(),
+       });
+     })
+     
+     
+  
+      const data = {
+        personal: personalQuerySnapshot.empty ? [] : Personaldata,
+     
+            
+      };
+      return {
+        data,
+      };
+     
+   } catch (error) {
+      console.log(error);
+   }
+  
+  return {
+    error: "Something went wrong",
+  };
+
+
+}
+
 export const getLoans = async (loan_type,uid) => {
 
   try {
@@ -256,19 +315,7 @@ export const getLoans = async (loan_type,uid) => {
   }
 
 
-  // const q = query(
-  //   collection(db, "Approved loans"),
-  //   where("uid", "==", "8pe75lCNR7fKR65PbtIBLOoEkG73")
-  // );
-  // const unsubscribe = onSnapshot(q, (querySnapshot) => {
-  //   const cities = [];
-  //   querySnapshot.forEach((doc) => {
-  //     cities.push(doc.data().name);
-  //   });
-  //   console.log("Current : ", cities.join(", "));
-  // });
 
-  // return unsubscribe;
 }
 
 

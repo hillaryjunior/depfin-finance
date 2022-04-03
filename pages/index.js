@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import HomeLayout from "../Layouts/HomeLayout";
 import { SITE_URL } from "../constants";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../redux/slices";
@@ -13,15 +13,10 @@ export default function Home() {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log("user", user);
       getData(user.uid)
         .then((data) => {
-          console.log("data", data);
           if (!data.error) {
-           
-         
-              dispatch(login(data));
-           
+            dispatch(login(data));
           } else {
             dispatch(logout());
           }
@@ -29,7 +24,6 @@ export default function Home() {
         .catch((err) => {
           console.log(err);
           dispatch(logout());
-          
         });
     }
   });
@@ -57,8 +51,6 @@ export default function Home() {
           property="og:description"
           content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
         />
-
-       
       </Head>
 
       <main>

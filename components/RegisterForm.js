@@ -6,7 +6,7 @@ import countryList from "react-select-country-list";
 import Link from "next/link";
 import { validateIdNumber } from "south-african-id-validator";
 
-import { createAccount } from "../services/Auth";
+import { createAccount, getData } from "../services/Auth";
 import { login } from "../redux/slices";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
@@ -76,7 +76,7 @@ function RegisterForm() {
     title,
     phoneNumber,
     idNumber,
-    applications: [],
+   
   };
 
   const register = async (e) => {
@@ -107,7 +107,27 @@ function RegisterForm() {
           if (res) {
             toast.success("Account created successfully");
             setLoading(false);
-            router.replace("/");
+
+            let uid = res?.user.uid;
+
+           
+            getData(uid)
+              .then((data) => {
+             
+                if (!data.error) {
+                  dispatch(login(data));
+                  router.replace("/apply");
+                } else {
+                  dispatch(logout());
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+                // dispatch(logout());
+              });
+            
+
+            
           }
         })
         .catch((err) => {
@@ -135,6 +155,7 @@ function RegisterForm() {
 
           <div className={styles.select__input}>
             <select value={title} onChange={(e) => setTitle(e.target.value)}>
+              <option value="">Select</option>
               <option value="Mr">Mr</option>
               <option value="Mrs">Mrs</option>
               <option value="Ms">Ms</option>

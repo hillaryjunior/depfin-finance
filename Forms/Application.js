@@ -37,28 +37,52 @@ function Application() {
   const decrease = () => {
     terms > 1 ? setTerms(terms - 1) : setTerms(terms);
   };
+  const result = Math.random().toString(36).substring(2, 8);
+
+  const ref_no = `${userData.lastName}${result}`;
 
   const sendEmail = () => {
     try {
-      axios.get(`/api/sendmail?email=${userData.email}`).then((res) => {
-        console.log(res);
-      }
-      ).catch((err) => {
-        console.log(err);
-      }
-      );
-      
-    }catch(err){
+      axios
+        .get(
+          `/api/sendmail?email=${userData?.email}&name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (err) {
       toast.error("Something went wrong");
       console.log(err);
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
+  const senAdminEmail = () => {
+    try {
+      axios
+        .get(
+          `/api/sendadmin?name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (err) {
+      // toast.error("Something went wrong");
+      console.log(err);
+      setLoading(false);
+    }
+  };
 
   const applicationData = {
     first_name: userData.firstName,
     last_name: userData.lastName,
     ID_number: userData.idNumber,
+    ref_no: ref_no,
 
     email: userData.email,
     date_created: new Date().toLocaleString(),
@@ -93,17 +117,20 @@ function Application() {
     )
       return toast.error("Please fill all the fields");
     setLoading(true);
-    await applyForLoan(userData.uid, loanType, applicationData)
+    await applyForLoan(ref_no, loanType, applicationData)
       .then((res) => {
-      
+        console;
 
         if (!res.error) {
-          toast.success("Loan application submitted successfully");
+          toast.success("Loan application submitted successfully, a confirmation email as been sent to your email .Check under Spam as well if you did not recieve the email.");
           sendEmail();
+          senAdminEmail();
           setLoading(false);
-          router.push("/auth/profile");
+          setTimeout(() => {
+            router.push("/auth/profile");
+          }, 3500);
         } else {
-          toast.warning("Previous loan application is still pending");
+          toast.error("Loan application failed");
           setLoading(false);
         }
       })

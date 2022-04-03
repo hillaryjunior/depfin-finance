@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap && cp public/sitemap-0.xml  public/sitemap.xml "
   },
   "dependencies": {
     "@emailjs/browser": "^3.4.0",

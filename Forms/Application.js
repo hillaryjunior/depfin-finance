@@ -128,7 +128,7 @@ function Application() {
           setLoading(false);
           setTimeout(() => {
             router.push("/auth/profile");
-          }, 3500);
+          }, 5000);
         } else {
           toast.error("Loan application failed");
           setLoading(false);

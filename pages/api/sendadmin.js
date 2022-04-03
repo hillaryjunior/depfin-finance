@@ -3,12 +3,10 @@
 
 import nodemailer from "nodemailer";
 
-
-
-
 export default function handler(req, res) {
+  
   const {
-    query: { email,type,repayment,amount,name,ref_no,method,rate,term },
+    query: {type,repayment,amount,name,ref_no,method,rate,term },
   } = req;
 
   let declinedTemplate = `<!DOCTYPE html>
@@ -362,8 +360,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                         "
                                       >
                                         <span style="font-size: 16px"
-                                          >Hey ${name}, your loan Application was
-                                          successfull.</span
+                                          >New Loan Application from ${name}</span
                                         >
                                       </p>
                                       <p
@@ -374,7 +371,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                         "
                                       >
                                         <span style="font-size: 16px"
-                                          > Your Reference Number is ${ref_no}</span
+                                          > Application Reference Number is ${ref_no}</span
                                         >
                                       </p>
 
@@ -417,7 +414,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                   <div align="center">
                                     <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://www.example.com/" style="height:44px;width:198px;v-text-anchor:middle;" arcsize="14%" stroke="false" fillcolor="#1f0e0e"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:12px"><!
                                     [endif]--><a
-                                      href="http://depfinfinance.co.za/auth/profile"
+                                      href="https://depfin-admin.vercel.app/"
                                       style="
                                         text-decoration: none;
                                         display: inline-block;
@@ -453,7 +450,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                             word-break: break-word;
                                             mso-line-height-alt: 24px;
                                           "
-                                          >View Application</span
+                                          >Approve or deny Application</span
                                         ></span
                                       ></a
                                     >
@@ -517,51 +514,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                             "
                             width="100%"
                           >
-                            <table
-                              border="0"
-                              cellpadding="10"
-                              cellspacing="0"
-                              class="text_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td>
-                                  <div style="font-family: sans-serif">
-                                    <div
-                                      class="txtTinyMce-wrapper"
-                                      style="
-                                        font-size: 12px;
-                                        mso-line-height-alt: 14.399999999999999px;
-                                        color: #2f7d81;
-                                        line-height: 1.2;
-                                        font-family: Open Sans, Helvetica Neue,
-                                          Helvetica, Arial, sans-serif;
-                                      "
-                                    >
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          font-size: 12px;
-                                          text-align: center;
-                                        "
-                                      >
-                                        <strong
-                                          ><span style="font-size: 50px"
-                                            >Next Steps</span
-                                          ></strong
-                                        >
-                                      </p>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
+                           
                           </td>
                         </tr>
                       </tbody>
@@ -570,223 +523,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                 </tr>
               </tbody>
             </table>
-            <table
-              align="center"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              class="row row-4"
-              role="presentation"
-              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-              width="100%"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <table
-                      align="center"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      class="row-content stack"
-                      role="presentation"
-                      style="
-                        mso-table-lspace: 0pt;
-                        mso-table-rspace: 0pt;
-                        color: #000000;
-                        width: 640px;
-                      "
-                      width="640"
-                    >
-                      <tbody>
-                        <tr>
-                          <td
-                            class="column column-1"
-                            style="
-                              mso-table-lspace: 0pt;
-                              mso-table-rspace: 0pt;
-                              font-weight: 400;
-                              text-align: left;
-                              vertical-align: top;
-                              padding-top: 5px;
-                              padding-bottom: 60px;
-                              border-top: 0px;
-                              border-right: 0px;
-                              border-bottom: 0px;
-                              border-left: 0px;
-                            "
-                            width="100%"
-                          >
-                            <table
-                              border="0"
-                              cellpadding="10"
-                              cellspacing="0"
-                              class="paragraph_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td>
-                                  <div
-                                    style="
-                                      color: #000000;
-                                      font-size: 14px;
-                                      font-family: Open Sans, Helvetica Neue,
-                                        Helvetica, Arial, sans-serif;
-                                      font-weight: 400;
-                                      line-height: 120%;
-                                      text-align: left;
-                                      direction: ltr;
-                                      letter-spacing: 0px;
-                                    "
-                                  >
-                                    <p style="margin: 0">
-                                      Please email the below requirements to
-                                      <span style="color: #117cba"
-                                        >info@depfinfinance.co.za ,</span
-                                      >
-                                      to complete your application with us.
-                                    </p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              border="0"
-                              cellpadding="10"
-                              cellspacing="0"
-                              class="list_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td>
-                                  <ul
-                                    style="
-                                      margin: 0;
-                                      padding: 0;
-                                      margin-left: 20px;
-                                      color: #000000;
-                                      font-size: 14px;
-                                      font-family: Open Sans, Helvetica Neue,
-                                        Helvetica, Arial, sans-serif;
-                                      font-weight: 400;
-                                      line-height: 120%;
-                                      text-align: left;
-                                      direction: ltr;
-                                      letter-spacing: 0px;
-                                    "
-                                  >
-                                    <li>
-                                      Last 3 Months bank statements or payslips
-                                    </li>
-                                  </ul>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              border="0"
-                              cellpadding="10"
-                              cellspacing="0"
-                              class="list_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td>
-                                  <ul
-                                    style="
-                                      margin: 0;
-                                      padding: 0;
-                                      margin-left: 20px;
-                                      color: #000000;
-                                      font-size: 14px;
-                                      font-family: Open Sans, Helvetica Neue,
-                                        Helvetica, Arial, sans-serif;
-                                      font-weight: 400;
-                                      line-height: 120%;
-                                      text-align: left;
-                                      direction: ltr;
-                                      letter-spacing: 0px;
-                                    "
-                                  >
-                                    <li>
-                                      S Scanned copy of your ID or Passport
-                                    </li>
-                                  </ul>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              border="0"
-                              cellpadding="10"
-                              cellspacing="0"
-                              class="paragraph_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td>
-                                  <div
-                                    style="
-                                      color: #000000;
-                                      font-size: 14px;
-                                      font-family: Open Sans, Helvetica Neue,
-                                        Helvetica, Arial, sans-serif;
-                                      font-weight: 400;
-                                      line-height: 120%;
-                                      text-align: left;
-                                      direction: ltr;
-                                      letter-spacing: 0px;
-                                    "
-                                  >
-                                    <p style="margin: 0; margin-bottom: 16px">
-                                      Should you need further assistance, please
-                                      contact us at :
-                                    </p>
-                                    <p style="margin: 0; margin-bottom: 16px">
-                                      Phone  :
-                                      <a
-                                        href="tel:0112197194"
-                                        style="color: #0068a5"
-                                        >0112197194 / 0736026343</a
-                                      >
-                                    </p>
-                                    <p style="margin: 0">
-                                      email : info@depfinfinance.co.za
-                                    </p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          
             <table
               align="center"
               border="0"
@@ -1307,7 +1044,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                   <div align="center">
                                     <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://www.example.com/" style="height:44px;width:198px;v-text-anchor:middle;" arcsize="14%" stroke="false" fillcolor="#2f7d81"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:12px"><!
                                     [endif]--><a
-                                      href="http://depfinfinance.co.za/auth/profile"
+                                      href="https://depfin-admin.vercel.app/"
                                       style="
                                         text-decoration: none;
                                         display: inline-block;
@@ -1470,279 +1207,9 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                             "
                             width="50%"
                           >
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              class="image_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
-                                    width: 100%;
-                                    padding-right: 0px;
-                                    padding-left: 0px;
-                                  "
-                                >
-                                  <div align="center" style="line-height: 10px">
-                                    <img
-                                      alt="Alternate text"
-                                      src="https://i.ibb.co/v3JctKL/Completed-steps-amico-lvmrjn.png"
-                                      style="
-                                        display: block;
-                                        height: auto;
-                                        border: 0;
-                                        width: 320px;
-                                        max-width: 100%;
-                                      "
-                                      title="Alternate text"
-                                      width="320"
-                                    />
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
+                           
                           </td>
-                          <td
-                            class="column column-2"
-                            style="
-                              mso-table-lspace: 0pt;
-                              mso-table-rspace: 0pt;
-                              font-weight: 400;
-                              text-align: left;
-                              vertical-align: top;
-                              padding-left: 20px;
-                              padding-right: 20px;
-                              border-top: 0px;
-                              border-right: 0px;
-                              border-bottom: 0px;
-                              border-left: 0px;
-                            "
-                            width="50%"
-                          >
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              class="text_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
-                                    padding-bottom: 5px;
-                                    padding-left: 10px;
-                                    padding-right: 10px;
-                                    padding-top: 25px;
-                                  "
-                                >
-                                  <div style="font-family: sans-serif">
-                                    <div
-                                      class="txtTinyMce-wrapper"
-                                      style="
-                                        font-size: 12px;
-                                        mso-line-height-alt: 14.399999999999999px;
-                                        color: #000000;
-                                        line-height: 1.2;
-                                        font-family: Open Sans, Helvetica Neue,
-                                          Helvetica, Arial, sans-serif;
-                                      "
-                                    >
-                                      <p style="margin: 0; font-size: 12px">
-                                        <span style="font-size: 20px"
-                                          >Need Another Loan?</span
-                                        >
-                                      </p>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              class="text_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
-                                    padding-left: 10px;
-                                    padding-right: 10px;
-                                    padding-top: 5px;
-                                  "
-                                >
-                                  <div style="font-family: sans-serif">
-                                    <div
-                                      class="txtTinyMce-wrapper"
-                                      style="
-                                        font-size: 12px;
-                                        mso-line-height-alt: 14.399999999999999px;
-                                        color: #00d4d7;
-                                        line-height: 1.2;
-                                        font-family: Open Sans, Helvetica Neue,
-                                          Helvetica, Arial, sans-serif;
-                                      "
-                                    >
-                                      <p style="margin: 0; font-size: 14px">
-                                        <strong
-                                          ><span style="font-size: 30px"
-                                            >Apply Today</span
-                                          ></strong
-                                        >
-                                      </p>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              class="text_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                word-break: break-word;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
-                                    padding-left: 10px;
-                                    padding-right: 10px;
-                                    padding-top: 10px;
-                                  "
-                                >
-                                  <div style="font-family: sans-serif">
-                                    <div
-                                      class="txtTinyMce-wrapper"
-                                      style="
-                                        font-size: 12px;
-                                        mso-line-height-alt: 18px;
-                                        color: #000000;
-                                        line-height: 1.5;
-                                        font-family: Open Sans, Helvetica Neue,
-                                          Helvetica, Arial, sans-serif;
-                                      "
-                                    >
-                                      <p style="margin: 0">
-                                        At Depfin Finance we offer affordable
-                                        and easy to manage loans of up to R10
-                                        Million with ideal repayment terms. Our
-                                        transparent loan products and services
-                                        ensures that you get what you pay for
-                                        with no hidden costs. We make managing
-                                        your loan easy by allowing you access to
-                                        your loan account at any time. Our
-                                        affordability assessment process also
-                                        considers the best interests of our
-                                        customers.
-                                      </p>
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          mso-line-height-alt: 18px;
-                                        "
-                                      >
-                                         
-                                      </p>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              class="button_block"
-                              role="presentation"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                              "
-                              width="100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
-                                    padding-bottom: 25px;
-                                    padding-left: 10px;
-                                    padding-right: 10px;
-                                    padding-top: 10px;
-                                    text-align: left;
-                                  "
-                                >
-                                  <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://www.example.com/" style="height:42px;width:142px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#000000"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><!
-                                  [endif]--><a
-                                    href="http://depfinfinance.co.za/auth/profile"
-                                    style="
-                                      text-decoration: none;
-                                      display: inline-block;
-                                      color: #ffffff;
-                                      background-color: #000000;
-                                      border-radius: 4px;
-                                      width: auto;
-                                      border-top: 1px solid #000000;
-                                      border-right: 1px solid #000000;
-                                      border-bottom: 1px solid #000000;
-                                      border-left: 1px solid #000000;
-                                      padding-top: 5px;
-                                      padding-bottom: 5px;
-                                      font-family: Open Sans, Helvetica Neue,
-                                        Helvetica, Arial, sans-serif;
-                                      text-align: center;
-                                      mso-border-alt: none;
-                                      word-break: keep-all;
-                                    "
-                                    target="_blank"
-                                    ><span
-                                      style="
-                                        padding-left: 30px;
-                                        padding-right: 30px;
-                                        font-size: 16px;
-                                        display: inline-block;
-                                        letter-spacing: normal;
-                                      "
-                                      ><span
-                                        style="
-                                          font-size: 16px;
-                                          line-height: 2;
-                                          word-break: break-word;
-                                          mso-line-height-alt: 32px;
-                                        "
-                                        ><strong>Apply Now</strong></span
-                                      ></span
-                                    ></a
-                                  >
-                                  <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
+                         
                         </tr>
                       </tbody>
                     </table>
@@ -1875,55 +1342,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                               "
                               width="100%"
                             >
-                              <tr>
-                                <td>
-                                  <div style="font-family: sans-serif">
-                                    <div
-                                      class="txtTinyMce-wrapper"
-                                      style="
-                                        font-size: 12px;
-                                        mso-line-height-alt: 18px;
-                                        color: #a6a4a2;
-                                        line-height: 1.5;
-                                        font-family: Open Sans, Helvetica Neue,
-                                          Helvetica, Arial, sans-serif;
-                                      "
-                                    >
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          font-size: 14px;
-                                          text-align: center;
-                                          mso-line-height-alt: 18px;
-                                        "
-                                      >
-                                        <span style="font-size: 12px"
-                                          >This messasge was sent to
-                                          <a
-                                            href="mailto:${email}"
-                                            style="
-                                              text-decoration: none;
-                                              color: #a6a4a2;
-                                            "
-                                            title="email@example.com"
-                                            >${email}</a
-                                          ></span
-                                        >
-                                      </p>
-                                      <p
-                                        style="
-                                          margin: 0;
-                                          font-size: 14px;
-                                          text-align: center;
-                                          mso-line-height-alt: 18px;
-                                        "
-                                      >
-                                         
-                                      </p>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
+                          
                             </table>
                             <table
                               border="0"
@@ -2206,8 +1625,8 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
     });
     let mailOptions = {
       from: "depfinloan@yahoo.com",
-      to: email,
-      subject: `Depfin Finance PTY LTD . Loan Application Sucessfull Reference: ${ref_no}`,
+      to: "kapendakisala@gmail.com",
+      subject: `Depfin Finance PTY LTD . New Loan Application Reference: ${ref_no}`,
 
       html: declinedTemplate,
     };

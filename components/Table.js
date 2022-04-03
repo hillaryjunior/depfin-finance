@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 import { DataGrid } from "@mui/x-data-grid";
-import { getApplications } from "../services/Auth";
+import { getApplications, getLoans } from "../services/Auth";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/slices";
 
-export default function LoansTable({ type }) {
+export default function LoansTable() {
   const user = useSelector(selectUser);
-  const [loanData, setLoanData] = useState([]);
+  const [BusinesLoanData, setBusinessLoanData] = useState([]);
+  const [PersonalLoanData, setPersonalLoanData] = useState([]);
+  const [GeneralLoanData, setGeneralLoanData] = useState([]);
+  const [MortgageLoanData, setMortgageLoanData] = useState([]);
+  const [ConsolidationLoanData, setConsolidationLoanData] = useState([]);
+
   const [businessRows, setBusinessRows] = useState([]);
   const [personalRows, setPersonalRows] = useState([]);
   const [mortageRows, setMortageRows] = useState([]);
@@ -15,34 +20,118 @@ export default function LoansTable({ type }) {
   const [consolidationRows, setConsolidationRows] = useState([]);
 
   useEffect(() => {
-    getApplications(user?.uid)
+    getLoans("Business loan", user?.uid)
       .then((res) => {
-        setLoanData(res?.data);
+        setBusinessLoanData(res?.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [user]);
+
+    getLoans("Personal loan", user?.uid)
+      .then((res) => {
+        setPersonalLoanData(res?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    getLoans("Mortage loan", user?.uid)
+      .then((res) => {
+        setMortgageLoanData(res?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    getLoans("General loan", user?.uid)
+      .then((res) => {
+        setGeneralLoanData(res?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    getLoans("Consolidation loan", user?.uid)
+      .then((res) => {
+        setConsolidationLoanData(res?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    return () => {
+      // cleanup
+      setBusinessLoanData([]);
+      setPersonalLoanData([]);
+    }
+  }, [
+    user,
+  
+   
+  ]);
+  
 
   useEffect(() => {
-    if (loanData) {
-      setBusinessRows(loanData?.business);
-      setPersonalRows(loanData?.personal);
-      setMortageRows(loanData?.mortage);
-      setGeneralRows(loanData?.general);
-      setConsolidationRows(loanData?.consolidation);
+    if (BusinesLoanData) {
+      setBusinessRows(BusinesLoanData.map((item) => {
+        return {
+          id: item.id,
+          ...item.data,
+        };
+      }));
+      
     }
+    if (PersonalLoanData) {
+      setPersonalRows(PersonalLoanData.map((item) => {
+        return {
+          id: item.id,
+          ...item.data,
+        };
+      }));
+    }
+    if (GeneralLoanData) {
+      setGeneralRows(GeneralLoanData.map((item) => {
+        return {
+          id: item.id,
+          ...item.data,
+        };
+      }));
+    }
+    if (MortgageLoanData) {
+      setMortageRows(MortgageLoanData.map((item) => {
+        return {
+          id: item.id,
+          ...item.data,
+        };
+      }));
+    }
+    if (ConsolidationLoanData) {
+      setConsolidationRows(ConsolidationLoanData.map((item) => {
+        return {
+          id: item.id,
+          ...item.data,
+        };
+      }));
+    }
+
+
+
     return () => {
       setBusinessRows([]);
       setPersonalRows([]);
-      setMortageRows([]);
       setGeneralRows([]);
+      setMortageRows([]);
       setConsolidationRows([]);
+      
+     
     };
-  }, [loanData]);
+  }, [BusinesLoanData, ConsolidationLoanData, GeneralLoanData, MortgageLoanData, PersonalLoanData]);
+
+   
 
   const columns = [
-    { field: "id", headerName: "ID", width: 70 },
+    { field: "id", headerName: "ID", width: 120 },
     { field: "loan_type", headerName: "Loan Type", width: 200 },
     { field: "date_created", headerName: "Date Created", width: 200 },
     {
@@ -78,75 +167,82 @@ export default function LoansTable({ type }) {
     {
       field: "status",
       headerName: "Loan Status",
-      type: "text",
+      type: "string",
       width: 90,
     },
   ];
-  const bRow = [
-    {
-      id: "id",
-      loan_type:  businessRows?.data?.loan_type,
-      date_created: businessRows?.data?.date_created,
-      rate: businessRows?.data?.rate,
-      loan_amount: businessRows?.data?.loan_amount,
-      term: businessRows?.data?.terms,
-      repayment: businessRows?.data?.monthly_repayment_amount,
-      method: businessRows?.data?.repayment_method,
-      status: businessRows?.data?.status,
-    },
-  ];
-  const pRow = [
-    {
-      id: "id",
-      loan_type: personalRows?.data?.loan_type,
-      date_created: personalRows?.data?.date_created,
-      rate: personalRows?.data?.rate,
-      loan_amount: personalRows?.data?.loan_amount,
-      term: personalRows?.data?.terms,
-      repayment: personalRows?.data?.monthly_repayment_amount,
-      method: personalRows?.data?.repayment_method,
-      status: personalRows?.data?.status,
-    },
-  ];
-  const mRow = [
-    {
-      id: "id",
-      loan_type: mortageRows?.data?.loan_type,
-      date_created: mortageRows?.data?.date_created,
-      rate: mortageRows?.data?.rate,
-      loan_amount: mortageRows?.data?.loan_amount,
-      term: mortageRows?.data?.terms,
-      repayment: mortageRows?.data?.monthly_repayment_amount,
-      method: mortageRows?.data?.repayment_method,
-      status: mortageRows?.data?.status,
-    },
-  ];
-  const gRow = [
-    {
-      id: "id",
-      loan_type: generalRows?.data?.loan_type,
-      date_created: generalRows?.data?.date_created,
-      rate: generalRows?.data?.rate + '%',
-      loan_amount: generalRows?.data?.loan_amount,
-      term: generalRows?.data?.terms,
-      repayment: generalRows?.data?.monthly_repayment_amount,
-      method: generalRows?.data?.repayment_method,
-      status: generalRows?.data?.status,
-    },
-  ];
-  const cRow = [
-    {
-      id: "id",
-      loan_type: consolidationRows?.data?.loan_type,
-      date_created: consolidationRows?.data?.date_created,
-      rate: consolidationRows?.data?.rate + "%",
-      loan_amount: consolidationRows?.data?.loan_amount,
-      term: consolidationRows?.data?.terms,
-      repayment: consolidationRows?.data?.monthly_repayment_amount,
-      method: consolidationRows?.data?.repayment_method,
-      status: consolidationRows?.data?.status,
-    },
-  ];
+  const bRow = businessRows.map((row) => {
+    return {
+      id: row?.id,
+      loan_type: row?.loan_type,
+      date_created: row?.date_created,
+      rate: row?.rate,
+      loan_amount: row?.loan_amount,
+      term: row?.terms,
+      repayment: row?.monthly_repayment_amount,
+      method: row?.repayment_method,
+      status: row?.status,
+    };
+  });
+  const pRow = personalRows.map((row) => {
+    return {
+      id: row?.id,
+      loan_type: row?.loan_type,
+      date_created: row?.date_created,
+      rate: row?.rate,
+      loan_amount: row?.loan_amount,
+      term: row?.terms,
+      repayment: row?.monthly_repayment_amount,
+      method: row?.repayment_method,
+      status: row?.status,
+    };
+  });
+  const gRow = generalRows.map((row) => {
+    return {
+      id: row?.id,
+      loan_type: row?.loan_type,
+      date_created: row?.date_created,
+      rate: row?.rate,
+      loan_amount: row?.loan_amount,
+      term: row?.terms,
+      repayment: row?.monthly_repayment_amount,
+      method: row?.repayment_method,
+      status: row?.status,
+    };
+  }
+  );
+  const mRow = mortageRows.map((row) => {
+    return {
+      id: row?.id,
+      loan_type: row?.loan_type,
+      date_created: row?.date_created,
+      rate: row?.rate,
+      loan_amount: row?.loan_amount,
+      term: row?.terms,
+      repayment: row?.monthly_repayment_amount,
+      method: row?.repayment_method,
+      status: row?.status,
+    };
+  }
+  );
+
+  const cRow = consolidationRows.map((row) => {
+    return {
+      id: row?.id,
+      loan_type: row?.loan_type,
+      date_created: row?.date_created,
+      rate: row?.rate,
+      loan_amount: row?.loan_amount,
+      term: row?.terms,
+      repayment: row?.monthly_repayment_amount,
+      method: row?.repayment_method,
+      status: row?.status,
+    };
+  }
+  );
+
+
+
 
   return (
     <div className="table_con">
@@ -177,6 +273,7 @@ export default function LoansTable({ type }) {
             </div>
           </div>
         )}
+        
         {mortageRows ? (
           <div className="table">
             <h6>Mortage Loans</h6>

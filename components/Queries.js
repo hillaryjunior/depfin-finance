@@ -40,11 +40,11 @@ function Queries({ image , contact }) {
                 <span>
                   <LocalPhoneRoundedIcon />
                 </span>
-                <Link href="tel:+27630884404">
+                <Link href="tel:+27736026343">
                   {mobile ? (
                     <a target="_blank">call</a>
                   ) : (
-                    <a target="_blank">0630884404</a>
+                    <a target="_blank">0736026343</a>
                   )}
                 </Link>
               </div>

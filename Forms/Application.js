@@ -37,9 +37,10 @@ function Application() {
   const decrease = () => {
     terms > 1 ? setTerms(terms - 1) : setTerms(terms);
   };
-  const result = Math.random().toString(36).substring(2, 8);
+  const result = Math.random().toString(36).substring(2, 8).toUpperCase();
 
-  const ref_no = `${userData.lastName}${result}`;
+  const ref_no = `${userData.lastName[0].toUpperCase()}${result}`;
+ 
 
   const sendEmail = () => {
     try {
@@ -128,7 +129,7 @@ function Application() {
           setLoading(false);
           setTimeout(() => {
             router.push("/auth/profile");
-          }, 5000);
+          }, 3500);
         } else {
           toast.error("Loan application failed");
           setLoading(false);

@@ -25,6 +25,7 @@ function ProfileLayout() {
           <p>
             A confirmation email with the next steps has has been sent to your email address. please check under Spam or junk mail if you do not see it under your inbox
           </p>
+          <small></small>
         </div>
         <div className={styles.profile__header}>
           <div>

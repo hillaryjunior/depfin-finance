@@ -23,7 +23,7 @@ function ProfileLayout() {
             applications`}
           </p>
           <p>
-            A confirmation email with the next steps has has been sent to your email address. please check under Spam or junk mail if you do not see it under your inbox
+            A confirmation email with the next steps has been sent to your email address. please check under Spam or junk mail if you do not see it under your inbox
           </p>
           <small></small>
         </div>

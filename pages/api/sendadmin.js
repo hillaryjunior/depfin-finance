@@ -1625,7 +1625,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
     });
     let mailOptions = {
       from: "depfinloan@yahoo.com",
-      to: "kapendakisala@gmail.com",
+      to: "info@depfinfinance.co.za",
       subject: `Depfin Finance PTY LTD . New Loan Application Reference: ${ref_no}`,
 
       html: declinedTemplate,

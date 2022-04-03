@@ -122,7 +122,7 @@ function Application() {
         console;
 
         if (!res.error) {
-          toast.success("Loan application submitted successfully, a confirmation email as been sent to your email .Check under Spam as well if you did not recieve the email.");
+          toast.success("Loan application submitted successfully, a confirmation email has been sent to your email .Check under Spam as well if you did not recieve the email.");
           sendEmail();
           senAdminEmail();
           setLoading(false);

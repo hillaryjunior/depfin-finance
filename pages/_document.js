@@ -31,7 +31,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://depfin.com.au/static/media/logo.png"
+            content="https://i.ibb.co/DbD4Cpw/depfin.png"
           />
           <meta property="og:url" content={SITE_URL} />
           <meta property="og:type" content="website" />

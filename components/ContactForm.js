@@ -27,7 +27,9 @@ function ContactForm() {
       
 
       axios
-        .get(`/api/hello?email=${email}&name=${name}&phone=${phone}&&message=${message}`)
+        .get(
+          `https://depfin-admin.vercel.app/api/hello?email=${email}&name=${name}&phone=${phone}&&message=${message}`
+        )
         .then((res) => {
           setLoading(false);
           toast.success("Your message has been sent successfully");

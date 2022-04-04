@@ -14,6 +14,9 @@ module.exports = {
       "/solutions": { page: "/solutions" },
       "/terms": { page: "/terms" },
       "/conflictofinterest": { page: "/conflictofinterest" },
+      "/auth/login": { page: "/auth/login" },
+      "/auth/reset": { page: "/auth/reset" },
+      "/auth/profile": { page: "/auth/profile" },
      
     };
   },

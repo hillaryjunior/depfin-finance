@@ -11,7 +11,7 @@ function Profile() {
   const router = useRouter()
   
   useEffect(() => {
-    if(!user) return router.replace('/')
+    if(!user) return router.replace('/auth/login')
 
   },[user,router])
   return (

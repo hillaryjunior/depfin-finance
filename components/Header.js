@@ -43,7 +43,7 @@ function Header() {
         <div className={styles.logo} onClick={() => router.push("/")}>
           <Image
             className={styles.image}
-            src={logo}
+            src="https://i.ibb.co/DbD4Cpw/depfin.png"
             layout="fill"
             objectFit="contain"
             alt="Depfin Logo"

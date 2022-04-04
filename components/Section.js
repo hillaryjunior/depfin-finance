@@ -38,9 +38,7 @@ function Section() {
                 <CheckCircleIcon className={styles.icon} /> Latest pay slip from
                 the current employer.
               </span>
-              <span>
-                <CheckCircleIcon className={styles.icon} /> Good credit score
-              </span>
+             
             </div>
           </div>
         </div>

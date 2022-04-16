@@ -70,7 +70,7 @@ function complaints() {
         request that your complaint is submitted to us in writing. Please
         ensure, that where the complaint is delivered by hand or by any other
         means, that you retain proof of delivery. Complaints submitted via
-        email should be sent to depfinloan@yahoo.com
+        email should be sent to depfinfinance@safrica.com
     </p>
     <p>
         4.2 INFORMATION REQUIRED WHEN SUBMITTING A COMPLAINT

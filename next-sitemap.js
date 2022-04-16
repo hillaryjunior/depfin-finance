@@ -1,7 +1,7 @@
 
 
 module.exports = {
-  siteUrl: "https://depfinfinance.co.za/",
+  siteUrl: "http://depfinfinance.co.za/",
   changefreq: "daily",
   priority: 1.0,
   sitemapSize: 5000,

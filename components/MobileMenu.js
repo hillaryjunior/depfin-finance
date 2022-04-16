@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser } from '../redux/slices';
 import styles from '../sass/components/Header.module.scss';
+import { LogOut } from '../services/Auth';
 
 function MobileMenu() {
    const user = useSelector(selectUser);

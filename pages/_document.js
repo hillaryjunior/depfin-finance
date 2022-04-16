@@ -23,16 +23,13 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" itemScope itemType="http://schema.org/Organization">
         <Head>
           <meta
             httpEquiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
           />
-          <meta
-            property="og:image"
-            content="https://i.ibb.co/DbD4Cpw/depfin.png"
-          />
+
           <meta property="og:url" content={SITE_URL} />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Depfin Finance" />
@@ -40,6 +37,8 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="o2c09wBxSEGBC_spdIgsJCtzSmxyeti2XTly5wM9pSc"
           />
+          <meta name="robots" content="index, follow" />
+
           <meta
             name="keywords"
             content="depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"

@@ -67,6 +67,11 @@
         display: grid;
         place-items: center;
         background-color: variables.$dark;
+
+        @media (max-width: 769px) {
+          bottom : 219px;
+
+        }
       }
       .socials__details {
         display: flex;

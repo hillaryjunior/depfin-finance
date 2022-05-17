@@ -39,7 +39,7 @@ function Application() {
   };
   const result = Math.random().toString(36).substring(2, 8).toUpperCase();
 
-  const ref_no = `${userData.lastName[0].toUpperCase()}${result}`;
+  const ref_no = userData.length && `${userData.lastName[0].toUpperCase()}${result}`;
  
 
   const sendEmail = () => {
@@ -143,14 +143,14 @@ function Application() {
   };
   return (
     <div className={styles.form__container}>
-      <h2>Apply for a loan</h2>
+      <h2>Complete Loan application</h2>
       <p>*Appplication takes less than 5 Minutes</p>
       <form className={styles.application__form}>
         <div className={styles.personal__details}>
           <h3>Personal Details</h3>
 
           <div className={styles.select__input}>
-            <span>Status</span>
+            <span>Employment Status</span>
             <select
               value={employmentStatus}
               onChange={(e) => setEmployeeStatus(e.target.value)}
@@ -302,7 +302,7 @@ function Application() {
               />
             </div>
           ) : (
-            <>{isVerified && <button onClick={apply}>Apply</button>}</>
+            <>{isVerified && <button onClick={apply}>Submit Application</button>}</>
           )}
 
           <div>

@@ -104,16 +104,14 @@ function RegisterForm() {
     try {
       await createAccount(email, password, data, userAcount)
         .then((res) => {
-          if (res) {
+          if (res?.user.uid) {
             toast.success("Account created successfully");
             setLoading(false);
 
             let uid = res?.user.uid;
 
-           
             getData(uid)
               .then((data) => {
-             
                 if (!data.error) {
                   dispatch(login(data));
                   router.replace("/apply");
@@ -125,9 +123,11 @@ function RegisterForm() {
                 console.log(err);
                 // dispatch(logout());
               });
-            
+          }
+          else{
 
-            
+            toast.error("Something went wrong");
+            setLoading(false);
           }
         })
         .catch((err) => {
@@ -146,7 +146,7 @@ function RegisterForm() {
   };
   return (
     <div className={styles.form__container}>
-      <h2>Create an account</h2>
+      <h2> Complete Loan Application</h2>
       <p>*Appplication takes less than 5 Minutes</p>
 
       <form>
@@ -155,7 +155,7 @@ function RegisterForm() {
 
           <div className={styles.select__input}>
             <select value={title} onChange={(e) => setTitle(e.target.value)}>
-              <option value="">Select</option>
+              <option value="">Select Title</option>
               <option value="Mr">Mr</option>
               <option value="Mrs">Mrs</option>
               <option value="Ms">Ms</option>
@@ -229,7 +229,7 @@ function RegisterForm() {
         </div>
         <div className={styles.terms}>
           <input defaultChecked type="checkbox" />
-          <Link href="/">
+          <Link href="/terms">
             <a className="terms__link">
               Accept <span>terms and conditions</span>
             </a>
@@ -256,7 +256,7 @@ function RegisterForm() {
             />
           </div>
         ) : (
-          <button onClick={register}>Create account</button>
+          <button onClick={register}>Next Step</button>
         )}
       </form>
 

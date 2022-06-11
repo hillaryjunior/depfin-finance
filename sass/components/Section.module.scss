@@ -131,5 +131,21 @@
         text-align: center;
       }
     }
+
+    .testimonials{
+      display: grid;
+      place-items :  center;
+      padding: 3rem 0;
+
+      h5{
+        font-size: 2rem;
+        font-family: variables.$PoppinsMedium;
+        color: variables.$dark;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-align: center;
+        
+      }
+    }
   }
 }

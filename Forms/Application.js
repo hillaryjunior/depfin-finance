@@ -39,7 +39,9 @@ function Application() {
   };
   const result = Math.random().toString(36).substring(2, 8).toUpperCase();
 
-  const ref_no = `${userData.lastName[0].toUpperCase()}${result}`;
+  const ref_no = userData && `${userData.lastName[0].toUpperCase()}${result}`;
+
+
  
 
   const sendEmail = () => {
@@ -120,7 +122,7 @@ function Application() {
     setLoading(true);
     await applyForLoan(ref_no, loanType, applicationData)
       .then((res) => {
-        console;
+
 
         if (!res.error) {
           toast.success("Loan application submitted successfully, a confirmation email has been sent to your email .Check under Spam as well if you did not recieve the email.");
@@ -143,14 +145,14 @@ function Application() {
   };
   return (
     <div className={styles.form__container}>
-      <h2>Apply for a loan</h2>
+      <h2>Next Step</h2>
       <p>*Appplication takes less than 5 Minutes</p>
       <form className={styles.application__form}>
         <div className={styles.personal__details}>
           <h3>Personal Details</h3>
 
           <div className={styles.select__input}>
-            <span>Status</span>
+            <span>Employment Status</span>
             <select
               value={employmentStatus}
               onChange={(e) => setEmployeeStatus(e.target.value)}
@@ -302,7 +304,7 @@ function Application() {
               />
             </div>
           ) : (
-            <>{isVerified && <button onClick={apply}>Apply</button>}</>
+            <>{isVerified && <button onClick={apply}>Submit Application</button>}</>
           )}
 
           <div>

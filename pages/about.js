@@ -9,7 +9,7 @@ function about() {
     <div>
       <Head>
         <title>
-          A personilsed loan application experience | Depfin Finance
+          A personalised loan application experience | Depfin Finance
         </title>
 
         {/* write meta description */}

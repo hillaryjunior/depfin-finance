@@ -1,14 +1,33 @@
 import { Avatar, Menu, MenuItem } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../redux/slices';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../redux/slices';
 import styles from '../sass/components/Header.module.scss';
+import { LogOut } from '../services/Auth';
 
 function MobileMenu() {
    const user = useSelector(selectUser);
-  const router =  useRouter()
+  const router = useRouter()
+   const dispatch = useDispatch();
+  
+  
+   const [open, setOpen] = useState(false);
+
+   const [anchorEl, setAnchorEl] = useState(null);
+   const openMenu = Boolean(anchorEl);
+   const handleClick = (event) => {
+     setAnchorEl(event.currentTarget);
+   };
+   const handleClose = () => {
+     setAnchorEl(null);
+   };
+
+   const userLogout = () => {
+     LogOut();
+     dispatch(logout());
+   };
         return (
           <div className={styles.mobile__menu}>
             <nav>
@@ -34,7 +53,7 @@ function MobileMenu() {
               </ul>
               <>
                 {user ? (
-                  <div>
+                  <div style = {{display: 'grid',placeItems : 'center'  }}>
                     <Avatar
                       style={{ cursor: "pointer" }}
                       id="basic-button"

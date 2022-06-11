@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../sass/components/Section.module.scss";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CustomizedSteppers from "./Steper";
+import Testimonials from "./Testimonials";
 function Section() {
   return (
     <div className={styles.section__about}>
@@ -45,6 +46,11 @@ function Section() {
         <div className={styles.steper}>
           <h5>Why Choose Depfin Finance?</h5>
           <CustomizedSteppers />
+        </div>
+
+        <div className = {styles.testimonials}>
+          <h5>What clients are saying</h5>
+          <Testimonials />
         </div>
       </div>
     </div>

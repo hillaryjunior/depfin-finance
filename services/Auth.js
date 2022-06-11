@@ -111,7 +111,7 @@ export const getData = async (uid) => {
       return docSnapshot.data();
     } else {
             console.log("No such document!");
-            auth.signOut();
+            // auth.signOut();
             return {
               
         data: [],

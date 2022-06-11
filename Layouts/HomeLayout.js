@@ -12,6 +12,7 @@ function HomeLayout() {
             <Header />
             <Banner />
             <Section />
+           
             <Fab />
             <Queries image="https://res.cloudinary.com/de0gawheh/image/upload/v1645273968/pexels-photo-8867630_1_hxo02o.jpg" />
             <Footer />

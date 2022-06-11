@@ -37,7 +37,9 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="o2c09wBxSEGBC_spdIgsJCtzSmxyeti2XTly5wM9pSc"
           />
-          <meta name=" robots" content="index, follow" />
+
+          <meta name="robots" content="index, follow" />
+
 
           <meta
             name="keywords"

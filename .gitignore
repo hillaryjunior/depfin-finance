@@ -14,9 +14,7 @@
 
 # production
 /build
-/public/sitemap.xml
-/public/sitemap-0.xml
-/public/robots.txt
+
 /public/manifest.json
 
 # misc

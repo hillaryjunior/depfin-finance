@@ -1,0 +1,167 @@
+@use "../abstracts/variables.scss" as variables;
+
+.container {
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+  --font-family: variables.$PoppinsRegular;
+  --font-size: 1rem;
+  --weight-light: 300;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  min-height: 100%;
+  font-family: variables.$PoppinsRegular;
+  font-size: var(--font-size);
+  font-weight: var(--weight-medium);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 2.3rem;
+  padding-right: 2.3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 28.5rem;
+}
+
+.slider {
+  position: relative; /* needed for posiition absolute in children (slider_buttons) */
+  
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slider_images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+  width: 78%;
+}
+
+.image_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.image_wrapper > img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  box-shadow: 0rem 1.3rem 2rem -0.5rem hsla(240, 38%, 50%, 25%);
+}
+
+.slider_buttons {
+  position: absolute;
+  top: calc(100% - 3.2rem - 2.85rem);
+  left: calc(50% - 2.85rem);
+  background-color: transparent;
+}
+
+.slider_buttons > button {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+
+  svg{
+          color: #01C5C4;
+          
+  }
+}
+
+.slider_buttons > button:focus {
+  outline: none;
+}
+
+.slider_buttons > button:first-of-type {
+  border-top-left-radius: 1.6rem;
+  border-bottom-left-radius: 1.6rem;
+}
+
+.slider_buttons > button:last-of-type {
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+}
+
+.slider_buttons > button > svg {
+  width: 3rem;
+  height: 2rem;
+}
+
+.testimonial {
+  padding-top: 2.5rem;
+  text-align: center;
+}
+
+.testimonial > * + * {
+  margin-top: 2rem;
+}
+
+.testimonial_content {
+  font-size: min(3.8vw, 2rem);
+  font-weight: var(--weight-light);
+  line-height: min(6.4vw, 3.2rem);
+  padding-left: .4rem;
+  padding-right: .4rem;
+  color: var(--dark-blue);
+
+  background-image: url('/frontendmentor/challenge/coding-bootcamp-testimonials-slider/pattern-quotes.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 6rem;
+  padding-top: 2.5rem;
+  margin-top: -2.5rem;
+}
+
+.testimonial_author > * + * {
+  margin-top: .4rem;
+}
+
+.testimonial_author_name {
+  font-size: min(4vw, 2rem);
+  font-weight: var(--weight-bold);
+  color: var(--dark-blue);
+}
+
+.testimonial_author_job {
+  font-size: min(4vw, 2rem);
+  font-weight: var(--weight-medium);
+  color: var(--grayish-blue);
+}
+
+@media(min-width: 1024px) and (orientation: landscape) {
+  .container {
+    background-size: 61rem;
+  }
+
+  .testimonial_container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .slider {
+    width: 53%;
+  }
+
+  .slider_images {
+    padding-top: 7.2rem;
+    padding-bottom: 7.2rem;
+  }
+
+  .slider_buttons {
+    top: calc(100% - 7.2rem - 3.15rem);
+    left: calc(25% - 2.85rem);
+    cursor: pointer;
+  }
+}

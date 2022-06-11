@@ -3,6 +3,7 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: true,
   // create exportPathMap
+
   exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
@@ -24,6 +25,7 @@ module.exports = {
       "/auth/profile": { page: "/auth/profile" },
     };
   },
+
   images: {
     loader: "akamai",
     path: "",

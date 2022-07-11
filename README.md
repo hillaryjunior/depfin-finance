@@ -148,7 +148,7 @@ note only make changes to texts.
 
 ## insert meta tags
 
-![App Screenshot](https://res.cloudinary.com/devtedcloud/image/upload/v1657528997/Screenshot_2022-07-11_at_10.42.48_bylj8m.png)
+![App Screenshot](https://res.cloudinary.com/devtedcloud/image/upload/v1657529730/Screenshot_2022-07-11_at_10.45.27_fupvt3.png)
 
 
 

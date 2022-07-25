@@ -480,10 +480,13 @@ function privacypolicy() {
   return (
     <div>
       <Head>
-              <title>Depfin Finance Privacy Policy</title>
-                <meta name="description" content="Depfin Finance Privacy Policy" />
+        <title>Privacy Policy - Depfin Finance</title>
+        <meta
+          name="description"
+          content="Read our privacy policy carefully, we update our privacy policy from time to time. If any queries or feedback about how we have handled your personal information, please contact us."
+        />
       </Head>
-      <PolicyLayout title = "Privacy Policy" content={html} />
+      <PolicyLayout title="Privacy Policy" content={html} />
     </div>
   );
 }

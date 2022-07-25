@@ -12,20 +12,19 @@ function Footer() {
           <h6>Quick Links</h6>
           <ul>
             <Link href="/">
-              <a>Home</a>
+              <a title="Home">Home</a>
             </Link>
             <Link href="/apply">
-              <a>Apply online</a>
+              <a title="Apply Online">Apply online</a>
             </Link>
             <Link href="/about">
-              <a>about</a>
+              <a title="About Us">About us</a>
             </Link>
             <Link href="/solutions">
-              <a>Solutions</a>
+              <a title="Solutions">Solutions</a>
             </Link>
-
-            <Link href="contact">
-              <a>Contact</a>
+            <Link href="/sitemap.xml">
+              <a title="sitemap">Sitemap</a>
             </Link>
           </ul>
         </div>
@@ -33,28 +32,61 @@ function Footer() {
           <h6>Resources</h6>
           <ul>
             <Link href="/complaints">
-              <a>Complaints Management</a>
+              <a title="Complaints Management">Complaints Management</a>
             </Link>
             <Link href="/conflictofinterest">
-              <a>Conflict of Interest management</a>
+              <a title="Conflict of interest management">
+                Conflict of Interest management
+              </a>
             </Link>
             <Link href="/terms">
-              <a>Terms & Conditions</a>
+              <a title="terms">Terms & Conditions</a>
             </Link>
             <Link href="/faqs">
-              <a>FAQs</a>
+              <a title="faqs">FAQs</a>
             </Link>
             <Link href="privacypolicy">
-              <a>Privacy Policy</a>
+              <a title="Privacy Policy">Privacy Policy</a>
             </Link>
           </ul>
           <div className="rounded-social-buttons">
-                    <a className="social-button facebook" href="https://www.facebook.com/Depfin-Finance-Loans-100582409291663" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
-                    <a className="social-button twitter" href="https://twitter.com/DepfinL" target="_blank" rel="noreferrer"><i className="fab fa-twitter" rel="noreferrer"></i></a>
-                    <a className="social-button linkedin" href="https://www.linkedin.com/in/palesa-namhla-b19254236/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
-                   
-                    <a className="social-button instagram" href="https://www.instagram.com/kimlorna46/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-                </div>
+            <a
+              title="facebook"
+              className="social-button facebook"
+              href="https://www.facebook.com/Depfin-Finance-Loans-100582409291663"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a
+              title="twitter"
+              className="social-button twitter"
+              href="https://twitter.com/DepfinL"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fab fa-twitter" rel="noreferrer"></i>
+            </a>
+            <a
+              title="linkedin"
+              className="social-button linkedin"
+              href="https://www.linkedin.com/in/palesa-namhla-b19254236/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+
+            <a
+              className="social-button instagram"
+              href="https://www.instagram.com/kimlorna46/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.copyright}>

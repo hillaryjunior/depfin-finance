@@ -6,10 +6,10 @@ function contact() {
   return (
     <div>
       <Head>
-        <title>Contact Depfin finance for a personalised loan experience.</title>
+        <title>Contact Us for Personalised Loan - Depfin Finance</title>
         <meta
           name="description"
-          content=" Enquiry about a loan that is guaranteed to make your dream a reality or to cover extra costs. Apply for a  loan today."
+          content=" Enquire for a personalised loan at Depfin Finance. Share your details with our advisors in the contact information from our advisors are always ready to assist you."
         />
       </Head>
       <ContactLayout />

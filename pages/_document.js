@@ -37,6 +37,9 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="o2c09wBxSEGBC_spdIgsJCtzSmxyeti2XTly5wM9pSc"
           />
+          <meta property="og:url" content="https://depfinfinance.co.za/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Depfin Finance" />
 
           <meta name="robots" content="index, follow" />
 
@@ -44,11 +47,11 @@ class MyDocument extends Document {
             name="keywords"
             content="depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"
           />
-          <script
+          {/* <script
             data-ad-client="ca-pub-2541847180773588"
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          ></script>
+          ></script> */}
         </Head>
 
         <body>

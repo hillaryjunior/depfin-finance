@@ -69,7 +69,7 @@ function Header() {
               <a>Blogs</a>
             </Link> */}
             <Link href="/contact">
-              <a>Contact us</a>
+              <a title = "contact us">Contact us</a>
             </Link>
           </ul>
         </nav>

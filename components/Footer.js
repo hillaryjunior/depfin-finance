@@ -23,7 +23,7 @@ function Footer() {
             <Link href="/solutions">
               <a title="Solutions">Solutions</a>
             </Link>
-            <Link href="/sitemap.xml">
+            <Link href="/sitemap">
               <a title="sitemap">Sitemap</a>
             </Link>
           </ul>

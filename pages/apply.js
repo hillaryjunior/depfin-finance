@@ -8,7 +8,7 @@ function Apply() {
     <div>
       <Head>
         <title>
-          Apply For Personal & Business Loan in South Africa - Depfin Finance{" "}
+          Apply For Personal & Business Loan in South Africa - Depfin Finance
                           </title>
                           <meta
                                   name="description"

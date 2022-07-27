@@ -17,7 +17,8 @@ function sitemap() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className = "sitemap">
+      <nav className="sitemap">
+        <h1>Sitemap</h1>
         <ul>
           <Link href="/">
             <a title="Home">Home</a>

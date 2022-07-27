@@ -226,6 +226,11 @@ gap : 10px;
         padding: 20px;
         font-family: variables.$PoppinsRegular;
 
+        h1{
+                padding: 40px 0;
+                font-size: 3rem;
+        }
+
         ul{
                 display : grid;
                 gap :  15px;

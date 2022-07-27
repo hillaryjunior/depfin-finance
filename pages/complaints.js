@@ -202,10 +202,10 @@ function complaints() {
   return (
     <div>
       <Head>
-        <title>Depfin Finance Loan Application Complaints Management </title>
+        <title>Complaints Management - Depfin Finance </title>
         <meta
           name="description"
-          content="Depfin Finance Loan Application Complaints Management Terms and Conditions"
+          content="Depfin Finance is one of the trusted companies where clients can file complaints in case of any grievance with the company or employee. "
         />
       </Head>
       <PolicyLayout title="Complaints Management" content={html} />

@@ -159,10 +159,10 @@ You can contact our customer care branch in order to give you a loan statement.
   return (
     <div>
       <Head>
-        <title>Frequently Asked Questions</title>
+        <title>Frequently Asked Questions - Depfin Finance</title>
         <meta
           name="description"
-          content="Depfin finance is a financial services company in South Africa. We offer a range of financial products and services to individuals and businesses."
+          content="Frequently asked questions like, what documentation do I need to apply for a personal loan? What are the latest interest rates and charges? "
         />
         <script
           type="application/ld+json"

@@ -2,6 +2,8 @@ const headers = require('./security')
 module.exports = {
   reactStrictMode: true,
   trailingSlash: true,
+ 
+
   // create exportPathMap
 
   exportPathMap: async function (

@@ -5,15 +5,20 @@ import ApplyLayout from '../Layouts/ApplyLayout'
 
 function Apply() {
   return (
-          <div>
-                  <Head>
-                          <title>A personalised loan application experience Apply for a loan in minutes </title>
-                  </Head>
+    <div>
+      <Head>
+        <title>
+          Apply For Personal & Business Loan in South Africa - Depfin Finance
+                          </title>
+                          <meta
+                                  name="description"
+                                  content="Apply for personal, business, mortgage, and consolidation loans without getting into tedious paperwork at Depfin Finance in Cape Town, South Africa. "
+                                />
+      </Head>
 
-                  <ApplyLayout />
-                  
+      <ApplyLayout />
     </div>
-  )
+  );
 }
 
 export default Apply

@@ -8,36 +8,22 @@ function about() {
   return (
     <div>
       <Head>
-        <title>
-          A personalised loan application experience | Depfin Finance
-        </title>
+        <title>About Us - Depfin Finance</title>
 
         {/* write meta description */}
 
         <meta
           name="description"
-          content="Get a personal loan today! Get instant approval when you apply online  and choose the loan repayment terms that best suit your needs."
+          content="Depfin Finance offers you loans according to your needs and circumstances. If you need a quick loan then a short-term loan is the ideal loan solution for you."
         />
         {/* viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="icon" href="/favicon.ico" />
 
-        <meta
-          property="og:title"
-          content="Loan from R5000 to R200 000 | Apply in minutes - Depfin Finance"
-        />
-        <meta
-          property="og:description"
-          content="We offer personal loans of up to R200 000 with repayment terms ranging from 24 - 72 months. Apply for a loan today!"
-        />
-        <meta
-          property="og:image"
-          content="https://depfin.com.au/static/media/logo.png"
-        />
-        <meta property="og:url" content="https://depfin.com.au/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Depfin Finance" />
+      
+      
+        
       </Head>
       <AboutLayout />
     </div>

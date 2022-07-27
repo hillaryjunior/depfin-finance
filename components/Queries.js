@@ -25,7 +25,7 @@ function Queries({ image , contact }) {
             <Image
               className={styles.image}
               src={image}
-              alt="advisor Image"
+              alt="Require more help for Loan In South Africa"
               layout="fill"
               objectFit="cover"
               priority

@@ -196,10 +196,13 @@ function terms() {
   return (
     <div>
       <Head>
-              <title>Depfin Finance Loan Application Terms and Conditions</title>
-                <meta name="description" content="Depfin Finance Loan Application Terms and Conditions" />
+        <title>Terms & Conditions - Depfin Finance</title>
+        <meta
+          name="description"
+          content="Read our terms and conditions carefully. If you have any questions or concerns about the Depfin Finance loan please contact us immediately."
+        />
       </Head>
-      <PolicyLayout title="Website terms of use" content = {html} />
+      <PolicyLayout title="Website terms of use" content={html} />
     </div>
   );
 }

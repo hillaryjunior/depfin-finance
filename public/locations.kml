@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>Depfin Finance</name>
+		<atom:link rel="related" href="https://depfinfinance.co.za" />
+		<Folder>
+			<Placemark>
+				<name><![CDATA[Depfin Finance]]></name>
+				<address><![CDATA[208 De Waal Road, Southfield, 7800 , South Africa]]></address>
+				<phoneNumber><![CDATA[0604601979]]></phoneNumber>
+				<description><![CDATA[Depfin Finance offers personal loans and business loans in Cape Town, South Africa. Our financial advisors are always ready to assist you. Apply for a loan today!]]></description>
+				<Point>
+					<coordinates>18.4824277,-34.0364812,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

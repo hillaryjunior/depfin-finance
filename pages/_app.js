@@ -13,12 +13,13 @@ import { useEffect } from 'react';
 let persistor = persistStore(store);
 import * as gtag from "../lib/gtag";
 import * as gtm from "../lib/googleTagManager";
+import { NextUIProvider } from "@nextui-org/react";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
     useEffect(() => {
       const handleRouteChange = (url) => {
         gtag.pageview(url);
-        // gtm.pageView(url);
+        gtm.pageView(url);
       };
       router.events.on("routeChangeComplete", handleRouteChange);
       return () => {
@@ -35,9 +36,12 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
-      <Script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossOrigin="anonymous"></Script>
-    
-
+      <Script
+        defer
+        src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+        integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+        crossOrigin="anonymous"
+      ></Script>
 
       <Script
         id="gtag-init"
@@ -52,7 +56,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      {/* <Script
+      <Script
         id="gtm-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -60,14 +64,16 @@ function MyApp({ Component, pageProps }) {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KS369TV');`,
+})(window,document,'script','dataLayer','GTM-K2Z9HSJ');`,
         }}
-      /> */}
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <Component {...pageProps} />
-        </PersistGate>
-      </Provider>
+      />
+      <NextUIProvider>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Component {...pageProps} />
+          </PersistGate>
+        </Provider>
+      </NextUIProvider>
     </>
   );
 }

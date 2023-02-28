@@ -56,27 +56,27 @@ function Header() {
             <Link href="/">
               <a title="Home">Home</a>
             </Link>
-            <Link href="/apply">
-              <a title = "Apply Online">Apply online</a>
+            <Link href="/personal/business/loan/apply">
+              <a title="Apply Online">Apply online</a>
             </Link>
             <Link href="/about">
-              <a title = "About Us">About us</a>
+              <a title="About Us">About us</a>
             </Link>
-            <Link  href="/solutions">
-              <a title = "Solutions">Solutions</a>
+            <Link href="/solutions">
+              <a title="Solutions">Solutions</a>
             </Link>
             {/* <Link href="/blogs">
               <a>Blogs</a>
             </Link> */}
             <Link href="/contact">
-              <a title = "contact us">Contact us</a>
+              <a title="contact us">Contact us</a>
             </Link>
           </ul>
         </nav>
         <div className={styles.cta}>
           <Link href="tel:087 510 7793">
             {mobile ? (
-              <a title = "mobile number">
+              <a title="mobile number">
                 {" "}
                 <span>
                   <LocalPhoneRoundedIcon />

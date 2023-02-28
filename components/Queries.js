@@ -75,10 +75,13 @@ function Queries({ image , contact }) {
             </div>
           </div>
 
-          <h5>• Head office address</h5>
+          <h5>•Branch Address</h5>
           <p>208 De Waal Rd, Southfield, Cape Town, 7800 South Africa.</p>
-          <h5>• Branch Address</h5>
-          <p>7495 W Atlantic Ave Suite 200-293 Delray Beach, Fl 33446 USA.</p>
+          <h5> •Head office address</h5>
+          <p>
+            Office Ground Flour, The Glen Shopping Centre, C/O Orpen & Letaba
+            Road, Eastcliff, Oakdene, Johannesburg, 2190
+          </p>
         </div>
 
         <div className={styles.queries__faqs}>

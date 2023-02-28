@@ -14,7 +14,7 @@ function Footer() {
             <Link href="/">
               <a title="Home">Home</a>
             </Link>
-            <Link href="/apply">
+            <Link href="/personal/business/loan/apply">
               <a title="Apply Online">Apply online</a>
             </Link>
             <Link href="/about">

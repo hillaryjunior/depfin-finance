@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 600px;
+    height : 900px;
     gap: 100px;
 
     @media screen and (max-width: 769px) {
@@ -58,7 +58,7 @@
       .work__hours {
         position: absolute;
         right: 0;
-        bottom: 180px;
+        top: 250px;
         max-width: 250px;
         border-radius: 10px;
         color: white;

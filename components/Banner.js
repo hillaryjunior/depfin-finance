@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { calculateLoanRepaymentMonthly } from "../services/Calculation";
 import { useDispatch } from 'react-redux';
 import { setRepayment } from '../redux/slices';
+import Disclaimer from './Disclaimer';
 function Banner() {
         const [value, setValue] = useState(30000);
   const [terms, setTerms] = useState(2);
@@ -30,7 +31,7 @@ function Banner() {
 
        })
      );
-     router.push("/apply");
+     router.push("/personal/business/loan/apply");
    };
 
 
@@ -56,7 +57,7 @@ function Banner() {
                   at
                   <span> Depfin Finance.</span>
                 </h1>
-                <Link href="/apply">
+                <Link href="/personal/business/loan/apply">
                   <a className={styles.apply__cta}>Apply Now!</a>
                 </Link>
               </div>
@@ -74,9 +75,7 @@ function Banner() {
                       value={value}
                       onChange={handleChange}
                       placeholder="Enter Required Loan Amount (R 30000)"
-                      
                     />
-                
                   </div>
                   <div className={styles.repayment}>
                     <div className={styles.item}>
@@ -108,6 +107,7 @@ function Banner() {
                   <button onClick={addLoanDetails}>Apply online</button>
                   <div>
                     <small>*Loans are calculated at a 6% interest rate</small>
+                    <Disclaimer />
                   </div>
                 </div>
               </div>

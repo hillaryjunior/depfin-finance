@@ -21,6 +21,29 @@ function Section() {
             to your loan account at any time. Our affordability assessment
             process also considers the best interests of our customers.
           </p>
+
+          <h3>
+            We are able to offer the best loans to match clients requirements.
+          </h3>
+
+          <p>
+            24 hours approval on all applications. Simple online application
+            takes less than 5 minutes to complete. Give us a try and see how
+            satisfied you will be with our fast flexible approval process.
+          </p>
+
+          <p>
+            We offer loans at 5% Interest rate, Apply Now for any type of loans
+            and you will be glad and be satisfied with our flexibility and fast
+            services. Blacklisted and Clients under debt review are qualified to
+            apply.
+          </p>
+          <p>
+            We offer loans at 5% Interest rate, Apply Now for any type of loans
+            and you will be glad and be satisfied with our flexibility and fast
+            services. Blacklisted and Clients under debt review are qualified to
+            apply.
+          </p>
           <div className={styles.requirements}>
             <h3>All You need to apply</h3>
             <div className={styles.required__items}>
@@ -39,7 +62,6 @@ function Section() {
                 <CheckCircleIcon className={styles.icon} /> Latest pay slip from
                 the current employer.
               </span>
-             
             </div>
           </div>
         </div>
@@ -48,7 +70,7 @@ function Section() {
           <CustomizedSteppers />
         </div>
 
-        <div className = {styles.testimonials}>
+        <div className={styles.testimonials}>
           <h5>What clients are saying</h5>
           <Testimonials />
         </div>

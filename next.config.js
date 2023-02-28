@@ -13,11 +13,14 @@ module.exports = {
     return {
       "/": { page: "/" },
       "/about": { page: "/about" },
-      "/apply": { page: "/apply" },
+      "/personal/business/loan/apply": {
+        page: "/personal/business/loan/apply",
+      },
       "/complaints": { page: "/complaints" },
       "/contact": { page: "/contact" },
       "/faqs": { page: "/faqs" },
       "/privacypolicy": { page: "/privacypolicy" },
+      "/sitemap": { page: "/sitemap" },
 
       "/solutions": { page: "/solutions" },
       "/terms": { page: "/terms" },

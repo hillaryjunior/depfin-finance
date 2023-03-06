@@ -33,17 +33,12 @@ function Section() {
           </p>
 
           <p>
-            We offer loans at 5% Interest rate, Apply Now for any type of loans
+            We offer loans at 6% Interest rate, Apply Now for any type of loans
             and you will be glad and be satisfied with our flexibility and fast
             services. Blacklisted and Clients under debt review are qualified to
             apply.
           </p>
-          <p>
-            We offer loans at 5% Interest rate, Apply Now for any type of loans
-            and you will be glad and be satisfied with our flexibility and fast
-            services. Blacklisted and Clients under debt review are qualified to
-            apply.
-          </p>
+         
           <div className={styles.requirements}>
             <h3>All You need to apply</h3>
             <div className={styles.required__items}>

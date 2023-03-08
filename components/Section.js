@@ -31,6 +31,8 @@ function Section() {
             takes less than 5 minutes to complete. Give us a try and see how
             satisfied you will be with our fast flexible approval process.
           </p>
+          
+
 
           <p>
             We offer loans at 6% Interest rate, Apply Now for any type of loans

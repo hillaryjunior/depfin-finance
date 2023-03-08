@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
     useEffect(() => {
       const handleRouteChange = (url) => {
-        gtag.pageview(url);
+        // gtag.pageview(url);
         gtm.pageView(url);
       };
       router.events.on("routeChangeComplete", handleRouteChange);
@@ -32,17 +32,17 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="canonical" href={`${SITE_URL}` + router?.asPath}></link>
       </Head>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
+      /> */}
       <Script
         defer
         src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
         integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
         crossOrigin="anonymous"
       ></Script>
-
+{/* 
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -55,7 +55,7 @@ function MyApp({ Component, pageProps }) {
   gtag('config', 'G-7QZ17S0VLG');
           `,
         }}
-      />
+      /> */}
       <Script
         id="gtm-init"
         strategy="afterInteractive"
@@ -64,7 +64,7 @@ function MyApp({ Component, pageProps }) {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K2Z9HSJ');`,
+})(window,document,'script','dataLayer','GTM-N4LX88L');`,
         }}
       />
       <NextUIProvider>

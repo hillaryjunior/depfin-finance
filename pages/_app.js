@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=GTM-N4LX88L`}
       /> */}
       <Script
         defer
@@ -42,8 +42,8 @@ function MyApp({ Component, pageProps }) {
         integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
         crossOrigin="anonymous"
       ></Script>
-{/* 
-      <Script
+
+      {/* <Script
         id="gtag-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-7QZ17S0VLG');
+  gtag('config', 'GTM-N4LX88L');
           `,
         }}
       /> */}

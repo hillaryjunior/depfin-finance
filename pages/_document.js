@@ -46,7 +46,7 @@ class MyDocument extends Document {
 
           <meta
             name="keywords"
-            content="depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"
+            content="Short Term Loans Cape Town,Online Loans Cape Town,Easy Online Loans South Africa,Business Finance South Africa,depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"
           />
           {/* <script
             data-ad-client="ca-pub-2541847180773588"

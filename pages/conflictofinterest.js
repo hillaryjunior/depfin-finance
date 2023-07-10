@@ -530,6 +530,8 @@ function conflictofinterest() {
     <div>
       <Head>
         <title>Conflict of Interest Management - Depfin Finance</title>
+              {/* coronical url */}
+                <link rel="canonical" href="https://depfinfinance.co.za/conflictofinterest" />
         <meta
           name="description"
           content="We are a reliable financial services provider in South Africa where we provide a conflict of interest policy to make sure there should be total transparency between the company and the clients."

@@ -481,6 +481,8 @@ function privacypolicy() {
     <div>
       <Head>
         <title>Privacy Policy - Depfin Finance</title>
+              {/* coronical url */}
+        <link rel="canonical" href="https://depfinfinance.co.za/privacypolicy/" />
         <meta
           name="description"
           content="Read our privacy policy carefully, we update our privacy policy from time to time. If any queries or feedback about how we have handled your personal information, please contact us."

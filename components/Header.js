@@ -43,7 +43,7 @@ function Header() {
         <div className={styles.logo} onClick={() => router.push("/")}>
           <Image
             className={styles.image}
-            src="https://i.ibb.co/DbD4Cpw/depfin.png"
+            src="https://res.cloudinary.com/devtedcloud/image/upload/q_27/v1685956866/depfin-finance/depfin_ihgf00.webp"
             layout="fill"
             objectFit="contain"
             alt="Depfin Logo"
@@ -53,43 +53,58 @@ function Header() {
 
         <nav>
           <ul>
-            <Link href="/">
-              <a title="Home">Home</a>
-            </Link>
-            <Link href="/personal/business/loan/apply">
-              <a title="Apply Online">Apply online</a>
-            </Link>
-            <Link href="/about">
-              <a title="About Us">About us</a>
-            </Link>
-            <Link href="/solutions">
-              <a title="Solutions">Solutions</a>
-            </Link>
+            <li>
+              <Link href="/">
+                <a title="Home">Home</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/personal/business/loan/apply">
+                <a title="Apply Online">Apply online</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a title="About Us">About us</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/solutions">
+                <a title="Solutions">Solutions</a>
+              </Link>
+            </li>
             {/* <Link href="/blogs">
               <a>Blogs</a>
             </Link> */}
-            <Link href="/contact">
-              <a title="contact us">Contact us</a>
-            </Link>
+            <li>
+              <Link href="/contact">
+                <a title="contact us">Contact us</a>
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className={styles.cta}>
           <Link href="tel:087 510 7793">
             {mobile ? (
-              <a title="mobile number">
-                {" "}
-                <span>
-                  <LocalPhoneRoundedIcon />
-                </span>{" "}
-              </a>
+              <li>
+                <a title="mobile number">
+                  {" "}
+                  <span>
+                    <LocalPhoneRoundedIcon />
+                  </span>{" "}
+                </a>
+              </li>
             ) : (
-              <a>
-                {" "}
-                <span>
-                  <LocalPhoneRoundedIcon />
-                </span>{" "}
-                087 510 7793
-              </a>
+              <li>
+                <a tilte ="phone">
+                  {" "}
+                  <span>
+                    <LocalPhoneRoundedIcon />
+                  </span>{" "}
+                  087 510 7793
+                </a>
+              </li>
             )}
           </Link>
           {mobile ? (

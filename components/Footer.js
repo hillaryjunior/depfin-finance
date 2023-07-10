@@ -4,12 +4,16 @@ import styles from '../sass/components/Footer.module.scss';
 function Footer() {
   return (
     <footer className={styles.footer}>
+      <h2>
+        Startup Business Loans | Blacklisted Loans & Short Term Loans Cape Town
+        | Instant Online Loans South Africa
+      </h2>
       <div className={styles.container}>
         <div>
           <h3>Depfin Finance</h3>
         </div>
         <div className={styles.quick__links}>
-          <h6>Quick Links</h6>
+          <h5>Quick Links</h5>
           <ul>
             <Link href="/">
               <a title="Home">Home</a>
@@ -29,11 +33,9 @@ function Footer() {
           </ul>
         </div>
         <div className={styles.quick__links}>
-          <h6>Resources</h6>
+          <h5>Resources</h5>
           <ul>
-            <Link href="/complaints">
-              <a title="Complaints Management">Complaints Management</a>
-            </Link>
+         
             <Link href="/conflictofinterest">
               <a title="Conflict of interest management">
                 Conflict of Interest management
@@ -60,6 +62,7 @@ function Footer() {
               <i className="fab fa-facebook-f"></i>
             </a>
             <a
+              name ="facebook"
               title="twitter"
               className="social-button twitter"
               href="https://twitter.com/DepfinL"
@@ -69,6 +72,7 @@ function Footer() {
               <i className="fab fa-twitter" rel="noreferrer"></i>
             </a>
             <a
+              name="linkedin"
               title="linkedin"
               className="social-button linkedin"
               href="https://www.linkedin.com/in/palesa-namhla-b19254236/"
@@ -79,6 +83,8 @@ function Footer() {
             </a>
 
             <a
+              name="instagram"
+              title='instagram'
               className="social-button instagram"
               href="https://www.instagram.com/kimlorna46/"
               target="_blank"

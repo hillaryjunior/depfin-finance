@@ -36,8 +36,8 @@ function ProfileLayout() {
           <div className={styles.profile__info}>
             <form>
               <div className={styles.input__group}>
-                <input type="text" defaultValue={user?.firstName} />
-                <input type="text" defaultValue={user?.lastName} />
+                <input name='name' type="text" defaultValue={user?.firstName} />
+                <input name ="surname" type="text" defaultValue={user?.lastName} />
               </div>
               <div className={styles.input__group}>
                 <input type="text" readOnly defaultValue={user?.email} />

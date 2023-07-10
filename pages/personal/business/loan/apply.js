@@ -12,8 +12,10 @@ function Apply() {
         </title>
         <meta
           name="description"
-          content="Apply for personal, business, mortgage, and consolidation loans without getting into tedious paperwork at Depfin Finance in Cape Town, South Africa. "
+          content="Apply for personal, business, mortgage, and consolidation loans without getting into tedious paperwork. Get easy online loans at Depfin Finance in Cape Town, South Africa."
         />
+        {/* coronical url */}
+        <link rel="canonical" href="https://depfinfinance.co.za/personal/business/loan/apply" />
       </Head>
 
       <ApplyLayout />

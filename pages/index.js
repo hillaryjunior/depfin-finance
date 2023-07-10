@@ -98,6 +98,10 @@ export default function Home() {
 
         <link rel="icon" href="/favicon.ico" />
 
+        {/* coronical url */}
+
+        <link rel="canonical" href={SITE_URL} />
+
         <meta
           property="og:title"
           content="Instant Business Loans Services in South Africa - Depfin Finance"

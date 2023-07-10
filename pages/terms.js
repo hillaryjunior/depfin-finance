@@ -197,6 +197,8 @@ function terms() {
     <div>
       <Head>
         <title>Terms & Conditions - Depfin Finance</title>
+              {/* coronical url */}
+                <link rel="canonical" href="https://depfinfinance.co.za/terms" />
         <meta
           name="description"
           content="Read our terms and conditions carefully. If you have any questions or concerns about the Depfin Finance loan please contact us immediately."

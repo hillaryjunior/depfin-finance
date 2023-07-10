@@ -15,12 +15,10 @@ module.exports = {
     "/_error",
     "/_document",
     "/500",
-    "/auth/login",
-    "/auth/passwordreset",
-    "/auth/reset",
-    "/auth/register",
+    "/auth",
+    
     "/account",
-    "/server-sitemap.xml",
+   
   ],
 
   robotsTxtOptions: {
@@ -29,7 +27,7 @@ module.exports = {
         userAgent: "*",
         allow: "/",
 
-        disallow: ["/account", "/auth/login", "auth/register"],
+        disallow: ["/account", "/auth/login", "/auth/register"],
       },
     ],
   },

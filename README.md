@@ -1,7 +1,7 @@
 
 # Depfin Finance
 
-This is a wesbite built for Depfin Finance aand was built using Next Js and is hosted on firebase.
+This is a wesbite built for Depfin Finance aand was built using Next Js and is uses firebase firestore.
 
 # Get Started
 
@@ -181,6 +181,8 @@ git push -u origin main
 
 ```
 
+But you can just create a PR and i will deploy it on my side.
+
 if you not logged in yet run
 ```bash
 
@@ -194,7 +196,7 @@ git config --global github.token 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
 
 ```
 
-your changes will be on bit bucket and i'll deploy them on firebase.
+your changes will be on github and i'll deploy them.
 
 
 

@@ -24,11 +24,14 @@ function Queries({ image , contact }) {
           <div className={styles.image__container}>
             <Image
               className={styles.image}
-              src={image}
+              src="https://res.cloudinary.com/devtedcloud/image/upload/q_25/v1685957431/depfin-finance/pexels-photo-8867630_1_hxo02o_1_mxcaaq.webp"
               alt="Require more help for Loan In South Africa"
               layout="fill"
+              width={100}
+              height={100}
+              
               objectFit="cover"
-              priority
+              
             />
           </div>
           <div className={styles.work__hours}>
@@ -66,9 +69,9 @@ function Queries({ image , contact }) {
                 </span>
                 <Link href="mailto:info@depfinfinance.co.za">
                   {mobile ? (
-                    <a target="_blank">mail</a>
+                    <a  name ="mail" target="_blank">mail</a>
                   ) : (
-                    <a target="_blank"> info@depfinfinance.co.za</a>
+                    <a name ="email" target="_blank"> info@depfinfinance.co.za</a>
                   )}
                 </Link>
               </div>

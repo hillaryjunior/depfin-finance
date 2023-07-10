@@ -110,10 +110,18 @@ const Testimonials = () => {
             </div>
           </div>
           <div className={style.slider_buttons}>
-            <button onClick={() => handleClickPrev()}>
+            <button
+              title="previous"
+              name="previous"
+              onClick={() => handleClickPrev()}
+            >
               <ArrowCircleLeftRoundedIcon />
             </button>
-            <button onClick={() => handleClickNext()}>
+            <button
+              title="next"
+              name="next"
+              onClick={() => handleClickNext()}
+            >
               <ArrowCircleRightRoundedIcon />
             </button>
           </div>
@@ -123,10 +131,9 @@ const Testimonials = () => {
             “ {`${data[index].testimonial}`} ”
           </p>
           <div className={style.testimonial_author}>
-            <p
-              className={style.testimonial_author_name}
-            >__{`${data[index].name}`}</p>
-           
+            <p className={style.testimonial_author_name}>
+              __{`${data[index].name}`}
+            </p>
           </div>
         </div>
       </div>

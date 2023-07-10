@@ -23,6 +23,8 @@ function FAQs({ data }) {
             <div className={styles.question} onClick={() => handleClick(index)}>
               <p>{item.question}</p>
               <button
+                name="open"
+                title="open"
                 className={styles.icon__btn}
                 onClick={() => handleClick(index)}
               >

@@ -63,13 +63,15 @@ function Banner() {
               </div>
               <div className={styles.form__container}>
                 <div className={styles.form}>
-                  <h4>Loan Calculator</h4>
+                  <h2>Loan Calculator</h2>
                   <div className={styles.loan__amount}>
                     <div className={styles.top}>
                       <label>Loan Amount</label>
                       <p>{`R${value}`}</p>
                     </div>
                     <input
+                      id='loanAmount'
+                      name='loanAmount'
                       className={styles.loan__input}
                       type="number"
                       value={value}

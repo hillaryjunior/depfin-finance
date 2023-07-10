@@ -41,11 +41,11 @@ function RegisterForm() {
       progress: undefined,
     });
 
-  useEffect(() => {
-    if (idNumber.length === 13) {
-      setIdIsValid(validateIdNumber(idNumber).valid);
-    }
-  }, [idNumber, idIsValid]);
+  // useEffect(() => {
+  //   if (idNumber.length === 13) {
+  //     setIdIsValid(validateIdNumber(idNumber).valid);
+  //   }
+  // }, [idNumber, idIsValid]);
 
   const isIdValid = (idNumber) => {
     if (validateIdNumber(idNumber)) {
@@ -96,9 +96,9 @@ function RegisterForm() {
     if (password !== confirmPassword)
       return toast.error("Passwords do not match");
 
-    if (!idIsValid) {
-      return toast.error("Please enter a valid ID Number");
-    }
+    // if (!idIsValid) {
+    //   return toast.error("Please enter a valid ID Number");
+    // }
 
     setLoading(true);
     try {
@@ -193,6 +193,7 @@ function RegisterForm() {
               type="number"
               value={idNumber}
               maxLength="13"
+              minLength="13"
               placeholder="SA ID number"
               onChange={(e) => setIdNumber(e.target.value)}
             />

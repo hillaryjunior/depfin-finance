@@ -203,6 +203,8 @@ function complaints() {
     <div>
       <Head>
         <title>Complaints Management - Depfin Finance </title>
+              {/* coronical url */}
+        <link rel="canonical" href="https://depfinfinance.co.za/complaints" />
         <meta
           name="description"
           content="Depfin Finance is one of the trusted companies where clients can file complaints in case of any grievance with the company or employee. "

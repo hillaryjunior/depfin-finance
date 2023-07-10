@@ -48,6 +48,13 @@ class MyDocument extends Document {
             name="keywords"
             content="Short Term Loans Cape Town,Online Loans Cape Town,Easy Online Loans South Africa,Business Finance South Africa,depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+            rel="stylesheet"
+          ></link>
+
           {/* <script
             data-ad-client="ca-pub-2541847180773588"
             async

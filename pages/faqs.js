@@ -160,6 +160,8 @@ You can contact our customer care branch in order to give you a loan statement.
     <div>
       <Head>
         <title>Frequently Asked Questions - Depfin Finance</title>
+        {/* coronical url */}
+        <link rel="canonical" href="https://depfinfinance.co.za/faqs" />
         <meta
           name="description"
           content="Frequently asked questions like, what documentation do I need to apply for a personal loan? What are the latest interest rates and charges? "

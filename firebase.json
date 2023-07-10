@@ -3,17 +3,22 @@
     "public": "out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+    "trailingSlash": false,
+
    
-    ],
-     "redirects": [ {
-    "source": "/apply/",
-    "destination": "/personal/business/loan/apply/",
-    "type": 301
-  } ]
+
+    "redirects": [
+      {
+        "source": "/apply",
+        "destination": "/personal/business/loan/apply",
+        "type": 301
+      }
+  
+  
+    
+   
+      
+
+    ]
   }
 }

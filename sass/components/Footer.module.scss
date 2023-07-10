@@ -10,6 +10,14 @@
        
         font-family: variables.$PoppinsRegular;
 
+        h2{
+                font-size: 12px;
+                font-family: variables.$PoppinsRegular;
+                text-align: center;
+                color: white;
+                padding: 10px 0;
+        }
+
         .container{
                 max-width: 1250px;
                 width: 100%;

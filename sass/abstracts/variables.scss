@@ -1,31 +1,31 @@
 
-// fonts inpmort
-@font-face {
-        font-family: 'Poppins';
-        src: url(../../fonts/Poppins-Regular.ttf);
-}
-@font-face {
-        font-family: 'PoppinsBold';
-        src: url(../../fonts/Poppins-Bold.ttf);
+// // fonts inpmort
+// @font-face {
+//         font-family: 'Poppins';
+//         src: url(../../fonts/Poppins-Regular.ttf);
+// }
+// @font-face {
+//         font-family: 'PoppinsBold';
+//         src: url(../../fonts/Poppins-Bold.ttf);
         
-}
-@font-face {
-        font-family: 'PoppinsMedium';
-        src: url(../../fonts/Poppins-Medium.ttf);
+// }
+// @font-face {
+//         font-family: 'PoppinsMedium';
+//         src: url(../../fonts/Poppins-Medium.ttf);
         
-}
-@font-face {
-        font-family: 'PoppinsSemiBold';
-        src: url(../../fonts/Poppins-SemiBold.ttf);
+// }
+// @font-face {
+//         font-family: 'PoppinsSemiBold';
+//         src: url(../../fonts/Poppins-SemiBold.ttf);
         
-}
+// }
 
 // fonts
 
-$PoppinsBold: 'PoppinsBold';
-$PoppinsMedium: 'PoppinsMedium';
-$PoppinsSemiBold: 'PoppinsSemiBold';
-$PoppinsRegular: 'Poppins';
+$PoppinsBold: 'Poppins', sans-serif;
+$PoppinsMedium: 'Poppins', sans-serif;
+$PoppinsSemiBold: 'Poppins', sans-serif;
+$PoppinsRegular: 'Poppins', sans-serif;
 
 // colors
 $teal  : #01C5C4;

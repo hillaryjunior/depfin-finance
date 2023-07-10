@@ -63,12 +63,12 @@ function Section() {
           </div>
         </div>
         <div className={styles.steper}>
-          <h5>Why Choose Depfin Finance?</h5>
+          <h4>Why Choose Depfin Finance?</h4>
           <CustomizedSteppers />
         </div>
 
         <div className={styles.testimonials}>
-          <h5>What clients are saying</h5>
+          <h4>What clients are saying</h4>
           <Testimonials />
         </div>
       </div>

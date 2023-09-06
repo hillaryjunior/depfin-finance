@@ -45,8 +45,16 @@ class MyDocument extends Document {
           <meta name="robots" content="index, follow" />
 
           <meta
+            name="title"
+            content="Instant Business Loans Services South Africa | Personal Loans"
+          />
+          <meta
             name="keywords"
-            content="Short Term Loans Cape Town,Online Loans Cape Town,Easy Online Loans South Africa,Business Finance South Africa,depfin finance,personal loan online application south africa,affordable loans in south africa,urgent personal loans south africa,depfin loan,personal loans,loans,personal loans apply online south africa,cheap loans in south africa,loan provisionally approved meaning,500000 personal loan"
+            content="Instant Business Loans Services , Business Loans Services , Personal Loans Services , Personal Loans Cape Town , Business Loans South Africa , Affordable Loans South Africa"
+          />
+           <meta
+            name="description"
+            content="Depfin Finance offers affordable personal & business loan services in Cape Town, South Africa. Our financial advisors are always ready to assist you. Apply today!"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

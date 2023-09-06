@@ -25,8 +25,8 @@ function BlogCard() {
           </div>
           <div className={styles.cta__buttons}>
             <Link
-              href="/post/[id]"
-              as={`/post/${item.title.trim().replace(/\s+/g, "")}`}
+              href="/blogs/[id]"
+              as={`/blogs/${item.id}`}
               key={item.title}
             >
               <a className={styles.link}> Read more </a>

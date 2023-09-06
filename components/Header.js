@@ -74,9 +74,9 @@ function Header() {
                 <a title="Solutions">Solutions</a>
               </Link>
             </li>
-            {/* <Link href="/blogs">
+            <Link href="/blogs">
               <a>Blogs</a>
-            </Link> */}
+            </Link>
             <li>
               <Link href="/contact">
                 <a title="contact us">Contact us</a>

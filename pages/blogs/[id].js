@@ -8,12 +8,17 @@ import styles from '../../sass/components/BlogsDetails.module.scss'
 
 
 function BlogID() {
+
+  <script
+  dangerouslySetInnerHTML={{ __html: blogsData }}
+/>
   const router = useRouter();
   const regex = /(<([^>]+)>)/ig;
   // console.log(router.query);
   // console.log(blogsData.filter(item => item.id === router.query.id));
   return (
     <>
+    
   <div>{blogsData.filter(item => item.id == router.query.id).map((item) => (
         <div className={styles.container}>
         <Image
@@ -28,7 +33,7 @@ function BlogID() {
         
             <h2>{item.title}</h2>
             <h5>{item.blurb}</h5>
-            <p className={styles.content}>{item.content.replace(regex, '')}</p>
+            <div  dangerouslySetInnerHTML={{__html: item.content}} />
            
           </div>
         </div>

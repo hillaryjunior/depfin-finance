@@ -6,7 +6,7 @@ export const blogsData = [
     meta_decrition: "For South African entrepreneurs seeking business loan options, there are various avenues to explore, each with its own set of terms, conditions, and eligibility criteria.   ",
     blurb: `For South African entrepreneurs seeking business loan options, there are various avenues to explore, each with its own set of terms, conditions, and eligibility criteria.  `,
     image:
-      "https://hallelujahgospel.org/demo2/public/new/img/blog-1.jpg",
+      "https://test.hallelujahgospel.org/demo2/public/new/img/blog-1.jpg",
     content: `<p style="text-align:justify; margin-bottom:11px"><span ><span style="text-justify:inter-ideograph"><span style="line-height:150%"><span ><span style="font-size:12.0pt"><span style="line-height:150%"><span >For South African entrepreneurs seeking business loan options, there are various avenues to explore, each with its own set of terms, conditions, and eligibility criteria. It&#39;s important to carefully consider your business needs, financial situation, and repayment capabilities before choosing a loan option. Here are some common business loan options available in South Africa</span></span></span></span></span></span></span></p>
 
     <p style="text-align:justify; margin-bottom:11px"><span ><span style="text-justify:inter-ideograph"><span style="line-height:150%"><span ><a href="https://depfinfinance.co.za/about" style="color:#0563c1; text-decoration:underline"><b><span style="font-size:10.0pt"><span style="line-height:150%"><span >Long Term Loans South Africa</span></span></span></b></a><span style="font-size:12.0pt"><span style="line-height:150%"><span >:</span></span></span></span></span></span></span></p>
@@ -99,7 +99,7 @@ export const blogsData = [
     meta_decrition: "Access to business loans for blacklisted individuals can indeed be challenging, but there are ways to work towards breaking these barriers and securing funding for entrepreneurship.  ",
     blurb: `Access to business loans for blacklisted individuals can indeed be challenging, but there are ways to work towards breaking these barriers and securing funding for entrepreneurship. `,
     image:
-      "https://hallelujahgospel.org/demo2/public/new/img/blog-2.jpg",
+      "https://test.hallelujahgospel.org/demo2/public/new/img/blog-2.jpg",
     content: `<p style="text-align:justify; margin-bottom:11px"><span ><span style="text-justify:inter-ideograph"><span style="line-height:150%"><span ><span style="font-size:12.0pt"><span style="line-height:150%"><span >Access to </span></span></span><a href="https://depfinfinance.co.za/about" style="color:#0563c1; text-decoration:underline"><span style="font-size:12.0pt"><span style="line-height:150%"><span >business loans</span></span></span></a><span style="font-size:12.0pt"><span style="line-height:150%"><span > for blacklisted individuals can indeed be challenging, but there are ways to work towards breaking these barriers and securing funding for entrepreneurship. Being blacklisted implies that an individual has a history of credit issues, making traditional borrowing more difficult. However, here are some strategies that can help overcome these challenges and obtain business funding:</span></span></span></span></span></span></span></p>
 
     <p style="text-align:justify; margin-bottom:11px">&nbsp;</p>
@@ -180,7 +180,7 @@ export const blogsData = [
     meta_decrition: "Long-term loans in South Africa are instrumental in building a stable financial future by providing individuals and businesses with the capital needed to invest in significant ventures, assets, and opportunities. ",
     blurb: `Long-term loans in South Africa are instrumental in building a stable financial future by providing individuals and businesses with the capital needed to invest in significant ventures, assets, and opportunities.  `,
     image:
-      "https://hallelujahgospel.org/demo2/public/new/img/blog-3.jpg",
+      "https://test.hallelujahgospel.org/demo2/public/new/img/blog-3.jpg",
     content: `<p style="text-align:justify; margin-bottom:11px"><span ><span style="text-justify:inter-ideograph"><span style="line-height:150%"><span ><a href="https://depfinfinance.co.za/about" style="color:#0563c1; text-decoration:underline"><b><span style="font-size:12.0pt"><span style="line-height:150%"><span >Long-term loans</span></span></span></b></a><span style="font-size:12.0pt"><span style="line-height:150%"><span > in South Africa are instrumental in building a stable financial future by providing individuals and businesses with the capital needed to invest in significant ventures, assets, and opportunities. Here&#39;s a detailed guide on how long-term loans can contribute to building a stable future in the South African context:</span></span></span></span></span></span></span></p>
 
     <p style="text-align:justify; margin-bottom:11px">&nbsp;</p>
@@ -259,7 +259,7 @@ export const blogsData = [
     meta_decrition: "Short-term loans can be a useful financial tool to address immediate financial needs and emergencies in South Africa. These loans are typically designed to be repaid over a short period, often within a few weeks to a few months. ",
     blurb: `Short-term loans can be a useful financial tool to address immediate financial needs and emergencies in South Africa. These loans are typically designed to be repaid over a short period, often within a few weeks to a few months. `,
     image:
-      "https://hallelujahgospel.org/demo2/public/new/img/blog-4.jpg",
+      "https://test.hallelujahgospel.org/demo2/public/new/img/blog-4.jpg",
     content: `<p style="text-align:justify; margin-bottom:11px"><span ><span style="text-justify:inter-ideograph"><span style="line-height:150%"><span ><a href="https://depfinfinance.co.za/about" style="color:#0563c1; text-decoration:underline"><span style="font-size:12.0pt"><span style="line-height:150%"><span >Short-term loans</span></span></span></a><span style="font-size:12.0pt"><span style="line-height:150%"><span > can be a useful financial tool to address immediate financial needs and emergencies in South Africa. These loans are typically designed to be repaid over a short period, often within a few weeks to a few months. Here&#39;s a guide on how short-term loans can serve as a quick financial fix in South Africa:</span></span></span></span></span></span></span></p>
 
     <p style="text-align:justify; margin-bottom:11px">&nbsp;</p>

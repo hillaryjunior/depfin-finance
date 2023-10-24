@@ -17,7 +17,7 @@
     "@mui/icons-material": "^5.4.1",
     "@mui/material": "^5.5.3",
     "@mui/x-data-grid": "^5.6.1",
-    "@next/swc-darwin-arm64": "^11.1.2",
+   
     "@nextui-org/react": "^1.0.0-beta.10",
     "@reduxjs/toolkit": "^1.7.2",
     "axios": "^0.26.1",

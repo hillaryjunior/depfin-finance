@@ -20,7 +20,7 @@ function BlogID() {
     <>
     
   <div>{blogsData.filter(item => item.id == router.query.id).map((item) => (
-        <div className={styles.container}>
+        <div key ={item.id} className={styles.container}>
         <Image
         className={styles.images_detail}
               src={item.image}

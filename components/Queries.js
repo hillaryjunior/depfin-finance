@@ -29,9 +29,7 @@ function Queries({ image , contact }) {
               layout="fill"
               width={100}
               height={100}
-              
               objectFit="cover"
-              
             />
           </div>
           <div className={styles.work__hours}>
@@ -43,11 +41,11 @@ function Queries({ image , contact }) {
                 <span>
                   <LocalPhoneRoundedIcon />
                 </span>
-                <Link href="tel:+270604601979">
+                <Link href="tel:+270710822692">
                   {mobile ? (
                     <a target="_blank">call</a>
                   ) : (
-                    <a target="_blank">0604601979</a>
+                    <a target="_blank">0710822692</a>
                   )}
                 </Link>
               </div>
@@ -69,9 +67,14 @@ function Queries({ image , contact }) {
                 </span>
                 <Link href="mailto:info@depfinfinance.co.za">
                   {mobile ? (
-                    <a  name ="mail" target="_blank">mail</a>
+                    <a name="mail" target="_blank">
+                      mail
+                    </a>
                   ) : (
-                    <a name ="email" target="_blank"> info@depfinfinance.co.za</a>
+                    <a name="email" target="_blank">
+                      {" "}
+                      info@depfinfinance.co.za
+                    </a>
                   )}
                 </Link>
               </div>

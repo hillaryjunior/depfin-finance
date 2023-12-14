@@ -53,7 +53,7 @@ function Queries({ image , contact }) {
                 <span>
                   <WhatsAppIcon />
                 </span>
-                <Link href="https://api.whatsapp.com/send?phone=+27836174518">
+                <Link href="https://api.whatsapp.com/send?phone=+27656926877">
                   {mobile ? (
                     <a target="_blank">chat</a>
                   ) : (

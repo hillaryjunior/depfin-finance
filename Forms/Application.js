@@ -25,11 +25,21 @@ function Application() {
   const [isBlackListed, setIsBlackListed] = useState("");
   const [isInDebt, setIsInDebt] = useState("");
   const [repaymentMethod, setRepaymentMethod] = useState("");
+  const [loanAmountError, setLoanAmountError] = useState("");
   const router = useRouter();
   const rate = 6;
   const monthlyRepayment = calculateLoanRepaymentMonthly(value, rate, terms);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
+  const handleChange = (e) => {
+    const newValue = parseInt(e.target.value);
+    if (newValue < 29999) {
+      setLoanAmountError("Loan amount must be at least R 30,000");
+    } else {
+      setLoanAmountError("");
+      setValue(newValue);
+    }
   };
   const increase = () => {
     setTerms(terms + 1);
@@ -107,6 +117,7 @@ function Application() {
 
   const apply = async (e) => {
     e.preventDefault();
+    if (loanAmountError) return toast.error("Loan amount must be at least R 30,000");
     if (
       !loanType ||
       !employmentStatus ||
@@ -244,7 +255,22 @@ function Application() {
               <option value="General loan">General Loan</option>
             </select>
           </div>
+
           <div style={{ margin: "20px 0" }}>
+          <input
+            className={styles.loan__input}
+            type="number"
+            value={value}
+            onChange={handleChange}
+            placeholder="Enter Loan Amount (R 30000 minimum)"
+            required
+          />
+          {loanAmountError && (
+            <p style={{ color: "red" }}>{loanAmountError}</p>
+          )}
+        </div>
+
+          {/* <div style={{ margin: "20px 0" }}>
             <input
               className={styles.loan__input}
               type="number"
@@ -253,7 +279,7 @@ function Application() {
               placeholder="Enter Loan Amount (R 30000)"
               required
             />
-          </div>
+          </div> */}
 
           <div className={styles.repayment}>
             <div className={styles.item}>

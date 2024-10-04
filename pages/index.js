@@ -18,7 +18,7 @@ export default function Home() {
     image: "https://i.ibb.co/DbD4Cpw/depfin.png?imwidth=3840",
     "@id": "https://depfinfinance.co.za/",
     url: "https://depfinfinance.co.za/",
-    telephone: "0875107793",
+    telephone: "0836174518",
     priceRange: "000",
     address: {
       "@type": "PostalAddress",

@@ -2195,17 +2195,18 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
 
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      host: 'smtpout.secureserver.net',
+      // service: "yahoo",
       port: 465,
       secure: true,
 
       auth: {
-        user: "depfinloan@yahoo.com",
-        pass: "bknhocmidtrczxht",
+        user: "info@depfinfinance.co.za",
+        pass: "asasjboy1",
       },
     });
     let mailOptions = {
-      from: "depfinloan@yahoo.com",
+      from: "info@depfinfinance.co.za",
       to: email,
       subject: `Depfin Finance PTY LTD . Loan Application Sucessfull Reference: ${ref_no}`,
 

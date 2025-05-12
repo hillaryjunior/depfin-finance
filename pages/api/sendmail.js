@@ -193,8 +193,7 @@ export default function handler(req, res) {
                                       target="_blank"
                                       ><img
                                         alt="Logo"
-                                        src="
-https://i.ibb.co/qdgZGX1/unnamed.jpg"
+                                        src="https://i.ibb.co/DbD4Cpw/depfin.png"
                                         style="
                                           display: block;
                                           height: auto;
@@ -767,9 +766,9 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                     <p style="margin: 0; margin-bottom: 16px">
                                       Phone  :
                                       <a
-                                        href="tel:0112197194"
+                                        href="tel:27781600033"
                                         style="color: #0068a5"
-                                        >0112197194 / 0736026343</a
+                                        >27781600033 / 0875107793</a
                                       >
                                     </p>
                                     <p style="margin: 0">
@@ -2168,7 +2167,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                           "
                                         >
                                           <!--<![endif]-->
-                                         
+
                                         </table>
                                       </td>
                                     </tr>
@@ -2195,17 +2194,18 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
 
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      host: 'smtpout.secureserver.net',
+      // service: "yahoo",
       port: 465,
       secure: true,
 
       auth: {
-        user: "depfinloan@yahoo.com",
-        pass: "bknhocmidtrczxht",
+        user: "info@depfinfinance.co.za",
+        pass: "asasjboy1",
       },
     });
     let mailOptions = {
-      from: "depfinloan@yahoo.com",
+      from: "info@depfinfinance.co.za",
       to: email,
       subject: `Depfin Finance PTY LTD . Loan Application Sucessfull Reference: ${ref_no}`,
 

@@ -58,7 +58,7 @@ function Application() {
     try {
       axios
         .get(
-          `https://depfin-admin.vercel.app/api/usermail?email=${userData?.email}&name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
+          `https://depfinfinance.co.za/api/sendmail?email=${userData?.email}&name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
         )
         .then((res) => {
           console.log(res);
@@ -76,7 +76,7 @@ function Application() {
     try {
       axios
         .get(
-          `https://depfin-admin.vercel.app/api/sendadmin?name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
+          `https://depfinfinance.co.za/api/sendadmin?name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
         )
         .then((res) => {
           console.log(res);

@@ -6,9 +6,13 @@
     "trailingSlash": false,
     "rewrites": [
       {
-        "source": "**", 
-        "destination": "/index.html"
+        "source": "**",
+        "function": "nextServer"
       }
     ]
+  },
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs20"
   }
 }

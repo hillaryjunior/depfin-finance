@@ -4,7 +4,7 @@
 import nodemailer from "nodemailer";
 
 export default function handler(req, res) {
-  
+
   const {
     query: {type,repayment,amount,name,ref_no,method,rate,term },
   } = req;
@@ -191,8 +191,7 @@ export default function handler(req, res) {
                                       target="_blank"
                                       ><img
                                         alt="Logo"
-                                        src="
-https://i.ibb.co/qdgZGX1/unnamed.jpg"
+                                        src="https://res.cloudinary.com/devtedcloud/image/upload/q_27/v1685956866/depfin-finance/depfin_ihgf00.webp?imwidth=1920"
                                         style="
                                           display: block;
                                           height: auto;
@@ -514,7 +513,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                             "
                             width="100%"
                           >
-                           
+
                           </td>
                         </tr>
                       </tbody>
@@ -523,7 +522,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                 </tr>
               </tbody>
             </table>
-          
+
             <table
               align="center"
               border="0"
@@ -1207,9 +1206,9 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                             "
                             width="50%"
                           >
-                           
+
                           </td>
-                         
+
                         </tr>
                       </tbody>
                     </table>
@@ -1342,7 +1341,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                               "
                               width="100%"
                             >
-                          
+
                             </table>
                             <table
                               border="0"
@@ -1587,7 +1586,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                           "
                                         >
                                           <!--<![endif]-->
-                                         
+
                                         </table>
                                       </td>
                                     </tr>

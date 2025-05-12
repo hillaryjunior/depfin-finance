@@ -767,9 +767,9 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                     <p style="margin: 0; margin-bottom: 16px">
                                       Phone  :
                                       <a
-                                        href="tel:0112197194"
+                                        href="tel:27781600033"
                                         style="color: #0068a5"
-                                        >0112197194 / 0736026343</a
+                                        >27781600033 / 0875107793</a
                                       >
                                     </p>
                                     <p style="margin: 0">

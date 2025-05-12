@@ -193,8 +193,7 @@ export default function handler(req, res) {
                                       target="_blank"
                                       ><img
                                         alt="Logo"
-                                        src="
-https://i.ibb.co/qdgZGX1/unnamed.jpg"
+                                        src="https://i.ibb.co/DbD4Cpw/depfin.png"
                                         style="
                                           display: block;
                                           height: auto;
@@ -2168,7 +2167,7 @@ https://i.ibb.co/qdgZGX1/unnamed.jpg"
                                           "
                                         >
                                           <!--<![endif]-->
-                                         
+
                                         </table>
                                       </td>
                                     </tr>

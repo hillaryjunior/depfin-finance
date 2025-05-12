@@ -27,7 +27,7 @@ function RegisterForm() {
   const [loading, setLoading] = useState(false);
   const [idIsValid, setIdIsValid] = useState();
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("South Africa");
   const options = useMemo(() => countryList().getData(""), []);
 
   const notify = () =>
@@ -76,7 +76,7 @@ function RegisterForm() {
     title,
     phoneNumber,
     idNumber,
-   
+
   };
 
   const register = async (e) => {

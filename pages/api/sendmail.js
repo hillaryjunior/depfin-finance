@@ -193,7 +193,7 @@ export default function handler(req, res) {
                                       target="_blank"
                                       ><img
                                         alt="Logo"
-                                        src="https://i.ibb.co/DbD4Cpw/depfin.png"
+                                        src="https://res.cloudinary.com/devtedcloud/image/upload/q_27/v1685956866/depfin-finance/depfin_ihgf00.webp?imwidth=1920"
                                         style="
                                           display: block;
                                           height: auto;

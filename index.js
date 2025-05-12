@@ -1,19 +1,16 @@
-const functions = require('firebase-functions');
-const next = require('next');
+const { https } = require("firebase-functions");
+const { default: next } = require("next");
 
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev, conf: { distDir: '.next' } });
-const handle = app.getRequestHandler();
-// Kick off Next.js preparation at cold start
-const appPrepare = app.prepare();
+const isDev = process.env.NODE_ENV !== "production";
+const server = next({
+  dev: isDev,
+  conf: { distDir: ".next" },
+});
+const nextjsHandle = server.getRequestHandler();
 
-exports.nextServer = functions
-  .runWith({
-    memory: '1GiB',         // allocate more memory for faster startup
-    timeoutSeconds: 300,    // extend timeout if needed
-    minInstances: 1         // keep one instance warm for real-time responses
-  })
-  .https.onRequest(async (req, res) => {
-    await appPrepare;       // wait for preparation (fast after cold start)
-    return handle(req, res);
-  });
+const serverReady = server.prepare();
+
+exports.nextServer = https.onRequest(async (req, res) => {
+  await serverReady;
+  return nextjsHandle(req, res);
+});

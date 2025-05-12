@@ -1,0 +1,158 @@
+[debug] [2025-05-12T13:42:46.838Z] ----------------------------------------------------------------------
+[debug] [2025-05-12T13:42:46.839Z] Command:       /opt/homebrew/Cellar/node/23.11.0/bin/node /opt/homebrew/bin/firebase deploy --only functions,hosting
+[debug] [2025-05-12T13:42:46.839Z] CLI Version:   14.3.1
+[debug] [2025-05-12T13:42:46.839Z] Platform:      darwin
+[debug] [2025-05-12T13:42:46.839Z] Node Version:  v23.11.0
+[debug] [2025-05-12T13:42:46.839Z] Time:          Mon May 12 2025 20:42:46 GMT+0700 (Western Indonesia Time)
+[debug] [2025-05-12T13:42:46.839Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-12T13:42:46.909Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-12T13:42:46.909Z] > authorizing via signed-in user (sultanmuhammad8@gmail.com)
+[debug] [2025-05-12T13:42:46.909Z] [iam] checking project depfin-finance for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-05-12T13:42:46.910Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:46.910Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:46.910Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance:testIamPermissions [none]
+[debug] [2025-05-12T13:42:46.910Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance:testIamPermissions x-goog-quota-user=projects/depfin-finance
+[debug] [2025-05-12T13:42:46.910Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-12T13:42:48.099Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance:testIamPermissions 200
+[debug] [2025-05-12T13:42:48.099Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-12T13:42:48.099Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:48.099Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:48.099Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/depfin-finance/serviceAccounts/depfin-finance@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-05-12T13:42:48.099Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/depfin-finance/serviceAccounts/depfin-finance@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-05-12T13:42:48.519Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/depfin-finance/serviceAccounts/depfin-finance@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-05-12T13:42:48.519Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/depfin-finance/serviceAccounts/depfin-finance@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-05-12T13:42:48.520Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:48.520Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:48.520Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/depfin-finance [none]
+[debug] [2025-05-12T13:42:49.397Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/depfin-finance 200
+[debug] [2025-05-12T13:42:49.398Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/depfin-finance {"projectId":"depfin-finance","projectNumber":"16093135629","displayName":"depfin-finance","name":"projects/depfin-finance","resources":{"hostingSite":"depfin-finance","realtimeDatabaseInstance":"depfin-finance-default-rtdb","locationId":"us-central"},"state":"ACTIVE","etag":"1_0b9ad249-d4ad-4121-9295-3a25f6436201"}
+[info] 
+[info] === Deploying to 'depfin-finance'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2025-05-12T13:42:49.403Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:49.403Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:49.403Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2025-05-12T13:42:49.403Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudresourcemanager.googleapis.com x-goog-quota-user=projects/depfin-finance
+[debug] [2025-05-12T13:42:50.874Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudresourcemanager.googleapis.com 200
+[debug] [2025-05-12T13:42:50.874Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2025-05-12T13:42:50.874Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:50.875Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:50.875Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance [none]
+[debug] [2025-05-12T13:42:51.152Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance 200
+[debug] [2025-05-12T13:42:51.153Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/depfin-finance {"projectNumber":"16093135629","projectId":"depfin-finance","lifecycleState":"ACTIVE","name":"depfin-finance","labels":{"firebase":"enabled"},"createTime":"2022-02-07T08:30:43.909Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:51.153Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:51.153Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-05-12T13:42:51.153Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/depfin-finance
+[debug] [2025-05-12T13:42:51.153Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-05-12T13:42:51.154Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/depfin-finance
+[debug] [2025-05-12T13:42:51.154Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudbuild.googleapis.com [none]
+[debug] [2025-05-12T13:42:51.154Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudbuild.googleapis.com x-goog-quota-user=projects/depfin-finance
+[debug] [2025-05-12T13:42:51.155Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/artifactregistry.googleapis.com [none]
+[debug] [2025-05-12T13:42:51.155Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/artifactregistry.googleapis.com x-goog-quota-user=projects/depfin-finance
+[debug] [2025-05-12T13:42:51.537Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudfunctions.googleapis.com 200
+[debug] [2025-05-12T13:42:51.537Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-05-12T13:42:52.561Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudbuild.googleapis.com 200
+[debug] [2025-05-12T13:42:52.561Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-05-12T13:42:52.568Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/runtimeconfig.googleapis.com 200
+[debug] [2025-05-12T13:42:52.568Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-05-12T13:42:52.573Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/artifactregistry.googleapis.com 200
+[debug] [2025-05-12T13:42:52.573Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/depfin-finance/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-05-12T13:42:52.574Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:52.574Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:52.574Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/depfin-finance/adminSdkConfig [none]
+[debug] [2025-05-12T13:42:53.929Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/depfin-finance/adminSdkConfig 200
+[debug] [2025-05-12T13:42:53.929Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/depfin-finance/adminSdkConfig {"projectId":"depfin-finance","databaseURL":"https://depfin-finance-default-rtdb.firebaseio.com","storageBucket":"depfin-finance.appspot.com","locationId":"us-central"}
+[debug] [2025-05-12T13:42:53.929Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:53.929Z] Checked if tokens are valid: true, expires at: 1747060400552
+[debug] [2025-05-12T13:42:53.929Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/depfin-finance/configs [none]
+[debug] [2025-05-12T13:42:54.678Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/depfin-finance/configs 200
+[debug] [2025-05-12T13:42:54.678Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/depfin-finance/configs {}
+[debug] [2025-05-12T13:42:54.679Z] Validating nodejs source
+[debug] [2025-05-12T13:42:55.258Z] > [functions] package.json contents: {
+  "name": "depfin-frontend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "next build && cross-env NODE_ENV=production firebase deploy --only functions,hosting",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.4.0",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.4.1",
+    "@mui/material": "^5.5.3",
+    "@mui/x-data-grid": "^5.6.1",
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "@reduxjs/toolkit": "^1.7.2",
+    "axios": "^0.26.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.23.0",
+    "firebase-admin": "^13.3.0",
+    "firebase-functions": "^6.3.2",
+    "framer-motion": "^6.2.6",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0",
+    "next": "^12.3.4",
+    "next-sitemap": "^3.0.5",
+    "nodemailer": "^6.7.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-loader-spinner": "^6.0.0-0",
+    "react-redux": "^7.2.6",
+    "react-select-country-list": "^2.2.3",
+    "react-toastify": "^8.2.0",
+    "redux": "^4.1.2",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.49.7",
+    "sharp": "^0.30.3",
+    "south-african-fake-id-generator": "^1.0.16",
+    "south-african-id-validator": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.10"
+  }
+}
+[debug] [2025-05-12T13:42:55.258Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-05-12T13:42:55.259Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-12T13:42:55.263Z] Found firebase-functions binary at '/Users/mohsulthana/WebstormProjects/depfin-finance/node_modules/.bin/firebase-functions'
+[info] Serving at port 8648
+
+[error] TypeError: functions.runWith is not a function
+    at Object.<anonymous> (/Users/mohsulthana/WebstormProjects/depfin-finance/index.js:11:4)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+    at Object..js (node:internal/modules/cjs/loader:1899:10)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at loadModule (/Users/mohsulthana/WebstormProjects/depfin-finance/node_modules/firebase-functions/lib/runtime/loader.js:40:16)
+
+[debug] [2025-05-12T13:42:55.547Z] Got response code 400; body Failed to generate manifest from function source: TypeError: functions.runWith is not a function

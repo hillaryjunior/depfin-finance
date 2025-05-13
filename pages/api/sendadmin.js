@@ -1613,17 +1613,18 @@ export default function handler(req, res) {
 
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      host: 'smtpout.secureserver.net',
+      // service: "yahoo",
       port: 465,
       secure: true,
 
       auth: {
-        user: "depfinloan@yahoo.com",
-        pass: "bknhocmidtrczxht",
+        user: "info@depfinfinance.co.za",
+        pass: "asasjboy1\"A",
       },
     });
     let mailOptions = {
-      from: "depfinloan@yahoo.com",
+      from: "info@depfinfinance.co.za",
       to: "info@depfinfinance.co.za",
       subject: `Depfin Finance PTY LTD . New Loan Application Reference: ${ref_no}`,
 

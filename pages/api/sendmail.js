@@ -2201,7 +2201,7 @@ export default function handler(req, res) {
 
       auth: {
         user: "info@depfinfinance.co.za",
-        pass: "asasjboy1",
+        pass: "asasjboy1\"A",
       },
     });
     let mailOptions = {

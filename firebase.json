@@ -7,7 +7,7 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "nextServer"
+        "function": "sendEmail"
       }
     ]
   },

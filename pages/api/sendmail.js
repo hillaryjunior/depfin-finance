@@ -2221,6 +2221,7 @@ export default function handler(req, res) {
       } else {
         res.status(200).json({
           message: "Email sent",
+          to: email
         });
         console.log("Email sent: " + info.response);
       }

@@ -16,7 +16,7 @@ function Application() {
   const userData = useSelector(selectUser);
   const [isVerified, setIsVerified] = useState(false);
   const [employmentStatus, setEmployeeStatus] = useState("");
-  const [value, setValue] = useState(1000);
+  const [value, setValue] = useState(30000);
   const [grossIncome, setGrossIncome] = useState("");
   const [terms, setTerms] = useState(2);
   const [status, setStatus] = useState("");
@@ -34,7 +34,12 @@ function Application() {
   // };
   const handleChange = (e) => {
     const newValue = parseInt(e.target.value);
-    setValue(newValue);
+    if (newValue < 29999) {
+      setLoanAmountError("Loan amount must be at least R 30,000");
+    } else {
+      setLoanAmountError("");
+      setValue(newValue);
+    }
   };
   const increase = () => {
     setTerms(terms + 1);
@@ -52,15 +57,15 @@ function Application() {
   const sendEmail = () => {
     try {
       axios
-        .get(
-          `https://depfinfinance.co.za/api/sendmail?email=${userData?.email}&name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
-        )
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+          .get(
+              `https://depfinfinance.co.za/api/sendmail?email=${userData?.email}&name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
+          )
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     } catch (err) {
       toast.error("Something went wrong");
       console.log(err);
@@ -70,15 +75,15 @@ function Application() {
   const senAdminEmail = () => {
     try {
       axios
-        .get(
-          `https://depfinfinance.co.za/api/sendadmin?name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
-        )
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+          .get(
+              `https://depfinfinance.co.za/api/sendadmin?name=${userData.firstName}${userData.lastName}&ref_no=${ref_no}&amount=${value}&repayment=${monthlyRepayment}&type=${loanType}&term=${terms}&rate=${rate}&method=${repaymentMethod}`
+          )
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     } catch (err) {
       // toast.error("Something went wrong");
       console.log(err);
@@ -114,156 +119,160 @@ function Application() {
     e.preventDefault();
     if (loanAmountError) return toast.error("Loan amount must be at least R 30,000");
     if (
-      !loanType ||
-      !employmentStatus ||
-      !isBlackListed ||
-      !isInDebt ||
-      !repaymentMethod ||
-      !grossIncome ||
-      !value ||
-      !terms ||
-      !monthlyRepayment
+        !loanType ||
+        !employmentStatus ||
+        !isBlackListed ||
+        !isInDebt ||
+        !repaymentMethod ||
+        !grossIncome ||
+        !value ||
+        !terms ||
+        !monthlyRepayment
     )
       return toast.error("Please fill all the fields");
     setLoading(true);
     await applyForLoan(ref_no, loanType, applicationData)
-      .then((res) => {
+        .then((res) => {
 
 
-        if (!res.error) {
-          toast.success("Loan application submitted successfully, a confirmation email has been sent to your email .Check under Spam as well if you did not recieve the email.");
-          sendEmail();
-          senAdminEmail();
+          if (!res.error) {
+            toast.success("Loan application submitted successfully, a confirmation email has been sent to your email .Check under Spam as well if you did not recieve the email.");
+            sendEmail();
+            senAdminEmail();
+            setLoading(false);
+            setTimeout(() => {
+              router.push("/auth/profile");
+            }, 3500);
+          } else {
+            toast.error("Loan application failed");
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          toast.error("Error submitting application", err);
+          console.log(err);
           setLoading(false);
-          setTimeout(() => {
-            router.push("/auth/profile");
-          }, 3500);
-        } else {
-          toast.error("Loan application failed");
-          setLoading(false);
-        }
-      })
-      .catch((err) => {
-        toast.error("Error submitting application", err);
-        console.log(err);
-        setLoading(false);
-      });
+        });
   };
   return (
-    <div className={styles.form__container}>
-      <h2>Next Step</h2>
-      <p>*Appplication takes less than 5 Minutes</p>
-      <form className={styles.application__form}>
-        <div className={styles.personal__details}>
-          <h3>Personal Details</h3>
+      <div className={styles.form__container}>
+        <h2>Next Step</h2>
+        <p>*Appplication takes less than 5 Minutes</p>
+        <form className={styles.application__form}>
+          <div className={styles.personal__details}>
+            <h3>Personal Details</h3>
 
-          <div className={styles.select__input}>
-            <span>Employment Status</span>
-            <select
-              value={employmentStatus}
-              onChange={(e) => setEmployeeStatus(e.target.value)}
-            >
-              <option value="">Select</option>
-              <option value="Employed">Employed</option>
-              <option value="unemployed">unemployed</option>
-              <option value="self emplopyed">Self employed</option>
-              <option value="retired">Retired</option>
-              <option value="others">Others</option>
-            </select>
-          </div>
+            <div className={styles.select__input}>
+              <span>Employment Status</span>
+              <select
+                  value={employmentStatus}
+                  onChange={(e) => setEmployeeStatus(e.target.value)}
+              >
+                <option value="">Select</option>
+                <option value="Employed">Employed</option>
+                <option value="unemployed">unemployed</option>
+                <option value="self emplopyed">Self employed</option>
+                <option value="retired">Retired</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
 
-          <div className={styles.form__input}>
-            <input
-              type="number"
-              value={grossIncome}
-              required
-              onChange={(e) => setGrossIncome(e.target.value)}
-              placeholder="Gross income (R30000)"
-            />
-          </div>
-          <div>
-            <div className={styles.selects__container}>
-              <span>Are you blaklisted?</span>
-              <div>
-                <select
-                  value={isBlackListed}
-                  onChange={(e) => setIsBlackListed(e.target.value)}
-                  name=""
-                  id=""
-                >
-                  <option value="">Select</option>
-                  <option value="No">No</option>
-                  <option value="Yes">Yes</option>
-                </select>
+            <div className={styles.form__input}>
+              <input
+                  type="number"
+                  value={grossIncome}
+                  required
+                  onChange={(e) => setGrossIncome(e.target.value)}
+                  placeholder="Gross income (R30000)"
+              />
+            </div>
+            <div>
+              <div className={styles.selects__container}>
+                <span>Are you blaklisted?</span>
+                <div>
+                  <select
+                      value={isBlackListed}
+                      onChange={(e) => setIsBlackListed(e.target.value)}
+                      name=""
+                      id=""
+                  >
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div className={styles.selects__container}>
+                <span>Are you in financial debt?</span>
+                <div>
+                  <select
+                      name="in debt"
+                      value={isInDebt}
+                      onChange={(e) => setIsInDebt(e.target.value)}
+                      id=""
+                  >
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div className={styles.selects__container}>
+                <span>Prefered loan repayment method</span>
+                <div>
+                  <select
+                      name="select"
+                      value={repaymentMethod}
+                      onChange={(e) => setRepaymentMethod(e.target.value)}
+                      id=""
+                  >
+                    <option value="">Select</option>
+                    <option value="debit order">Debit Order</option>
+                    <option value="direct deposit">Direct deposit</option>
+                    <option value="salary payment">Salary payment</option>
+                    <option value="bank standing order">
+                      Bank standing order
+                    </option>
+                    <option value="post dated check ">Post dated check </option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div className={styles.selects__container}>
-              <span>Are you in financial debt?</span>
-              <div>
-                <select
-                  name="in debt"
-                  value={isInDebt}
-                  onChange={(e) => setIsInDebt(e.target.value)}
-                  id=""
-                >
-                  <option value="">Select</option>
-                  <option value="No">No</option>
-                  <option value="Yes">Yes</option>
-                </select>
-              </div>
-            </div>
-            <div className={styles.selects__container}>
-              <span>Prefered loan repayment method</span>
-              <div>
-                <select
-                  name="select"
-                  value={repaymentMethod}
-                  onChange={(e) => setRepaymentMethod(e.target.value)}
-                  id=""
-                >
-                  <option value="">Select</option>
-                  <option value="debit order">Debit Order</option>
-                  <option value="direct deposit">Direct deposit</option>
-                  <option value="salary payment">Salary payment</option>
-                  <option value="bank standing order">
-                    Bank standing order
-                  </option>
-                  <option value="post dated check ">Post dated check </option>
-                </select>
-              </div>
-            </div>
           </div>
-        </div>
-        <div className={styles.calculator}>
-          <h4>Loan Calculator</h4>
-          <div className={styles.select__input}>
-            <span>Loan Type</span>
-            <select
-              value={loanType}
-              onChange={(e) => setLoanType(e.target.value)}
-            >
-              <option value="">Select</option>
-              <option value="Personal loan">Personal Loan</option>
-              <option value="Business loan">Business Loan</option>
-              <option value="Consolidation loan">Consolidation Loan</option>
-              <option value="Mortage loan">Mortage Loan</option>
-              <option value="General loan">General Loan</option>
-            </select>
-          </div>
+          <div className={styles.calculator}>
+            <h4>Loan Calculator</h4>
+            <div className={styles.select__input}>
+              <span>Loan Type</span>
+              <select
+                  value={loanType}
+                  onChange={(e) => setLoanType(e.target.value)}
+              >
+                <option value="">Select</option>
+                <option value="Personal loan">Personal Loan</option>
+                <option value="Business loan">Business Loan</option>
+                <option value="Consolidation loan">Consolidation Loan</option>
+                <option value="Mortage loan">Mortage Loan</option>
+                <option value="General loan">General Loan</option>
+              </select>
+            </div>
 
-          <div style={{ margin: "20px 0" }}>
-          <input
-            className={styles.loan__input}
-            type="number"
-            value={value}
-            placeholder="Enter Loan Amount"
-            step={50}
-            onChange={handleChange}
-            required
-          />
-        </div>
+            <div style={{ margin: "20px 0" }}>
+              <input
+                  className={styles.loan__input}
+                  type="number"
+                  value={value}
+                  onChange={handleChange}
+                  step={50}
+                  min={30000}
+                  placeholder="Enter Loan Amount (R 30000 minimum)"
+                  required
+              />
+              {loanAmountError && (
+                  <p style={{ color: "red" }}>{loanAmountError}</p>
+              )}
+            </div>
 
-          {/* <div style={{ margin: "20px 0" }}>
+            {/* <div style={{ margin: "20px 0" }}>
             <input
               className={styles.loan__input}
               type="number"
@@ -274,85 +283,85 @@ function Application() {
             />
           </div> */}
 
-          <div className={styles.repayment}>
-            <div className={styles.item}>
-              <label>period (years)</label>
-              <div className={styles.years__item}>
+            <div className={styles.repayment}>
+              <div className={styles.item}>
+                <label>period (years)</label>
+                <div className={styles.years__item}>
                 <span onClick={decrease}>
                   <RemoveRoundedIcon />
                 </span>
 
-                <input
-                  type="number"
-                  value={terms}
-                  min="1"
-                  max="1000"
-                  onChange={(e) => setTerms(e.target.value)}
-                />
-                <span onClick={increase}>
+                  <input
+                      type="number"
+                      value={terms}
+                      min="1"
+                      max="1000"
+                      onChange={(e) => setTerms(e.target.value)}
+                  />
+                  <span onClick={increase}>
                   <AddRoundedIcon />
                 </span>
+                </div>
+              </div>
+              <div className={styles.item}>
+                <label>Monthly payment</label>
+                <div className={styles.years__item}>
+                  <p>R {monthlyRepayment}</p>
+                </div>
               </div>
             </div>
-            <div className={styles.item}>
-              <label>Monthly payment</label>
-              <div className={styles.years__item}>
-                <p>R {monthlyRepayment}</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <ReCAPTCHA
-              sitekey="6LcoOvYeAAAAAPqz2GvBd_D2Jr0l7C6uZ1LqU0Zt"
-              onChange={(e) => setIsVerified(!isVerified)}
-            />
-          </div>
-          {loading ? (
-            <div
-              style={{
-                display: "grid",
-                placeItems: "center",
-                margin: "20px 0",
-              }}
-            >
-              <ThreeCircles
-                color="#01C5C4"
-                height={60}
-                width={60}
-                ariaLabel="three-circles-rotating"
+            <div>
+              <ReCAPTCHA
+                  sitekey="6LcoOvYeAAAAAPqz2GvBd_D2Jr0l7C6uZ1LqU0Zt"
+                  onChange={(e) => setIsVerified(!isVerified)}
               />
             </div>
-          ) : (
-            <>{isVerified && <button onClick={apply}>Submit Application</button>}</>
-          )}
+            {loading ? (
+                <div
+                    style={{
+                      display: "grid",
+                      placeItems: "center",
+                      margin: "20px 0",
+                    }}
+                >
+                  <ThreeCircles
+                      color="#01C5C4"
+                      height={60}
+                      width={60}
+                      ariaLabel="three-circles-rotating"
+                  />
+                </div>
+            ) : (
+                <>{isVerified && <button onClick={apply}>Submit Application</button>}</>
+            )}
 
-          <div>
-            <small>*Loans are calculated at a 6% interest rate</small>
-          </div>
-          <div>
-            <div className={styles.terms}>
-              <input defaultChecked type="checkbox" />
-              <Link href="/terms">
-                <a className="terms__link">
-                  Accept <span>terms and conditions</span>
-                </a>
-              </Link>
+            <div>
+              <small>*Loans are calculated at a 6% interest rate</small>
+            </div>
+            <div>
+              <div className={styles.terms}>
+                <input defaultChecked type="checkbox" />
+                <Link href="/terms">
+                  <a className="terms__link">
+                    Accept <span>terms and conditions</span>
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-    </div>
+        </form>
+        <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+        />
+      </div>
   );
 }
 

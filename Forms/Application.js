@@ -16,7 +16,7 @@ function Application() {
   const userData = useSelector(selectUser);
   const [isVerified, setIsVerified] = useState(false);
   const [employmentStatus, setEmployeeStatus] = useState("");
-  const [value, setValue] = useState(30000);
+  const [value, setValue] = useState(1000);
   const [grossIncome, setGrossIncome] = useState("");
   const [terms, setTerms] = useState(2);
   const [status, setStatus] = useState("");
@@ -34,12 +34,7 @@ function Application() {
   // };
   const handleChange = (e) => {
     const newValue = parseInt(e.target.value);
-    if (newValue < 29999) {
-      setLoanAmountError("Loan amount must be at least R 30,000");
-    } else {
-      setLoanAmountError("");
-      setValue(newValue);
-    }
+    setValue(newValue);
   };
   const increase = () => {
     setTerms(terms + 1);
@@ -52,7 +47,7 @@ function Application() {
   const ref_no = userData && `${userData.lastName[0].toUpperCase()}${result}`;
 
 
- 
+
 
   const sendEmail = () => {
     try {
@@ -261,13 +256,11 @@ function Application() {
             className={styles.loan__input}
             type="number"
             value={value}
+            placeholder="Enter Loan Amount"
+            step={50}
             onChange={handleChange}
-            placeholder="Enter Loan Amount (R 30000 minimum)"
             required
           />
-          {loanAmountError && (
-            <p style={{ color: "red" }}>{loanAmountError}</p>
-          )}
         </div>
 
           {/* <div style={{ margin: "20px 0" }}>

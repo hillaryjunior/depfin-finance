@@ -5,7 +5,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 function Fab() {
   return (
     <div className="float">
-      <Link href="https://api.whatsapp.com/send?phone=+27836174518">
+      <Link href="https://api.whatsapp.com/send?phone=+27781600033">
         <a title="whatsapp" name="whatsapp" className="my-float">
           <WhatsAppIcon />
         </a>

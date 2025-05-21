@@ -36,6 +36,7 @@ function Application() {
     const newValue = parseInt(e.target.value);
     if (newValue < 29999) {
       setLoanAmountError("Loan amount must be at least R 30,000");
+      setValue(newValue);
     } else {
       setLoanAmountError("");
       setValue(newValue);

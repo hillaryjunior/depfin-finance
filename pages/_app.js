@@ -13,20 +13,26 @@ import { useEffect } from 'react';
 let persistor = persistStore(store);
 import * as gtag from "../lib/gtag";
 import * as gtm from "../lib/googleTagManager";
+import * as fbPixel from "../lib/fbPixel";
 import { NextUIProvider } from "@nextui-org/react";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
     useEffect(() => {
+      // Initialize Facebook Pixel
+      fbPixel.init();
+
       const handleRouteChange = (url) => {
         // gtag.pageview(url);
         gtm.pageView(url);
+        // Track page view with Facebook Pixel
+        fbPixel.pageView();
       };
       router.events.on("routeChangeComplete", handleRouteChange);
       return () => {
         router.events.off("routeChangeComplete", handleRouteChange);
       };
     }, [router.events]);
-  
+
   return (
     <>
       <Head>
@@ -68,6 +74,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N4LX88L');`,
         }}
       />
+
+      {/* Facebook Meta Pixel Base Code */}
+      <Script
+        id="fb-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1243356307431724'); 
+            fbq('track', 'PageView');
+          `,
+        }}
+      />
+      <noscript>
+        <img height="1" width="1" style={{ display: "none" }}
+          src="https://www.facebook.com/tr?id=1243356307431724&ev=PageView&noscript=1"
+        />
+      </noscript>
+
       <NextUIProvider>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>

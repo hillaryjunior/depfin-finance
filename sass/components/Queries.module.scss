@@ -1,0 +1,141 @@
+@use "../abstracts/variables.scss" as variables;
+
+.queries {
+  max-width: 1200px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-family: variables.$PoppinsRegular;
+
+  h6 {
+    font-size: 2rem;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    color: variables.$teal;
+    font-family: variables.$PoppinsBold;
+
+    span {
+      color: variables.$dark;
+    }
+  }
+
+  .queries__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height : 900px;
+    gap: 100px;
+
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      height: 100%;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .contact__info {
+
+      width: 100%;
+      height: auto;
+
+      position: relative;
+
+      .image__container {
+        width: 100%;
+        height: 400px;
+
+        position: relative;
+
+        .image {
+          max-width: 100%;
+          position: absolute;
+          height: 100%;
+          border-radius: 10px;
+        }
+      }
+      .work__hours {
+        position: absolute;
+        right: 0;
+        top: 250px;
+        max-width: 250px;
+        border-radius: 10px;
+        color: white;
+        width: 100%;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        background-color: variables.$dark;
+
+        @media (max-width: 769px) {
+          bottom : 219px;
+
+        }
+      }
+      .socials__details {
+        display: flex;
+        align-items: center;
+
+        gap: 20px 20px;
+
+       
+
+        .social__item {
+          display: flex;
+          align-items: center;
+          margin: 10px 0;
+
+          width: 100%;
+          justify-content: center;
+          gap: 10px;
+          padding: 10px;
+          background: #f7f7f7;
+          border-radius: 10px;
+
+          @media screen and (max-width: 769px) {
+              
+                  gap: 0;
+                  background: white;
+          }
+
+          span {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: variables.$teal;
+            color: white;
+            display: grid;
+            place-items: center;
+
+            svg {
+              width: 90%;
+              height: 90%;
+              font-size: 20px;
+              fill: white;
+            }
+          }
+
+          a {
+            color: variables.$dark;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .queries__faqs{
+
+      width: 100%;
+      height: 500px;
+
+      position: relative;
+
+      @media screen and (max-width: 769px) {
+        height: auto;
+        width: 95%;
+      }
+
+    }
+  }
+}

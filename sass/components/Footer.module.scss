@@ -1,0 +1,98 @@
+@use '../abstracts/variables.scss' as variables;
+
+
+.footer{
+        width:100%;
+        height : auto;
+        background : variables.$dark;
+        position : relative;
+        bottom: 0;
+       
+        font-family: variables.$PoppinsRegular;
+
+        h2{
+                font-size: 12px;
+                font-family: variables.$PoppinsRegular;
+                text-align: center;
+                color: white;
+                padding: 10px 0;
+        }
+
+        .container{
+                max-width: 1250px;
+                width: 100%;
+                height: 300px;
+                margin: 0 auto;
+                display: grid;
+             ;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 10px;
+                color: white;
+                position: relative;
+
+                @media screen and (max-width: 769px) {
+                        height: 500px;
+                        display: flex;
+                        
+                        flex-direction: column;
+                }
+
+                h3{
+                        font-size: 1.6rem;
+                        font-family: variables.$PoppinsMedium;
+                       
+                }
+                .quick__links{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                      
+                       
+                        color: white;
+                        position: relative;
+
+                        h6{
+                                font-size: 1.2rem;
+                                font-family: variables.$PoppinsMedium;
+                                
+                        }
+
+                        ul{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                        }
+
+                        a{
+                                color: white;
+                                text-decoration: none;
+                                font-size: 13px;
+                                font-family: variables.$PoppinsMedium;
+                            
+                                
+                                transition: all 0.3s ease-in-out;
+                                &:hover{
+                                        color: variables.$teal;
+                                        border-bottom: 1px solid variables.$teal;
+                                }
+                        }
+                }
+
+               
+
+        }
+         .copyright{
+
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                color: white;
+                text-align: center;
+                        
+                     
+                        
+                }
+}

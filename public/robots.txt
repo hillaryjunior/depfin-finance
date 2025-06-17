@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /auth/login
+Disallow: auth/register
+
+# Host
+Host: https://depfinfinance.co.za
+
+# Sitemaps
+Sitemap: https://depfinfinance.co.za/sitemap.xml

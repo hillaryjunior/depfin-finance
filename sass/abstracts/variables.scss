@@ -1,0 +1,35 @@
+
+// // fonts inpmort
+// @font-face {
+//         font-family: 'Poppins';
+//         src: url(../../fonts/Poppins-Regular.ttf);
+// }
+// @font-face {
+//         font-family: 'PoppinsBold';
+//         src: url(../../fonts/Poppins-Bold.ttf);
+        
+// }
+// @font-face {
+//         font-family: 'PoppinsMedium';
+//         src: url(../../fonts/Poppins-Medium.ttf);
+        
+// }
+// @font-face {
+//         font-family: 'PoppinsSemiBold';
+//         src: url(../../fonts/Poppins-SemiBold.ttf);
+        
+// }
+
+// fonts
+
+$PoppinsBold: 'Poppins', sans-serif;
+$PoppinsMedium: 'Poppins', sans-serif;
+$PoppinsSemiBold: 'Poppins', sans-serif;
+$PoppinsRegular: 'Poppins', sans-serif;
+
+// colors
+$teal  : #01C5C4;
+$dark : #063940;
+$light : #E2F2F2;
+$gradient  :linear-gradient(90deg, rgba(60,184,183,0.37718837535014005) 42%, rgba(6,57,64,0.6292892156862745) 61%);
+

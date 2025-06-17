@@ -1,1 +1,1 @@
-export const SITE_URL = "https://depfinfinance.co.za";
+export const SITE_URL = 'https://depfinfinance.co.za'

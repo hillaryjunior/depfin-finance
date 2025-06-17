@@ -1,15 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-
-import nodemailer from "nodemailer";
-
-
-
+import nodemailer from 'nodemailer'
 
 export default function handler(req, res) {
   const {
-    query: { email, name,phone,message },
-  } = req;
+    query: { email, name, phone, message },
+  } = req
 
   let declinedTemplate = `<!DOCTYPE html>
 
@@ -690,39 +686,39 @@ export default function handler(req, res) {
     </table>
   
   </body>
-</html>`;
+</html>`
 
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      service: 'yahoo',
       port: 465,
       secure: true,
 
       auth: {
-        user: "depfinloan@yahoo.com",
-        pass: "bknhocmidtrczxht",
+        user: 'depfinloan@yahoo.com',
+        pass: 'bknhocmidtrczxht',
       },
-    });
+    })
     let mailOptions = {
-      from: "depfinloan@yahoo.com",
-      to: " info@depfinfinance.co.za",
+      from: 'depfinloan@yahoo.com',
+      to: ' info@depfinfinance.co.za',
       subject: `New message from ${name}`,
 
       html: declinedTemplate,
-    };
+    }
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         res.status(500).json({
-          message: "Something went wrong" + error,
-        });
+          message: 'Something went wrong' + error,
+        })
 
-        console.log(error);
+        console.log(error)
       } else {
         res.status(200).json({
-          message: "Email sent",
-        });
-        console.log("Email sent: " + info.response);
+          message: 'Email sent',
+        })
+        console.log('Email sent: ' + info.response)
       }
-    });
-  });
+    })
+  })
 }

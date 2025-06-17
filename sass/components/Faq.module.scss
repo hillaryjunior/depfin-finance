@@ -1,40 +1,37 @@
-@use "../abstracts/variables.scss" as variables;
+@use '../abstracts/variables.scss' as variables;
 
-.accordion{
+.accordion {
+  width: 100%;
+  height: auto;
+  font-family: variables.$PoppinsRegular;
 
-        width: 100%;
-        height: auto;
-        font-family: variables.$PoppinsRegular;
-       
+  .accordion__content {
+    display: grid;
+    padding: 10px 0;
+    gap: 10px;
+    border-bottom: 1px solid variables.$teal;
 
-        .accordion__content{
-                display: grid;
-                padding: 10px 0;
-                gap: 10px;
-                border-bottom: 1px solid variables.$teal;
+    .question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-                .question{
-                        display : flex;
-                        align-items: center;
-                        justify-content: space-between;
+      p {
+        font-family: variables.$PoppinsSemiBold;
+        color: variables.$dark;
+        cursor: pointer;
+        font-weight: 300;
 
-                        p{
-                                
-                                font-family: variables.$PoppinsSemiBold;
-                                color: variables.$dark;
-                                cursor: pointer;
-                                font-weight: 300;
-
-                                &:hover{
-                                       color: variables.$teal;
-                                }
-                        }
-                }
-                .icon__btn{
-                        border: none;
-                        outline: none;
-                        background: none;
-                        color: variables.$teal;
-                }
+        &:hover {
+          color: variables.$teal;
         }
+      }
+    }
+    .icon__btn {
+      border: none;
+      outline: none;
+      background: none;
+      color: variables.$teal;
+    }
+  }
 }

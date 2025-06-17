@@ -1,74 +1,58 @@
-@use "../abstracts/variables.scss" as variables;
+@use '../abstracts/variables.scss' as variables;
 
+.container {
+  width: 100%;
+  height: 400px;
+  padding: 4rem;
 
+  position: relative;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px 1px #f1f0f0;
 
-  .container {
-    width: 100%;
+  .images_detail {
     height: 400px;
-    padding: 4rem;
+    width: 300px;
 
-    position: relative;
-    margin: 0 auto;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 1px 1px #f1f0f0;
-
-    .images_detail {
-      height: 400px;
+    .image {
       width: 300px;
-
-      .image{
-        width: 300px;
-      }
     }
-    .blogs__container {
-      position: absolute;
-      top: 400px;
-    }
-    h2 {
-      font-family: variables.$PoppinsBold;
-      color: variables.$dark;
-      font-size: 3.5rem;
+  }
+  .blogs__container {
+    position: absolute;
+    top: 400px;
+  }
+  h2 {
+    font-family: variables.$PoppinsBold;
+    color: variables.$dark;
+    font-size: 3.5rem;
 
-      @media screen and (max-width: 769px) {
-        font-size: 2rem;
-      }
-
-
-    }
-  h5 {
+    @media screen and (max-width: 769px) {
       font-size: 2rem;
-      margin-top: 0px;
-      @media screen and (max-width: 769px) {
-        font-size: 1.3rem;
-      }
-
-
     }
-    .meta_decrition{
-      font-size :  2.4rem;
-      @media screen and (max-width: 769px) {
-               font-size :  1rem;
-      }
-
-     
-      
-}
-.content {
-  font-size: 1.5rem;
-  text-align: justify;
-  padding-right: 2rem;
-  margin-top: 0px;
-  @media screen and (max-width: 769px) {
+  }
+  h5 {
     font-size: 2rem;
+    margin-top: 0px;
+    @media screen and (max-width: 769px) {
+      font-size: 1.3rem;
+    }
   }
-
-
+  .meta_decrition {
+    font-size: 2.4rem;
+    @media screen and (max-width: 769px) {
+      font-size: 1rem;
+    }
+  }
+  .content {
+    font-size: 1.5rem;
+    text-align: justify;
+    padding-right: 2rem;
+    margin-top: 0px;
+    @media screen and (max-width: 769px) {
+      font-size: 2rem;
+    }
+  }
 }
-
-    
-
-
-
-  }

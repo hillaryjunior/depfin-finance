@@ -1,6 +1,6 @@
-import Head from "next/head";
-import React from "react";
-import PolicyLayout from "../Layouts/PolicyLayout";
+import Head from 'next/head'
+import React from 'react'
+import PolicyLayout from '../Layouts/PolicyLayout'
 
 function conflictofinterest() {
   const html = `<div>
@@ -525,21 +525,24 @@ function conflictofinterest() {
         which emanate from the fit and proper requirements related to the FAIS
         Act, including debarment.
     </p>
-</div>`;
+</div>`
   return (
     <div>
       <Head>
         <title>Conflict of Interest Management - Depfin Finance</title>
-              {/* coronical url */}
-                <link rel="canonical" href="https://depfinfinance.co.za/conflictofinterest" />
+        {/* coronical url */}
+        <link
+          rel='canonical'
+          href='https://depfinfinance.co.za/conflictofinterest'
+        />
         <meta
-          name="description"
-          content="We are a reliable financial services provider in South Africa where we provide a conflict of interest policy to make sure there should be total transparency between the company and the clients."
+          name='description'
+          content='We are a reliable financial services provider in South Africa where we provide a conflict of interest policy to make sure there should be total transparency between the company and the clients.'
         />
       </Head>
-      <PolicyLayout title=" Conflict of interest management" content={html} />
+      <PolicyLayout title=' Conflict of interest management' content={html} />
     </div>
-  );
+  )
 }
 
-export default conflictofinterest;
+export default conflictofinterest

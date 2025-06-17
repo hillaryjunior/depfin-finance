@@ -6,23 +6,17 @@ import ProfileLayout from '../../Layouts/ProfileLayout'
 import { selectUser } from '../../redux/slices'
 
 function Profile() {
-
   const user = useSelector(selectUser)
   const router = useRouter()
-  
-  useEffect(() => {
-    if(!user) return router.replace('/')
 
-  },[user,router])
+  useEffect(() => {
+    if (!user) return router.replace('/')
+  }, [user, router])
   return (
     <div>
       <Head>
-        <title>
-          View My account profile | Depfin Finance
-        </title>
-        <meta name="description" content="depfin finance account Dashboard"/>
-
-
+        <title>View My account profile | Depfin Finance</title>
+        <meta name='description' content='depfin finance account Dashboard' />
       </Head>
       <ProfileLayout />
     </div>

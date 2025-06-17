@@ -1,4 +1,4 @@
-@use "../abstracts/variables.scss" as variables;
+@use '../abstracts/variables.scss' as variables;
 
 .container {
   --dark-blue: hsl(240, 38%, 20%);
@@ -23,7 +23,6 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 28.5rem;
@@ -31,7 +30,7 @@
 
 .slider {
   position: relative; /* needed for posiition absolute in children (slider_buttons) */
-  
+
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -74,9 +73,8 @@
   background-color: white;
   cursor: pointer;
 
-  svg{
-          color: #01C5C4;
-          
+  svg {
+    color: #01c5c4;
   }
 }
 
@@ -112,8 +110,8 @@
   font-size: min(3.8vw, 2rem);
   font-weight: var(--weight-light);
   line-height: min(6.4vw, 3.2rem);
-  padding-left: .4rem;
-  padding-right: .4rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
   color: var(--dark-blue);
 
   background-image: url('/frontendmentor/challenge/coding-bootcamp-testimonials-slider/pattern-quotes.svg');
@@ -125,7 +123,7 @@
 }
 
 .testimonial_author > * + * {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .testimonial_author_name {
@@ -140,7 +138,7 @@
   color: var(--grayish-blue);
 }
 
-@media(min-width: 1024px) and (orientation: landscape) {
+@media (min-width: 1024px) and (orientation: landscape) {
   .container {
     background-size: 61rem;
   }

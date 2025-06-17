@@ -1,46 +1,45 @@
 @use '../abstracts/variables.scss' as variables;
 
-.hero{
-        width: 100%;
-        height: 380px;
-        clip-path: polygon(0 0, 100% 0%, 100% 91%, 0 99%);
+.hero {
+  width: 100%;
+  height: 380px;
+  clip-path: polygon(0 0, 100% 0%, 100% 91%, 0 99%);
 
   background: linear-gradient(270deg, variables.$teal, variables.$light);
   background-size: 400% 400%;
 }
-.container{
-        max-width :  1250px;
-        width :  100%;
-        height :  100%;
-        margin :  0 auto;
-       
+.container {
+  max-width: 1250px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 
-        .content{
-                display : flex;
-                place-items :  center;
-              
-                width :  90%;
-                height :  100%;
-                margin: 0 auto;
-                text-align: center;
+  .content {
+    display: flex;
+    place-items: center;
 
-                @media (max-width:769px){
-                        width : 100%;
-                        padding: 0 2px;
-                }
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
 
-                h1{
-                        font-family: variables.$PoppinsBold;
-                        color: variables.$dark;
-                        font-size :  3.6rem;
+    @media (max-width: 769px) {
+      width: 100%;
+      padding: 0 2px;
+    }
 
-                        @media screen and (max-width: 769px) {
-                                font-size :  2rem;
-                        }
+    h1 {
+      font-family: variables.$PoppinsBold;
+      color: variables.$dark;
+      font-size: 3.6rem;
 
-                        span{
-                                color : white;
-                        }
-                }
-        }
+      @media screen and (max-width: 769px) {
+        font-size: 2rem;
+      }
+
+      span {
+        color: white;
+      }
+    }
+  }
 }

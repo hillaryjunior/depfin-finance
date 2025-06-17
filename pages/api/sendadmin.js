@@ -1,13 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer'
 
 export default function handler(req, res) {
-
   const {
-    query: {type,repayment,amount,name,ref_no,method,rate,term },
-  } = req;
+    query: { type, repayment, amount, name, ref_no, method, rate, term },
+  } = req
 
   let declinedTemplate = `<!DOCTYPE html>
 
@@ -1609,7 +1607,7 @@ export default function handler(req, res) {
     <!-- End -->
   </body>
 </html>
-`;
+`
 
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
@@ -1619,30 +1617,30 @@ export default function handler(req, res) {
       secure: true,
 
       auth: {
-        user: "info@depfinfinance.co.za",
-        pass: "asasjboy1\"A",
+        user: 'info@depfinfinance.co.za',
+        pass: 'asasjboy1"A',
       },
-    });
+    })
     let mailOptions = {
-      from: "info@depfinfinance.co.za",
-      to: "info@depfinfinance.co.za",
+      from: 'info@depfinfinance.co.za',
+      to: 'info@depfinfinance.co.za',
       subject: `Depfin Finance PTY LTD . New Loan Application Reference: ${ref_no}`,
 
       html: declinedTemplate,
-    };
+    }
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         res.status(500).json({
-          message: "Something went wrong" + error,
-        });
+          message: 'Something went wrong' + error,
+        })
 
-        console.log(error);
+        console.log(error)
       } else {
         res.status(200).json({
-          message: "Email sent",
-        });
-        console.log("Email sent: " + info.response);
+          message: 'Email sent',
+        })
+        console.log('Email sent: ' + info.response)
       }
-    });
-  });
+    })
+  })
 }

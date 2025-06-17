@@ -1,9 +1,9 @@
-import Head from 'next/head';
+import Head from 'next/head'
 import React from 'react'
-import PolicyLayout from '../Layouts/PolicyLayout';
+import PolicyLayout from '../Layouts/PolicyLayout'
 
 function privacypolicy() {
-   const html = `
+  const html = `
 <p>
     <strong>1. INTRODUCTION</strong>
 </p>
@@ -476,21 +476,24 @@ function privacypolicy() {
     steps to comply with and process personal information in accordance with
     POPI.
 </p>
-`;
+`
   return (
     <div>
       <Head>
         <title>Privacy Policy - Depfin Finance</title>
-              {/* coronical url */}
-        <link rel="canonical" href="https://depfinfinance.co.za/privacypolicy/" />
+        {/* coronical url */}
+        <link
+          rel='canonical'
+          href='https://depfinfinance.co.za/privacypolicy/'
+        />
         <meta
-          name="description"
-          content="Read our privacy policy carefully, we update our privacy policy from time to time. If any queries or feedback about how we have handled your personal information, please contact us."
+          name='description'
+          content='Read our privacy policy carefully, we update our privacy policy from time to time. If any queries or feedback about how we have handled your personal information, please contact us.'
         />
       </Head>
-      <PolicyLayout title="Privacy Policy" content={html} />
+      <PolicyLayout title='Privacy Policy' content={html} />
     </div>
-  );
+  )
 }
 
 export default privacypolicy

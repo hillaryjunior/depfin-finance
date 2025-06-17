@@ -2,7 +2,6 @@ const headers = require('./security')
 module.exports = {
   reactStrictMode: true,
   trailingSlash: false,
- 
 
   // create exportPathMap
 
@@ -35,18 +34,17 @@ module.exports = {
   // },
 
   images: {
-    loader: "akamai",
-    path: "",
-    domains: ["res.cloudinary.com"],
+    loader: 'akamai',
+    path: '',
+    domains: ['res.cloudinary.com'],
   },
 
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: '/(.*)',
         headers,
       },
-    ];
+    ]
   },
-};
-
+}

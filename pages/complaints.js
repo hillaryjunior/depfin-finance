@@ -1,6 +1,6 @@
-import Head from "next/head";
-import React from "react";
-import PolicyLayout from "../Layouts/PolicyLayout";
+import Head from 'next/head'
+import React from 'react'
+import PolicyLayout from '../Layouts/PolicyLayout'
 
 function complaints() {
   const html = `<div>
@@ -198,21 +198,21 @@ function complaints() {
     <p>
         P.O. Box 74574, Lynwood Ridge.
     </p>
-</div>`;
+</div>`
   return (
     <div>
       <Head>
         <title>Complaints Management - Depfin Finance </title>
-              {/* coronical url */}
-        <link rel="canonical" href="https://depfinfinance.co.za/complaints" />
+        {/* coronical url */}
+        <link rel='canonical' href='https://depfinfinance.co.za/complaints' />
         <meta
-          name="description"
-          content="Depfin Finance is one of the trusted companies where clients can file complaints in case of any grievance with the company or employee. "
+          name='description'
+          content='Depfin Finance is one of the trusted companies where clients can file complaints in case of any grievance with the company or employee. '
         />
       </Head>
-      <PolicyLayout title="Complaints Management" content={html} />
+      <PolicyLayout title='Complaints Management' content={html} />
     </div>
-  );
+  )
 }
 
-export default complaints;
+export default complaints

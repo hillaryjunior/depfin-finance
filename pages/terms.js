@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import PolicyLayout from '../Layouts/PolicyLayout';
+import PolicyLayout from '../Layouts/PolicyLayout'
 
 function terms() {
   const html = `
@@ -192,21 +192,21 @@ function terms() {
     remaining provisions of these T&amp;Cs shall remain in full force and
     effect.
 </p>
-  `;
+  `
   return (
     <div>
       <Head>
         <title>Terms & Conditions - Depfin Finance</title>
-              {/* coronical url */}
-                <link rel="canonical" href="https://depfinfinance.co.za/terms" />
+        {/* coronical url */}
+        <link rel='canonical' href='https://depfinfinance.co.za/terms' />
         <meta
-          name="description"
-          content="Read our terms and conditions carefully. If you have any questions or concerns about the Depfin Finance loan please contact us immediately."
+          name='description'
+          content='Read our terms and conditions carefully. If you have any questions or concerns about the Depfin Finance loan please contact us immediately.'
         />
       </Head>
-      <PolicyLayout title="Website terms of use" content={html} />
+      <PolicyLayout title='Website terms of use' content={html} />
     </div>
-  );
+  )
 }
 
 export default terms

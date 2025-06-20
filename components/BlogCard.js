@@ -1,20 +1,27 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { blogsData } from '../Blogs/blogs';
 import styles from '../sass/components/Blogs.module.scss'
 
+
+
 function BlogCard() {
+
+
   return (
     <>
+
       {blogsData?.map((item) => (
         <div key={item.id} className={ styles.blog__items__card}>
           <div className={styles.blog__image}>
-            <img
+            <Image
               className={styles.image}
               src={item.image}
               layout="fill"
               objectFit="cover"
+              quality={75}
               priority
               alt={item.title}
             />

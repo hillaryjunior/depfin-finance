@@ -6,8 +6,19 @@
         list-style: none;
         text-decoration: none;
         accent-color: variables.$teal;
-         transition: all 0.3s ease-in-out;
+}
 
+img,
+.image,
+.blog__image {
+  contain-intrinsic-size: 300px;
+}
+
+button,
+a,
+input,
+.card {
+  transition: all 0.3s ease-in-out;
 }
 
 .app{
@@ -28,9 +39,6 @@
         display: grid;
         place-items: center;
         padding: 20px;
-
-
-        
 
         h2{
                 font-family: variables.$PoppinsBold;
@@ -129,10 +137,6 @@
 
 
 }
-
-
-
-
 
 .svg-inline--fa {
   vertical-align: -0.200em;

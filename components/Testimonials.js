@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-
 import style from "../sass/components/Silder.module.scss";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
@@ -107,8 +105,10 @@ const Testimonials = () => {
               {/* <img
                 src={`/frontendmentor/challenge/coding-bootcamp-testimonials-slider/${data[index].picture}`}
               /> */}
+              {/* <img src="\Images\blog-16-1 (1).webp" alt="" /> */}
             </div>
           </div>
+
           <div className={style.slider_buttons}>
             <button
               title="previous"
@@ -134,6 +134,7 @@ const Testimonials = () => {
             <p className={style.testimonial_author_name}>
               __{`${data[index].name}`}
             </p>
+            
           </div>
         </div>
       </div>

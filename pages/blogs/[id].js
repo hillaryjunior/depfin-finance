@@ -19,11 +19,13 @@ function BlogID({ blog }) {
 
   return (
     <div className={styles.container}>
-      <img
+      <Image
         className={styles.images_detail}
         // src={`/images/blogs-image/${blog.image}`}
         src={blog.image}
         layout='fill'
+        objectFit='contain'
+        quality={75}
         priority
         alt={blog.title}
       />

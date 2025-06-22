@@ -41,11 +41,11 @@ function Queries({ image , contact }) {
                 <span>
                   <LocalPhoneRoundedIcon />
                 </span>
-                <Link href="tel:+27781600033">
+                <Link href="tel:+27684321169">
                   {mobile ? (
                     <a target="_blank">call</a>
                   ) : (
-                    <a target="_blank">27781600033</a>
+                    <a target="_blank">27684321169</a>
                   )}
                 </Link>
               </div>
@@ -53,7 +53,7 @@ function Queries({ image , contact }) {
                 <span>
                   <WhatsAppIcon />
                 </span>
-                <Link href="https://api.whatsapp.com/send?phone=27781600033">
+                <Link href="https://api.whatsapp.com/send?phone=27684321169">
                   {mobile ? (
                     <a target="_blank">chat</a>
                   ) : (

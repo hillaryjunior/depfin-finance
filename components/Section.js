@@ -3,6 +3,12 @@ import styles from "../sass/components/Section.module.scss";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CustomizedSteppers from "./Steper";
 import Testimonials from "./Testimonials";
+<link
+  rel="preload"
+  as="image"
+  href="/assets/optimized-hero.webp"
+  type="image/webp"
+/>
 function Section() {
   return (
     <div className={styles.section__about}>

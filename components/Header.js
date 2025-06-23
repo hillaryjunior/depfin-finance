@@ -85,7 +85,7 @@ function Header() {
           </ul>
         </nav>
         <div className={styles.cta}>
-          <Link href="tel:27684321169">
+          <Link href="tel:27604601979">
             {mobile ? (
               <li>
                 <a title="mobile number">
@@ -102,7 +102,7 @@ function Header() {
                   <span>
                     <LocalPhoneRoundedIcon />
                   </span>{" "}
-                  27684321169
+                  27604601979
                 </a>
               </li>
             )}

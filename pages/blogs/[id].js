@@ -1,67 +1,69 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { blogsData } from '../../Blogs/blogs'
 import styles from '../../sass/components/BlogsDetails.module.scss'
+
+// 🔹 Code-split component
+const BlogDetailsContent = dynamic(() =>
+  import('../../components/BlogDetailsContent')
+)
 
 function BlogID({ blog }) {
   const router = useRouter()
 
-  // Fallback handling: if page is being generated, show a loading state
-  if (router.isFallback) {
-    return <div>Loading...</div>
-  }
-
-  // Add a check to ensure that `blog` is defined before accessing its properties
-  if (!blog) {
-    return <div>Blog post not found</div>
-  }
+  if (router.isFallback) return <div>Loading...</div>
+  if (!blog) return <div>Blog post not found</div>
 
   return (
-    <div className={styles.container}>
-      <Image
-        className={styles.images_detail}
-        // src={`/images/blogs-image/${blog.image}`}
-        src={blog.image}
-        layout='fill'
-        objectFit='contain'
-        quality={75}
-        priority
-        alt={blog.title}
-      />
-      <div className={styles.blogs__container}>
-        <h2>{blog.title}</h2>
-        <h5>{blog.blurb}</h5>
-        <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+    <>
+      <Head>
+        <title>{blog.title} | My Blog</title>
+        <meta name='description' content={blog.description || blog.title} />
+        <meta property='og:title' content={blog.title} />
+        <meta
+          property='og:description'
+          content={blog.description || blog.title}
+        />
+        <meta property='og:image' content={blog.image} />
+        <link rel='preload' as='image' href={blog.image} />
+      </Head>
+
+      <div className={styles.container}>
+        <Image
+          className={styles.images_detail}
+          src={blog.image}
+          layout='fill'
+          objectFit='contain'
+          quality={75}
+          priority
+          alt={blog.title}
+        />
+        <div className={styles.blogs__container}>
+          <BlogDetailsContent blog={blog} styles={styles} />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
-// 1. Define paths for all dynamic routes using getStaticPaths
+// 🔹 Static paths
 export async function getStaticPaths() {
-  // Generate paths for each blog post
   const paths = blogsData.map((blog) => ({
-    params: { id: blog.id.toString() }, // Ensure id is a string
+    params: { id: blog.id.toString() },
   }))
-
   return { paths, fallback: true }
 }
 
-// 2. Fetch the blog data based on the dynamic route id
+// 🔹 Static props
 export async function getStaticProps({ params }) {
-  // Find the blog post based on the id
   const blog = blogsData.find((blog) => blog.id.toString() === params.id)
-
-  // If the blog is not found, return a 404 error
-  if (!blog) {
-    return { notFound: true }
-  }
+  if (!blog) return { notFound: true }
 
   return {
-    props: {
-      blog, // Pass blog data as props
-    },
+    props: { blog },
   }
 }
 

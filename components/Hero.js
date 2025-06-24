@@ -1,16 +1,19 @@
-import React from 'react'
 import styles from '../sass/components/Hero.module.scss'
-function Hero({content}) {
+
+// If you have any heavy components inside Hero, load them dynamically
+// const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+//   loading: () => <div>Loading...</div>,
+// })
+
+function Hero({ content }) {
   return (
     <div className={styles.hero}>
       <div className={styles.container}>
-        <div className = {styles.content}>
+        <div className={styles.content}>
           <h1>
-                
-           {content }
+            {content}
           </h1>
         </div>
-        
       </div>
     </div>
   );

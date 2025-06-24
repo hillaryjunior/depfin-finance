@@ -8,7 +8,7 @@ import { auth } from '../firebase'
 import { login, logout } from '../redux/slices'
 import { getData } from '../services/Auth'
 
-// 🔹 Lazy load HomeLayout for code-splitting
+// 🔹 Lazy load HomeLayout
 const HomeLayout = dynamic(() => import('../Layouts/HomeLayout'), {
   loading: () => <p>Loading...</p>,
 })
@@ -72,7 +72,6 @@ const schema = {
 export default function Home() {
   const dispatch = useDispatch()
 
-  // ✅ Move auth state logic into useEffect to avoid re-runs on each render
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -96,6 +95,7 @@ export default function Home() {
   return (
     <div className='app'>
       <Head>
+        {/* ✅ SEO Title & Description */}
         <title>
           Instant Business Loans Services in South Africa - Depfin Finance
         </title>
@@ -104,14 +104,21 @@ export default function Home() {
           content='Depfin Finance offers personal loans and business loans in Cape Town, South Africa. Our financial advisors are always ready to assist you. Apply for a loan today!'
         />
 
-        {/* ✅ Paste preload tag here */}
-        <link rel='preload' as='image' href='/your-hero.jpg' />
-
+        {/* ✅ Viewport and Canonical */}
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link rel='icon' href='/favicon.ico' />
         <link rel='canonical' href={SITE_URL} />
+        <link rel='icon' href='/favicon.ico' />
 
-        {/* OG Tags */}
+        {/* ✅ Preload Hero Image */}
+        <link
+          rel='preload'
+          as='image'
+          href='/your-hero.jpg'
+          fetchpriority='high'
+          imagesrcset='/your-hero.jpg 1x'
+        />
+
+        {/* ✅ OpenGraph Tags */}
         <meta
           property='og:title'
           content='Instant Business Loans Services in South Africa - Depfin Finance'
@@ -120,14 +127,22 @@ export default function Home() {
           property='og:description'
           content='Depfin Finance offers personal loans and business loans in Cape Town, South Africa. Our financial advisors are always ready to assist you. Apply for a loan today!'
         />
+        <meta
+          property='og:image'
+          content='https://i.ibb.co/DbD4Cpw/depfin.png?imwidth=3840'
+        />
+        <meta property='og:url' content={SITE_URL} />
+        <meta property='og:type' content='website' />
 
-        {/* JSON-LD Schema */}
+        {/* ✅ Compressed JSON-LD Schema */}
         <script
           type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema).replace(/\s+/g, ''),
+          }}
         />
 
-        {/* 🧹 Cleaned <noscript> with plain <img> instead of <Image> */}
+        {/* ✅ Facebook Pixel Fallback */}
         <noscript>
           <img
             height='1'

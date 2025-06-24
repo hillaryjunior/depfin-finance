@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "../sass/components/Faq.module.scss";
-import AddIcon from "@mui/icons-material/Add";
-import CloseIcon from "@mui/icons-material/Close";
+import { Plus, X } from "lucide-react";
 
 function FAQs({ data }) {
   const [open, setOpen] = useState(false);
@@ -28,7 +27,7 @@ function FAQs({ data }) {
                 className={styles.icon__btn}
                 onClick={() => handleClick(index)}
               >
-                {open === index ? <CloseIcon /> : <AddIcon />}
+                {open === index ? <X size={24} /> : <Plus size={24} />}
               </button>
             </div>
             {open === index && (

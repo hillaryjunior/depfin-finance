@@ -1,7 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
 import styles from "../sass/components/Forms.module.scss";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
-import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import countryList from "react-select-country-list";
 import Link from "next/link";
 import { validateIdNumber } from "south-african-id-validator";

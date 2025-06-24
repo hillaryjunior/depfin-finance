@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from '../sass/components/Faq.module.scss'
-import AddIcon from '@mui/icons-material/Add'
-import CloseIcon from '@mui/icons-material/Close'
-
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Queries from '../components/Queries'
 import { faqSchema } from '../data'
+import { Minus, Plus } from 'lucide-react'
 
 function Faqs() {
   const [open, setOpen] = useState(false)
@@ -190,7 +188,7 @@ You can contact our customer care branch in order to give you a loan statement.
                     className={styles.icon__btn}
                     onClick={() => handleClick(index)}
                   >
-                    {open === index ? <CloseIcon /> : <AddIcon />}
+                    {open === index ? <Plus size={24} /> : <Minus size={24} />}
                   </button>
                 </div>
                 {open === index && (

@@ -1,12 +1,24 @@
 import React from 'react'
-import Footer from '../components/Footer';
-import Header from '../components/Header'
-import Hero from '../components/Hero';
-import Queries from '../components/Queries';
+import dynamic from 'next/dynamic'
 
-function PolicyLayout({content,title}) {
+// 🔹 Dynamic imports with loading placeholders
+const Header = dynamic(() => import('../components/Header'), {
+  loading: () => <div>Loading Header...</div>,
+})
 
- 
+const Hero = dynamic(() => import('../components/Hero'), {
+  loading: () => <div>Loading Hero...</div>,
+})
+
+const Queries = dynamic(() => import('../components/Queries'), {
+  loading: () => <div>Loading Queries...</div>,
+})
+
+const Footer = dynamic(() => import('../components/Footer'), {
+  loading: () => <div>Loading Footer...</div>,
+})
+
+function PolicyLayout({ content, title }) {
   return (
     <div>
       <Header />
@@ -20,7 +32,7 @@ function PolicyLayout({content,title}) {
       />
       <Footer />
     </div>
-  );
+  )
 }
 
 export default PolicyLayout

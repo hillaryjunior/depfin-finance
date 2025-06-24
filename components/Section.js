@@ -1,14 +1,32 @@
-import React from "react";
+import React, { Suspense } from "react";
+import dynamic from 'next/dynamic';
 import styles from "../sass/components/Section.module.scss";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CustomizedSteppers from "./Steper";
-import Testimonials from "./Testimonials";
-<link
-  rel="preload"
-  as="image"
-  href="/assets/optimized-hero.webp"
-  type="image/webp"
-/>
+
+// Code splitting for heavy components
+const CustomizedSteppers = dynamic(() => import('./Steper'), {
+  loading: () => <div className={styles.loading}>Loading steps...</div>,
+  ssr: false // If this component doesn't need server-side rendering
+});
+
+const Testimonials = dynamic(() => import('./Testimonials'), {
+  loading: () => <div className={styles.loading}>Loading testimonials...</div>,
+  ssr: false // If this component doesn't need server-side rendering
+});
+
+
+// Custom lightweight check icon to replace Material-UI
+const CheckIcon = () => (
+  <svg 
+    className={styles.icon} 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    fill="currentColor"
+  >
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+  </svg>
+);
+
 function Section() {
   return (
     <div className={styles.section__about}>
@@ -18,6 +36,7 @@ function Section() {
             Need a <span>loan?</span>Think <span>Depfin Finance</span>
           </h2>
         </div>
+        
         <div className={styles.introduction}>
           <p>
             At Depfin Finance we offer affordable and easy to manage loans of up
@@ -37,8 +56,6 @@ function Section() {
             takes less than 5 minutes to complete. Give us a try and see how
             satisfied you will be with our fast flexible approval process.
           </p>
-          
-
 
           <p>
             We offer loans at 6% Interest rate, Apply Now for any type of loans
@@ -51,32 +68,38 @@ function Section() {
             <h3>All You need to apply</h3>
             <div className={styles.required__items}>
               <span>
-                <CheckCircleIcon className={styles.icon} /> SA Identity Document
+                <CheckIcon className={styles.icon} /> SA Identity Document
               </span>
               <span>
-                <CheckCircleIcon className={styles.icon} /> Three months stamped
+                <CheckIcon className={styles.icon} /> Three months stamped
                 bank statement
               </span>
               <span>
-                <CheckCircleIcon className={styles.icon} />
+                <CheckIcon className={styles.icon} />
                 Proof of residential address
               </span>
               <span>
-                <CheckCircleIcon className={styles.icon} /> Latest pay slip from
+                <CheckIcon className={styles.icon} /> Latest pay slip from
                 the current employer.
               </span>
             </div>
           </div>
         </div>
+
+        {/* Code-split the stepper component */}
         <div className={styles.steper}>
           <h4>Why Choose Depfin Finance?</h4>
-          <CustomizedSteppers />
+          <Suspense fallback={<div className={styles.loading}>Loading steps...</div>}>
+            <CustomizedSteppers />
+          </Suspense>
         </div>
 
+        {/* Code-split the testimonials component */}
         <div className={styles.testimonials}>
           <h4>What clients are saying</h4>
-
-          <Testimonials />
+          <Suspense fallback={<div className={styles.loading}>Loading testimonials...</div>}>
+            <Testimonials />
+          </Suspense>
         </div>
       </div>
     </div>

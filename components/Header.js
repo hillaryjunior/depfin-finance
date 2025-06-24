@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import styles from "../sass/components/Header.module.scss";
-import logo from "../public/depfin.png";
-import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import useMediaQuery from "@mui/material/useMediaQuery";
-const MobileMenu = dynamic(() => import("./MobileMenu"));
-import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import { Avatar, Menu, MenuItem } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectUser } from "../redux/slices";
 import { LogOut } from "../services/Auth";
+import { MenuIcon, Phone, X } from "lucide-react";
+
+// 🔹 Dynamic imports
+const MobileMenu = dynamic(() => import("./MobileMenu"));
+const Avatar = dynamic(() => import("@mui/material/Avatar"), { ssr: false });
+const Menu = dynamic(() => import("@mui/material/Menu"), { ssr: false });
+const MenuItem = dynamic(() => import("@mui/material/MenuItem"), { ssr: false });
+
+import useMediaQuery from "@mui/material/useMediaQuery"; 
+
 function Header() {
    const dispatch = useDispatch();
   const router = useRouter();
@@ -91,7 +94,7 @@ function Header() {
                 <a title="mobile number">
                   {" "}
                   <span>
-                    <LocalPhoneRoundedIcon />
+                    <Phone size={20} />
                   </span>{" "}
                 </a>
               </li>
@@ -100,7 +103,7 @@ function Header() {
                 <a title="phone">
                   {" "}
                   <span>
-                    <LocalPhoneRoundedIcon />
+                    <Phone size={20} />
                   </span>{" "}
                   27604601979
                 </a>
@@ -109,7 +112,7 @@ function Header() {
           </Link>
           {mobile ? (
             <span onClick={() => setOpen(!open)}>
-              {open ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
+              {open ? <X size={20} /> : <MenuIcon   size={20}/>}
             </span>
           ) : (
             <>

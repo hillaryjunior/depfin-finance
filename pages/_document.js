@@ -68,6 +68,16 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap'
             rel='stylesheet'
           />
+          <Head>
+            <link
+              rel='preload'
+              href='/fonts/Poppins-Bold.woff2'
+              as='font'
+              type='font/woff2'
+              crossOrigin='anonymous'
+            />
+          </Head>
+
           <link
             rel='preload'
             href='/fonts/Poppins-Regular.woff2'

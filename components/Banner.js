@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import styles from '../sass/components/Banner.module.scss'
 import { useRouter } from 'next/router'
@@ -8,7 +8,9 @@ import { calculateLoanRepaymentMonthly } from '../services/Calculation'
 
 // 🔹 Dynamic imports for heavy components
 import dynamic from 'next/dynamic'
-const Disclaimer = dynamic(() => import('./Disclaimer'))
+const Disclaimer = dynamic(() => import('./Disclaimer'), {
+  loading: () => <p>Loading disclaimer...</p>,
+})
 
 function Banner() {
   const [value, setValue] = useState(30000)
@@ -48,7 +50,8 @@ function Banner() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>
-            afnan
+            Get a loan from R30 000 to R10 Million in minutes at
+             Depfin Finance.
           </h1>
           <Link href='/personal/business/loan/apply'>
             <a className={styles.apply__cta}>Apply Now!</a>

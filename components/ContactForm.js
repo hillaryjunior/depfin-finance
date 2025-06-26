@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from '../sass/components/Forms.module.scss';
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify';

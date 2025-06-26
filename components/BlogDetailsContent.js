@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BlogDetailsContent = ({ blog, styles }) => {
+const BlogDetailsContent = ({ blog }) => {
   return (
     <>
       <h2>{blog.title}</h2>

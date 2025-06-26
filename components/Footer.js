@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link';
 import styles from '../sass/components/Footer.module.scss';
 function Footer() {

@@ -1,4 +1,9 @@
-@use "../abstracts/variables.scss" as variables;
+@use '../abstracts/variables.scss' as variables;
+@use './reset.scss';
+@use './typography.scss';
+@use './transitions.scss';
+@use './app.scss';
+
 *{
         margin: 0;
         padding: 0;

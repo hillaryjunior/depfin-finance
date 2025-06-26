@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-
+import  { useEffect, useState } from "react";
+import '../sass/components/Table.module.scss'
 import { DataGrid } from "@mui/x-data-grid";
-import { getApplications, getLoans } from "../services/Auth";
+import { getLoans } from "../services/Auth";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/slices";
 

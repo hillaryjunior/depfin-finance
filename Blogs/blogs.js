@@ -958,9 +958,7 @@ export const blogsData = [
 <p><span><span><a href="https://depfinfinance.co.za/about" style="color:#0563c1; text-decoration:underline">Short-term loans in South Africa</a> offer a quick and convenient solution for individuals facing financial emergencies. However, they come with high-interest rates and the risk of falling into a debt cycle if not managed carefully. By understanding the different types of short-term loans, comparing lenders, and borrowing responsibly, you can navigate the world of short-term loans with confidence. Always remember that while these loans can provide temporary relief, they should be used sparingly and as a last resort to avoid long-term financial difficulties.</span></span></p>
 
 <p><span><span>For more information or to explore short-term loan options that suit your needs, visit <a href="https://depfinfinance.co.za/" style="color:#0563c1; text-decoration:underline" target="_new">Depfin Finance</a>, where we provide tailored financial solutions to help you manage life&#39;s unexpected challenges.</span></span></p>
-
-
-          `,
+    `,
   },
   {
     id: 20,
@@ -1862,7 +1860,7 @@ export const blogsData = [
     <p style="text-align:justify; margin-bottom:11px"><span ><span style="text-justify:inter-ideograph"><span style="line-height:150%"><span ><span ><span style="line-height:150%"><span >It&#39;s important for borrowers to carefully review the terms and conditions of any loan, understand the total cost of borrowing, and ensure they can meet the repayment obligations to make short-term loans an effective financial solution in South Africa.</span></span></span></span></span></span></span></p>
      `,
   },
-
+// id 1 start
   {
     id: 1,
     title: 'Comparing Short-Term Loan Providers: Finding the Right Fit for You',

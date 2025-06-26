@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import dynamic from 'next/dynamic';
 import styles from "../sass/components/Section.module.scss";
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import Link from 'next/link'
 import styles from '../sass/components/Banner.module.scss'
 import { useRouter } from 'next/router'
@@ -48,8 +48,7 @@ function Banner() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>
-            Get a <span>loan</span> from R30 000 to R10 Million in minutes at
-            <span> Depfin Finance.</span>
+            afnan
           </h1>
           <Link href='/personal/business/loan/apply'>
             <a className={styles.apply__cta}>Apply Now!</a>

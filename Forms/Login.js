@@ -1,19 +1,27 @@
+// components/Login.jsx
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import { login } from "../redux/slices";
-import styles from "../sass/components/Auth.module.scss";
 import { userLogin } from "../services/Auth";
-import { ThreeCircles } from "react-loader-spinner";
+import styles from "../sass/components/Auth.module.scss";
+
+// ✅ Lazy load loader only when needed
+const ThreeCircles = dynamic(
+  () => import("react-loader-spinner").then((mod) => mod.ThreeCircles),
+  { ssr: false, loading: () => <div style={{ height: 60 }} /> }
+);
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
   const dispatch = useDispatch();
-  const [loading , setLoading] = useState(false);
 
   const SignIn = async (e) => {
     e.preventDefault();
@@ -21,35 +29,18 @@ function Login() {
     setLoading(true);
 
     try {
-      await userLogin(email, password)
-        .then((res) => {
-
-          if (!res.error) {
-            toast.success("Login Successful");
-            setLoading(false);
-            dispatch(login(res.data));
-           router.push("/");
-           
-            
-          }
-          else {
-            setLoading(false);
-            toast.error("Invalid email or password");
-            
-          }
-
-          
-          
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoading(false);
-          toast.error("Invalid email or password");
-        });
+      const res = await userLogin(email, password);
+      if (!res.error) {
+        dispatch(login(res.data));
+        toast.success("Login Successful");
+        router.push("/");
+      } else {
+        toast.error("Invalid email or password");
+      }
     } catch (error) {
-      console.log(error);
-      setLoading(false);
       toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,19 +65,15 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+
         <div className={styles.forget__password}>
-          <Link href="/auth/reset">
+          <Link href="/auth/reset" passHref>
             <a>Forgot password ?</a>
           </Link>
         </div>
+
         {loading ? (
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              margin: "20px 0",
-            }}
-          >
+          <div className={styles.loaderWrapper}>
             <ThreeCircles
               color="#01C5C4"
               height={60}
@@ -95,23 +82,23 @@ function Login() {
             />
           </div>
         ) : (
-          <button onClick={SignIn}>Login</button>
+          <button type="submit" onClick={SignIn}>
+            Login
+          </button>
         )}
       </form>
+
       <div className={styles.sign__up}>
-        <Link href="/apply">
+        <Link href="/apply" passHref>
           <a>
             New user ? <span>Register</span>
           </a>
         </Link>
       </div>
+
       <ToastContainer
         position="top-center"
         autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
         pauseOnFocusLoss
         draggable
         pauseOnHover

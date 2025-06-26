@@ -1,0 +1,10 @@
+@use '../abstracts/variables.scss' as variables;
+
+body, p, span, input, textarea {
+  font-family: variables.$PoppinsRegular;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: variables.$PoppinsBold;
+  color: variables.$dark;
+}

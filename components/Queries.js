@@ -35,7 +35,6 @@ function Queries({ image, contact }) {
               className={styles.image}
               src="https://res.cloudinary.com/devtedcloud/image/upload/q_25/v1685957431/depfin-finance/pexels-photo-8867630_1_hxo02o_1_mxcaaq.webp"
               alt="Require more help for Loan In South Africa"
-              layout="fill"
               width={100}
               height={100}
               objectFit="cover"

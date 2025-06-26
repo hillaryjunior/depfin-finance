@@ -1,70 +1,68 @@
+// pages/blogs/[id].js
 import React from 'react'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
-import { blogsData } from '../../Blogs/blogs'
+import { useRouter } from 'next/router'
 import styles from '../../sass/components/BlogsDetails.module.scss'
+import { blogsSummary } from '../../dataBlog/blogsSummary'
 
-// 🔹 Code-split component
-const BlogDetailsContent = dynamic(() =>
-  import('../../components/BlogDetailsContent')
-)
-
-function BlogID({ blog }) {
+export default function BlogDetailPage({ post }) {
   const router = useRouter()
-
-  if (router.isFallback) return <div>Loading...</div>
-  if (!blog) return <div>Blog post not found</div>
+  if (router.isFallback) return <p>Loading…</p>
+  if (!post) return <p>Not found</p>
 
   return (
-    <>
+    <div className={styles.posts}>
       <Head>
-        <title>{blog.title} | My Blog</title>
-        <meta name='description' content={blog.description || blog.title} />
-        <meta property='og:title' content={blog.title} />
-        <meta
-          property='og:description'
-          content={blog.description || blog.title}
-        />
-        <meta property='og:image' content={blog.image} />
-        <link rel='preload' as='image' href={blog.image} />
+        <title>{post.title} – Depfin Finance</title>
+        <meta name="description" content={post.meta_description} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.container}>
-        <Image
-          className={styles.images_detail}
-          src={blog.image}
-          layout='fill'
-          objectFit='contain'
-          quality={75}
-          priority
-          alt={blog.title}
+      <Image
+        src={post.image}
+        alt={post.title}
+        width={800}
+        height={450}
+        priority
+      />
+
+      <article className={styles.container}>
+        <h1>{post.title}</h1>
+        <p className={styles.meta_description}>{post.blurb}</p>
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{ __html: post.content }}
         />
-        <div className={styles.blogs__container}>
-          <BlogDetailsContent blog={blog} styles={styles} />
-        </div>
-      </div>
-    </>
+      </article>
+    </div>
   )
 }
 
-// 🔹 Static paths
 export async function getStaticPaths() {
-  const paths = blogsData.map((blog) => ({
-    params: { id: blog.id.toString() },
-  }))
-  return { paths, fallback: true }
-}
-
-// 🔹 Static props
-export async function getStaticProps({ params }) {
-  const blog = blogsData.find((blog) => blog.id.toString() === params.id)
-  if (!blog) return { notFound: true }
-
   return {
-    props: { blog },
+    paths: blogsSummary.map(b => ({
+      params: { id: b.id.toString() }
+    })),
+    fallback: true
   }
 }
 
-export default BlogID
+export async function getStaticProps({ params }) {
+  const id      = params.id
+  const meta   = blogsSummary.find(b => b.id.toString() === id)
+  if (!meta) return { notFound: true }
+
+  // dynamic import of the HTML-only module:
+  const content = (await import(`../../dataBlog/blogContent/${id}.js`)).default
+
+  return {
+    props: {
+      post: {
+        ...meta,
+        content
+      }
+    },
+    revalidate: 60
+  }
+}

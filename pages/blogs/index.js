@@ -1,32 +1,36 @@
+// pages/blogs/index.js
 import React from 'react'
 import Head from 'next/head'
-// import BlogsLayout from "../Layouts/BlogsLayout";
-import BlogsLayout from '../../Layouts/BlogsLayout'
+import dynamic from 'next/dynamic'
+import styles from '../../sass/components/Blogs.module.scss'
 
-function blogs() {
+const Header   = dynamic(() => import('../../components/Header'))
+const Hero     = dynamic(() => import('../../components/Hero'))
+const BlogCard = dynamic(() => import('../../components/BlogCard'))
+const Footer   = dynamic(() => import('../../components/Footer'))
+
+export default function BlogsPage() {
   return (
-    <div>
+    <div className={styles.blogs}>
       <Head>
-        <title>Blogs - Depfin Finance</title>
-
-        {/* write meta description */}
-
+        <title>Blogs – Depfin Finance</title>
         <meta
-          name='description'
-          content='Depfin Finance offers you loans according to your needs and circumstances. If you need a quick loan then a short-term loan is the ideal loan solution for you in Cape Town.
-
-'
+          name="description"
+          content="Depfin Finance offers you loans according to your needs…"
         />
-        {/* viewport */}
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
-        <link rel='icon' href='/favicon.ico' />
-        {/* coronical url */}
-        <link rel='canonical' href='https://depfinfinance.co.za/blogs' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://depfinfinance.co.za/blogs" />
       </Head>
-      <BlogsLayout />
+
+      <Header />
+      <Hero content="Depfin Finance offers a personalised loan experience…" />
+
+      <div className={styles.blogs__container}>
+        <BlogCard />
+      </div>
+
+      <Footer />
     </div>
   )
 }
-
-export default blogs

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../sass/components/Faq.module.scss";
 import { Plus, X } from "lucide-react";
 

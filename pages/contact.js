@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import React from 'react'
 import ContactLayout from '../Layouts/ContactLayout'
-
+import  '../sass/components/Contact.module.scss'
 function contact() {
   return (
     <div>

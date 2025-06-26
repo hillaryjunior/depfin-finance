@@ -1,6 +1,7 @@
 import Head from 'next/head'
+import '../../sass/components/Profile.module.scss'
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import ProfileLayout from '../../Layouts/ProfileLayout'
 import { selectUser } from '../../redux/slices'

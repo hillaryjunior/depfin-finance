@@ -1,149 +1,100 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-import styles from "../sass/components/Header.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "../redux/slices";
-import { LogOut } from "../services/Auth";
-import { MenuIcon, Phone, X } from "lucide-react";
+import  { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+import styles from '../sass/components/Header.module.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectUser } from '../redux/slices'
+import { MenuIcon, Phone, X } from 'lucide-react'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
-// 🔹 Dynamic imports
-const MobileMenu = dynamic(() => import("./MobileMenu"));
-const Avatar = dynamic(() => import("@mui/material/Avatar"), { ssr: false });
-const Menu = dynamic(() => import("@mui/material/Menu"), { ssr: false });
-const MenuItem = dynamic(() => import("@mui/material/MenuItem"), { ssr: false });
-
-import useMediaQuery from "@mui/material/useMediaQuery"; 
+// 🔹 Dynamically load heavy components
+const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false })
+const UserMenu = dynamic(() => import('./UserMenu'), { ssr: false })
 
 function Header() {
-   const dispatch = useDispatch();
-  const router = useRouter();
-  const mobile = useMediaQuery("(max-width:769px)");
-  const [open, setOpen] = useState(false);
-  const user = useSelector(selectUser);
- 
-   const [anchorEl, setAnchorEl] = useState(null);
-   const openMenu = Boolean(anchorEl);
-   const handleClick = (event) => {
-     setAnchorEl(event.currentTarget);
-   };
-   const handleClose = () => {
-     setAnchorEl(null);
-   };
-  
-  const userLogout = () => {
-    LogOut();
-    dispatch(logout())
-
-  }
-  
+  const router = useRouter()
+  const dispatch = useDispatch()
+  const mobile = useMediaQuery('(max-width:769px)')
+  const [open, setOpen] = useState(false)
+  const user = useSelector(selectUser)
+  const [anchorEl, setAnchorEl] = useState(null)
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.logo} onClick={() => router.push("/")}>
+        <div className={styles.logo} onClick={() => router.push('/')}>
           <Image
             className={styles.image}
-            src="https://res.cloudinary.com/devtedcloud/image/upload/q_27/v1685956866/depfin-finance/depfin_ihgf00.webp"
-            layout="fill"
-            objectFit="contain"
-            alt="Depfin Logo"
+            src='/Images/ezgif.com-webp-to-jpg-converter (1) (1) (1).webp'
+            width={250}
+            height={110}
+            alt='Depfin Logo'
+            quality={60}
             priority
+            decoding='async'
+            objectFit='cover'
           />
         </div>
 
         <nav>
           <ul>
             <li>
-              <Link href="/">
-                <a title="Home">Home</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/personal/business/loan/apply">
-                <a title="Apply Online">Apply online</a>
+              <Link href='/'>
+                <a title='Home'>Home</a>
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a title="About Us">About us</a>
+              <Link href='/personal/business/loan/apply'>
+                <a title='Apply Online'>Apply online</a>
               </Link>
             </li>
             <li>
-              <Link href="/solutions">
-                <a title="Solutions">Solutions</a>
+              <Link href='/about'>
+                <a title='About Us'>About us</a>
               </Link>
             </li>
-            <Link href="/blogs">
-              <a>Blogs</a>
-            </Link>
             <li>
-              <Link href="/contact">
-                <a title="contact us">Contact us</a>
+              <Link href='/solutions'>
+                <a title='Solutions'>Solutions</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/blogs'>
+                <a>Blogs</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/contact'>
+                <a title='contact us'>Contact us</a>
               </Link>
             </li>
           </ul>
         </nav>
+
         <div className={styles.cta}>
-          <Link href="tel:27604601979">
-            {mobile ? (
-              <li>
-                <a title="mobile number">
-                  {" "}
-                  <span>
-                    <Phone size={20} />
-                  </span>{" "}
-                </a>
-              </li>
-            ) : (
-              <li>
-                <a title="phone">
-                  {" "}
-                  <span>
-                    <Phone size={20} />
-                  </span>{" "}
-                  27604601979
-                </a>
-              </li>
-            )}
+          <Link href='tel:27604601979' passHref={true}>
+            <li>
+              <a title='phone'>
+                <span>
+                  <Phone size={20} />
+                </span>
+                {!mobile && ' 27604601979'}
+              </a>
+            </li>
           </Link>
+
           {mobile ? (
             <span onClick={() => setOpen(!open)}>
-              {open ? <X size={20} /> : <MenuIcon   size={20}/>}
+              {open ? <X size={20} /> : <MenuIcon size={20} />}
             </span>
           ) : (
             <>
               {user ? (
-                <div>
-                  <Avatar
-                    style={{ cursor: "pointer" }}
-                    id="basic-button"
-                    aria-controls={open ? "basic-menu" : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? "true" : undefined}
-                    onClick={handleClick}
-                  ></Avatar>
-                  <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={openMenu}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      "aria-labelledby": "profile-menu",
-                    }}
-                  >
-                    <MenuItem onClick={() => router.push("/auth/profile")}>
-                      My Account
-                    </MenuItem>
-
-                    <MenuItem onClick={userLogout}>Logout</MenuItem>
-                  </Menu>
-                </div>
+                <UserMenu anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
               ) : (
-                <button onClick={() => router.push("/auth/login")}>
+                <button onClick={() => router.push('/auth/login')}>
                   Login
                 </button>
               )}
@@ -151,9 +102,10 @@ function Header() {
           )}
         </div>
       </div>
+
       {open && mobile && <MobileMenu />}
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

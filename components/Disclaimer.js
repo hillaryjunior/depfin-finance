@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Input, Row, Checkbox, Button, Text } from "@nextui-org/react";
+import { Modal,  Button, Text } from "@nextui-org/react";
 
 
 export default function Disclaimer() {
@@ -13,9 +13,7 @@ export default function Disclaimer() {
     <div>
       <p
         style={{ cursor: "pointer" }}
-        auto
         color="warning"
-        shadow
         onClick={handler}
       >
         Disclaimer

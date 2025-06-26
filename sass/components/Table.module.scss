@@ -1,0 +1,25 @@
+@use '../abstracts/variables.scss' as variables;
+
+.tabe__data {
+  height: 200px;
+  width: 100%;
+}
+
+.table_con,
+.profile {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #eee;
+}
+
+.table {
+  height: 100%;
+  padding: 20px 0;
+
+  h6 {
+    font-family: variables.$PoppinsBold;
+    color: variables.$dark;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}

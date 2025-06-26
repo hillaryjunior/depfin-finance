@@ -110,13 +110,13 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
 
         {/* ✅ Preload Hero Image */}
-        <link
+        {/* <link
           rel='preload'
           as='image'
           href='/your-hero.jpg'
           fetchpriority='high'
           imagesrcset='/your-hero.jpg 1x'
-        />
+        /> */}
 
         {/* ✅ OpenGraph Tags */}
         <meta

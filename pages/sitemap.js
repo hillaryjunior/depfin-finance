@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React from 'react'
-
+import '../sass/components/Sitemap.module.scss'
 function sitemap() {
   return (
     <div>

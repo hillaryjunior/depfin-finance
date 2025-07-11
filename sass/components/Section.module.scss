@@ -19,30 +19,46 @@
     }
 
     .container__content {
-      width: 100%;
+      position: relative;
+      // width: 100%;
       height: 350px;
-      background-color: #979797;
-      background-image: url('/Images/herobgimg.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-repeat: no-repeat;
       border-radius: 10px;
-      background-blend-mode: multiply;
-      padding: 20px;
-      span {
-        color: white;
-      }
+      overflow: hidden;
 
       h2 {
+        position: relative;
+        z-index: 1;
         font-size: 4.9rem;
         width: 60%;
         color: variables.$teal;
 
-        @media screen and (max-width: 769px) {
+        .lcp-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #063940;
+}
+
+
+        @media screen and (max-width: 769px) { 
           font-size: 2.9rem;
           width: 100%;
         }
+
+        span {
+          color: white;
+        }
+      }
+
+      .backgroundImage {
+        width: 100%;
+        height: 350px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        filter: brightness(0.5);
+        z-index: 0;
       }
     }
 
@@ -51,7 +67,7 @@
       width: 100%;
       padding: 20px;
       height: autot;
-      font-family: variables.$PoppinsRegular;
+      font-family: variables.$PoppinsRegular ;
 
       background-color: rgb(255, 255, 255);
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -60,8 +76,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      top: -90px;
-      left: 20px;
+      margin-top: -90px;
+      margin-left: 20px;
       gap: 20px;
 
       @media screen and (max-width: 769px) {
@@ -70,6 +86,8 @@
 
       p {
         font-size: 1rem;
+         opacity: 1;
+        transition: none;
       }
       .requirements {
         display: grid;
@@ -128,6 +146,9 @@
         text-align: center;
       }
     }
+
+
+
 
     .testimonials {
       display: grid;

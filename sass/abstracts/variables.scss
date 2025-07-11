@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'PoppinsBold';
+  font-family: 'Poppins';
   src: url('/fonts/Poppins-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: 'PoppinsMedium';
+  font-family: 'Poppins';
   src: url('/fonts/Poppins-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -23,20 +23,19 @@
 }
 
 @font-face {
-  font-family: 'PoppinsSemiBold';
+  font-family: 'Poppins';
   src: url('/fonts/Poppins-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
-
 // fonts
 
-$PoppinsBold: 'Poppins', sans-serif;
-$PoppinsMedium: 'Poppins', sans-serif;
-$PoppinsSemiBold: 'Poppins', sans-serif;
-$PoppinsRegular: 'Poppins', sans-serif;
+$PoppinsRegular: 'Poppins', Arial, sans-serif;
+$PoppinsSemiBold: 'Poppins', Arial, sans-serif;
+$PoppinsMedium: 'Poppins', Arial, sans-serif;
+$PoppinsBold: 'Poppins', Arial, sans-serif;
 
 // colors
 $teal: #01c5c4;

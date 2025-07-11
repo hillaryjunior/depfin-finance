@@ -1,7 +1,4 @@
-import React from 'react'
-import Header from '../components/Header'
 import Head from 'next/head'
-import Image from 'next/image'
 import BlogsLayout from '../Layouts/BlogsLayout'
 
 function blogs() {
@@ -15,7 +12,6 @@ function blogs() {
         <meta
           name='description'
           content='Depfin Finance offers you loans according to your needs and circumstances. If you need a quick loan then a short-term loan is the ideal loan solution for you in Cape Town.
-
 '
         />
         {/* viewport */}

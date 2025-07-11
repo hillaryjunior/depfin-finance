@@ -3,7 +3,6 @@ import styles from "../sass/components/Forms.module.scss";
 import countryList from "react-select-country-list";
 import Link from "next/link";
 import { useRouter } from "next/router";
-// import { validateIdNumber } from "south-african-id-validator";
 import { createAccount, getData } from "../services/Auth";
 import { login } from "../redux/slices";
 import { toast, ToastContainer } from "react-toastify";

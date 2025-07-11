@@ -1,8 +1,6 @@
-import React from 'react'
 import dynamic from 'next/dynamic'
 import styles from '../sass/components/Blogs.module.scss'
 
-// 🔹 Dynamically imported components with loading UI
 const Header = dynamic(() => import('../components/Header'), {
   loading: () => <div>Loading Header...</div>,
 })
@@ -24,7 +22,7 @@ function BlogsLayout() {
     <div className={styles.blogs}>
       <Header />
 
-      <Hero content="Depfin Finance offers a personalised business and personal loan application experience. Read through our latest news here" />
+      <Hero content='Depfin Finance offers a personalised business and personal loan application experience. Read through our latest news here' />
 
       <div className={styles.blogs__container}>
         <BlogCard />

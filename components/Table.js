@@ -241,9 +241,6 @@ export default function LoansTable() {
   }
   );
 
-
-
-
   return (
     <div className="table_con">
       <div>

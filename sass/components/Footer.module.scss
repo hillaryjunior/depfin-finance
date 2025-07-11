@@ -2,16 +2,31 @@
 
 .footer {
   width: 100%;
-  height: auto;
+  min-height: 480px;
+  contain-intrinsic-size: 480px;
+  contain: layout paint;
+  overflow-anchor: none;
   background: variables.$dark;
+  padding: 40px 0;
   position: relative;
-  bottom: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
 
-  font-family: variables.$PoppinsRegular;
+  &.loaded {
+    visibility: visible;
+    opacity: 1;
+  }
 
   h2 {
     font-size: 12px;
-    font-family: variables.$PoppinsRegular;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
+    min-height: 30px;
     text-align: center;
     color: white;
     padding: 10px 0;
@@ -19,67 +34,106 @@
 
   .container {
     max-width: 1250px;
-    width: 100%;
-    // height: 300px;
+    min-height: 300px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
+    gap: 20px;
+    padding: 30px;
     color: white;
-    position: relative;
+    box-sizing: border-box;
 
     @media screen and (max-width: 769px) {
-      height: 580px;
+      min-height: 580px;
       display: flex;
-
       flex-direction: column;
     }
 
     h3 {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+      font-weight: 500;
       font-size: 1.6rem;
-      font-family: variables.$PoppinsMedium;
+      line-height: 1.8rem;
+      color: white;
     }
+
     .quick__links {
       display: flex;
       flex-direction: column;
       gap: 10px;
-
       color: white;
       position: relative;
 
       h6 {
         font-size: 1.2rem;
-        font-family: variables.$PoppinsMedium;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        font-weight: 500;
       }
 
       ul {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
       }
 
       a {
         color: white;
         text-decoration: none;
         font-size: 13px;
-        font-family: variables.$PoppinsMedium;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        font-weight: 500;
 
-        transition: all 0.3s ease-in-out;
         &:hover {
           color: variables.$teal;
           border-bottom: 1px solid variables.$teal;
         }
       }
     }
+
+    .rounded-social-buttons {
+      display: flex;
+      gap: 10px;
+      min-height: 40px;
+
+      a {
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        i, svg {
+          font-size: 10px;
+          width: 10px;
+          height: 10px;
+          line-height: 20px;
+          display: inline-block;
+        }
+      }
+    }
   }
+
   .copyright {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    margin: 0 auto;
-    color: white;
+    height: 40px;
+    min-height: 40px;
     text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color: white;
+  }
+  span.year {
+    display: inline-block;
+    min-width: 80px;
+    font-variant-numeric: tabular-nums; /* Keeps digits same width */
   }
 }

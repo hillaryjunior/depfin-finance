@@ -11,8 +11,6 @@ import { selectUser } from "../redux/slices";
 import LoanCard from "./LoanCard";
 import DeclinedCard from "./DeclinedCard";
 
-
-
 const blue = {
   50: "#F0F7FF",
   100: "#C2E0FF",

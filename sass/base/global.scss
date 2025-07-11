@@ -13,6 +13,13 @@
         accent-color: variables.$teal;
 }
 
+
+
+// body {
+//   font-family: 'Poppins', sans-serif;
+//   font-weight: 400;
+// }
+
 img,
 .image,
 .blog__image {
@@ -50,8 +57,6 @@ input,
                 color: variables.$dark;
                 font-size: 2.5rem;
                 text-align: center;
-
-
         }
 }
 
@@ -140,7 +145,6 @@ input,
                 font-size: 3.7rem;
         }
 
-
 }
 
 .svg-inline--fa {
@@ -225,6 +229,7 @@ gap : 10px;
   background: #fefefe;
   border-color: #125688;
 }
+
 .sitemap{
         max-width: 1250px;
         margin: 0 auto;
@@ -244,7 +249,6 @@ gap : 10px;
                 display : grid;
                 gap :  15px;
                 
-
                 a{
                         color: #000;
                         text-decoration: underline;

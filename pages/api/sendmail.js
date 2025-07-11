@@ -762,9 +762,9 @@ export default function handler(req, res) {
                                     <p style="margin: 0; margin-bottom: 16px">
                                       Phone  :
                                       <a
-                                        href="tel:27604601979"
+                                        href="tel:0875107793"
                                         style="color: #0068a5"
-                                        >27604601979 / 27604601979</a
+                                        >0875107793 / 0875107793</a
                                       >
                                     </p>
                                     <p style="margin: 0">

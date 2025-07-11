@@ -1,44 +1,39 @@
-import { Suspense } from "react";
-import dynamic from 'next/dynamic';
-import styles from "../sass/components/Section.module.scss";
-
-// Code splitting for heavy components
-const CustomizedSteppers = dynamic(() => import('./Steper'), {
-  loading: () => <div className={styles.loading}>Loading steps...</div>,
-  ssr: false // If this component doesn't need server-side rendering
-});
+import dynamic from 'next/dynamic'
+import styles from '../sass/components/Section.module.scss'
+import Image from 'next/image'
+import { CheckIcon } from 'lucide-react'
 
 const Testimonials = dynamic(() => import('./Testimonials'), {
-  loading: () => <div className={styles.loading}>Loading testimonials...</div>,
-  ssr: false // If this component doesn't need server-side rendering
-});
+  ssr: false,
+  loading: () => <div>Loading Testimonials...</div>,
+})
 
-
-// Custom lightweight check icon to replace Material-UI
-const CheckIcon = () => (
-  <svg 
-    className={styles.icon} 
-    width="20" 
-    height="20" 
-    viewBox="0 0 24 24" 
-    fill="currentColor"
-  >
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-  </svg>
-);
+const CustomizedSteppers = dynamic(() => import('./Steper'), {
+  loading: () => <div>Loading Steper ...</div>,
+})
 
 function Section() {
   return (
     <div className={styles.section__about}>
       <div className={styles.container}>
         <div className={styles.container__content}>
+          <Image
+            src='/Images/herobgimg_73_80.webp'
+            alt='Depfin Finance background'
+            layout='fill'
+            sizes='(max-width: 768px) 100vw, 1250px'
+            priority
+            placeholder='blur'
+            blurDataURL='/Images/herobgimg-small.webp'
+            className={styles.backgroundImage}
+          />
           <h2>
             Need a <span>loan?</span>Think <span>Depfin Finance</span>
           </h2>
         </div>
-        
+
         <div className={styles.introduction}>
-          <p>
+          <p className={styles['lcp-text']}>
             At Depfin Finance we offer affordable and easy to manage loans of up
             to R10 Million with ideal repayment terms. Our transparent loan
             products and services ensures that you get what you pay for with no
@@ -63,7 +58,7 @@ function Section() {
             services. Blacklisted and Clients under debt review are qualified to
             apply.
           </p>
-         
+
           <div className={styles.requirements}>
             <h3>All You need to apply</h3>
             <div className={styles.required__items}>
@@ -71,16 +66,16 @@ function Section() {
                 <CheckIcon className={styles.icon} /> SA Identity Document
               </span>
               <span>
-                <CheckIcon className={styles.icon} /> Three months stamped
-                bank statement
+                <CheckIcon className={styles.icon} /> Three months stamped bank
+                statement
               </span>
               <span>
                 <CheckIcon className={styles.icon} />
                 Proof of residential address
               </span>
               <span>
-                <CheckIcon className={styles.icon} /> Latest pay slip from
-                the current employer.
+                <CheckIcon className={styles.icon} /> Latest pay slip from the
+                current employer.
               </span>
             </div>
           </div>
@@ -89,21 +84,15 @@ function Section() {
         {/* Code-split the stepper component */}
         <div className={styles.steper}>
           <h4>Why Choose Depfin Finance?</h4>
-          <Suspense fallback={<div className={styles.loading}>Loading steps...</div>}>
-            <CustomizedSteppers />
-          </Suspense>
+          <CustomizedSteppers />
         </div>
-
-        {/* Code-split the testimonials component */}
         <div className={styles.testimonials}>
           <h4>What clients are saying</h4>
-          <Suspense fallback={<div className={styles.loading}>Loading testimonials...</div>}>
-            <Testimonials />
-          </Suspense>
+          <Testimonials />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Section;
+export default Section

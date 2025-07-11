@@ -1,7 +1,6 @@
 import React from "react";
 import { Modal,  Button, Text } from "@nextui-org/react";
 
-
 export default function Disclaimer() {
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);

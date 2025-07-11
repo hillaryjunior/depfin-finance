@@ -1,12 +1,14 @@
 import Link from 'next/link'
-import '../sass/components/Float.module.scss'
+import styles from '../sass/components/Float.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 function Fab() {
   return (
-    <div className='float'>
+    <div className={styles.float}>
       <Link href='https://api.whatsapp.com/send?phone=27604601979'>
-        <a title='whatsapp' name='whatsapp' className='my-float'>
-          <i className="fa-brands fa-whatsapp"></i>
+        <a title='whatsapp' name='whatsapp' className={styles.myfloat}>
+          <FontAwesomeIcon icon={faWhatsapp} size="lg" />
         </a>
       </Link>
     </div>

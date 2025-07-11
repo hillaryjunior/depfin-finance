@@ -1,10 +1,9 @@
-import { Link } from "@mui/material";
-import Image from "next/image";
-import React from "react";
-import styles from "../sass/components/Queries.module.scss";
+import { Link } from '@mui/material';
+import Image from 'next/image'
+import styles from  '../sass/components/Queries.module.scss'
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { depfinFaqs } from "../data";
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
 
 // ✅ Dynamically import ContactForm and FAQS
@@ -18,7 +17,7 @@ const FAQS = dynamic(() => import("./FAQS"), {
   ssr: false,
 });
 
-function Queries({ image, contact }) {
+function Queries({ contact }) {
   const mobile = useMediaQuery("(max-width:769px)");
 
   return (
@@ -35,8 +34,9 @@ function Queries({ image, contact }) {
               className={styles.image}
               src="https://res.cloudinary.com/devtedcloud/image/upload/q_25/v1685957431/depfin-finance/pexels-photo-8867630_1_hxo02o_1_mxcaaq.webp"
               alt="Require more help for Loan In South Africa"
-              width={100}
-              height={100}
+              width={700}
+              height={400}
+              layout="intrinsic"
               objectFit="cover"
             />
           </div>
@@ -50,8 +50,8 @@ function Queries({ image, contact }) {
               <span>
                 <Phone size={20} />
               </span>
-              <Link href="tel:+27604601979">
-                {mobile ? <a target="_blank">call</a> : <a target="_blank">27604601979</a>}
+              <Link href="tel:+0875107793">
+                {mobile ? <a target="_blank">call</a> : <a target="_blank">0875107793</a>}
               </Link>
             </div>
 
@@ -66,7 +66,7 @@ function Queries({ image, contact }) {
 
             <div className={styles.social__item}>
               <span>
-                <i className="fa-regular fa-envelope"></i>
+                <Mail size={20}/>
               </span>
               <Link href="mailto:info@depfinfinance.co.za">
                 {mobile ? (

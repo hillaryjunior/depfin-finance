@@ -1,16 +1,16 @@
 import React from 'react'
-import Footer from '../components/Footer';
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
-import Queries from '../components/Queries';
-import styles  from '../sass/components/Solutions.module.scss'
+import Queries from '../components/Queries'
+import styles from '../sass/components/Solutions.module.scss'
 
 function SolutionsLayout() {
   return (
     <div className={styles.solutions}>
       <Header />
 
-      <Hero content="Personal and business loan solutions to help you meet your financial goals." />
+      <Hero content='Personal and business loan solutions to help you meet your financial goals.' />
 
       <div className={styles.solutions__container}>
         <div className={styles.solution__info}>
@@ -44,13 +44,12 @@ function SolutionsLayout() {
             achieve your goals and dreams
           </p>
         </div>
-      
 
-        <Queries image="https://res.cloudinary.com/de0gawheh/image/upload/v1645285292/pexels-photo-8867176_1_fkpify.jpg" />
-                  </div>
-        <Footer />
+        <Queries />
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default SolutionsLayout

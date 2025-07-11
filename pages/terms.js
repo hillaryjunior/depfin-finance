@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import React from 'react'
 import PolicyLayout from '../Layouts/PolicyLayout'
 
 function terms() {

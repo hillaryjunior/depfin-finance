@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import styles from '../sass/components/Banner.module.scss'
 import { useRouter } from 'next/router'
+import { calculateLoanRepaymentMonthly } from '../services/Calculation'
 import { useDispatch } from 'react-redux'
 import { setRepayment } from '../redux/slices'
-import { calculateLoanRepaymentMonthly } from '../services/Calculation'
-
-// 🔹 Dynamic imports for heavy components
 import dynamic from 'next/dynamic'
+import { Minus, Plus } from 'lucide-react'
+import { useMemo } from 'react'
+
 const Disclaimer = dynamic(() => import('./Disclaimer'), {
+  ssr: false,
   loading: () => <p>Loading disclaimer...</p>,
 })
 
@@ -17,9 +19,13 @@ function Banner() {
   const [terms, setTerms] = useState(2)
   const router = useRouter()
   const rate = 6
+
   const dispatch = useDispatch()
 
-  const monthlyRepayment = calculateLoanRepaymentMonthly(value, rate, terms)
+  const monthlyRepayment = useMemo(
+    () => calculateLoanRepaymentMonthly(value, rate, terms),
+    [value, rate, terms]
+  )
 
   const addLoanDetails = () => {
     dispatch(
@@ -33,25 +39,27 @@ function Banner() {
     router.push('/personal/business/loan/apply')
   }
 
-  const handleChange = (e) => {
-    setValue(e.target.value)
-  }
-
-  const increase = () => {
-    setTerms(terms + 1)
-  }
-
   const decrease = () => {
     terms > 1 ? setTerms(terms - 1) : setTerms(terms)
   }
 
+  const handleChange = (e) => {
+    setValue(e.target.value)
+  }
+  const increase = () => {
+    setTerms(terms + 1)
+  }
+
+
+  
   return (
     <div className={styles.banner}>
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>
-            Get a loan from R30 000 to R10 Million in minutes at
-             Depfin Finance.
+            Get a <span style={{ color: '#fff' }}>loan</span> from RS 30000 to
+            R10 Million in minutes at
+            <span style={{ color: '#fff' }}> Depfin Finance.</span>
           </h1>
           <Link href='/personal/business/loan/apply'>
             <a className={styles.apply__cta}>Apply Now!</a>
@@ -80,28 +88,9 @@ function Banner() {
                 <label>period (years)</label>
                 <div className={styles.years__item}>
                   <span onClick={decrease}>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='currentColor'
-                    >
-                      <circle
-                        cx='12'
-                        cy='12'
-                        r='10'
-                        fill='currentColor'
-                        opacity='0.1'
-                      />
-                      <path
-                        d='M12 8v8M8 12h8'
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                      />
-                    </svg>
+                    <Minus size={20} />
                   </span>
+
                   <input
                     type='number'
                     value={terms}
@@ -110,27 +99,7 @@ function Banner() {
                     onChange={(e) => setTerms(e.target.value)}
                   />
                   <span onClick={increase}>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='currentColor'
-                    >
-                      <circle
-                        cx='12'
-                        cy='12'
-                        r='10'
-                        fill='currentColor'
-                        opacity='0.1'
-                      />
-                      <path
-                        d='M8 12h8'
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                      />
-                    </svg>
+                    <Plus size={20} />
                   </span>
                 </div>
               </div>
@@ -142,7 +111,7 @@ function Banner() {
               </div>
             </div>
             <button onClick={addLoanDetails}>Apply online</button>
-            <div>
+            <div style={{ minHeight: '60px' }}>
               <small>*Loans are calculated at a 6% interest rate</small>
               <Disclaimer />
             </div>

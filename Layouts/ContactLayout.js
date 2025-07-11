@@ -10,19 +10,16 @@ function ContactLayout() {
   return (
     <div>
       <Header />
-      <Hero content="Enquire  for a personalised loan application experience at Depfin Finance" />
-      <Queries
-        image="https://res.cloudinary.com/de0gawheh/image/upload/v1645273968/pexels-photo-8867630_1_hxo02o.jpg"
-        contact
-      />
+      <Hero content='Enquire  for a personalised loan application experience at Depfin Finance' />
+      <Queries contact />
 
-      <div className="contact">
+      <div className='contact'>
         <h2>Frequently asked questions</h2>
         <FAQs data={depfinFaqs} />
-                  </div>
-                  <Footer />
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default ContactLayout

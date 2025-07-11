@@ -1,8 +1,6 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-
 import CardContent from "@mui/material/CardContent";
-
 import Typography from "@mui/material/Typography";
 import { getLoans } from "../services/Auth";
 import { useEffect } from "react";
@@ -10,8 +8,6 @@ import { useState } from "react";
 
 export default function DeclinedCard({uid}) {
   const [data, setData] = useState([]);
-
-
 
   useEffect(() => {
     getLoans("Declined loans",uid).then((loans) => {

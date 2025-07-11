@@ -74,13 +74,13 @@ function Header() {
         </nav>
 
         <div className={styles.cta}>
-          <Link href='tel:27604601979' passHref={true}>
+          <Link href='tel:0875107793' passHref={true}>
             <li>
               <a title='phone'>
                 <span>
                   <Phone size={20} />
                 </span>
-                {!mobile && ' 27604601979'}
+                {!mobile && '0875107793'}
               </a>
             </li>
           </Link>

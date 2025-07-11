@@ -18,44 +18,17 @@
   flex-direction: column;
   justify-content: center;
 
-  padding-left: 2.3rem;
-  padding-right: 2.3rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-
+  padding: 2rem 2.3rem;
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 28.5rem;
 }
 
 .slider {
-  position: relative; /* needed for posiition absolute in children (slider_buttons) */
+  position: relative;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
-
-.slider_images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 3.2rem;
-  padding-bottom: 3.2rem;
-  width: 78%;
-}
-
-.image_wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-.image_wrapper > img {
-  width: 100%;
-  height: auto;
-  opacity: 1;
-  box-shadow: 0rem 1.3rem 2rem -0.5rem hsla(240, 38%, 50%, 25%);
 }
 
 .slider_buttons {
@@ -63,79 +36,72 @@
   top: calc(100% - 3.2rem - 2.85rem);
   left: calc(50% - 2.85rem);
   background-color: transparent;
-}
 
-.slider_buttons > button {
-  width: 3.2rem;
-  height: 3.2rem;
-  border: none;
-  background-color: white;
-  cursor: pointer;
+  > button {
+    width: 3.2rem;
+    height: 3.2rem;
+    border: none;
+    background-color: white;
+    cursor: pointer;
 
-  svg {
-    color: #01c5c4;
+    svg {
+      color: #01c5c4;
+      width: 3rem;
+      height: 2rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: 1.6rem;
+      border-bottom-left-radius: 1.6rem;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 1.6rem;
+      border-bottom-right-radius: 1.6rem;
+    }
   }
-}
-
-.slider_buttons > button:focus {
-  outline: none;
-}
-
-.slider_buttons > button:first-of-type {
-  border-top-left-radius: 1.6rem;
-  border-bottom-left-radius: 1.6rem;
-}
-
-.slider_buttons > button:last-of-type {
-  border-top-right-radius: 1.6rem;
-  border-bottom-right-radius: 1.6rem;
-}
-
-.slider_buttons > button > svg {
-  width: 3rem;
-  height: 2rem;
 }
 
 .testimonial {
   padding-top: 2.5rem;
   text-align: center;
-}
 
-.testimonial > * + * {
-  margin-top: 2rem;
+  > * + * {
+    margin-top: 2rem;
+  }
 }
 
 .testimonial_content {
   font-size: min(3.8vw, 2rem);
   font-weight: var(--weight-light);
   line-height: min(6.4vw, 3.2rem);
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
+  padding: 2.5rem 0.4rem 0 0.4rem;
+  margin-top: -2.5rem;
   color: var(--dark-blue);
-
-  // background-image: url('/frontendmentor/challenge/coding-bootcamp-testimonials-slider/pattern-quotes.svg');
-  // background-image: url("/Images/blog-16-1.webp");
-  // background-repeat: no-repeat;
   background-position: top center;
   background-size: 6rem;
-  padding-top: 2.5rem;
-  margin-top: -2.5rem;
 }
 
-.testimonial_author > * + * {
-  margin-top: 0.4rem;
-}
+.testimonial_author {
+  > * + * {
+    margin-top: 0.4rem;
+  }
 
-.testimonial_author_name {
-  font-size: min(4vw, 2rem);
-  font-weight: var(--weight-bold);
-  color: var(--dark-blue);
-}
+  &_name {
+    font-size: min(4vw, 2rem);
+    font-weight: var(--weight-bold);
+    color: var(--dark-blue);
+  }
 
-.testimonial_author_job {
-  font-size: min(4vw, 2rem);
-  font-weight: var(--weight-medium);
-  color: var(--grayish-blue);
+  &_job {
+    font-size: min(4vw, 2rem);
+    font-weight: var(--weight-medium);
+    color: var(--grayish-blue);
+  }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
@@ -152,14 +118,8 @@
     width: 53%;
   }
 
-  .slider_images {
-    padding-top: 7.2rem;
-    padding-bottom: 7.2rem;
-  }
-
   .slider_buttons {
     top: calc(100% - 7.2rem - 3.15rem);
     left: calc(25% - 2.85rem);
-    cursor: pointer;
   }
 }

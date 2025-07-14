@@ -36,6 +36,7 @@
   top: calc(100% - 3.2rem - 2.85rem);
   left: calc(50% - 2.85rem);
   background-color: transparent;
+  
 
   > button {
     width: 3.2rem;
@@ -43,6 +44,7 @@
     border: none;
     background-color: white;
     cursor: pointer;
+    margin-top: 2rem;
 
     svg {
       color: #01c5c4;

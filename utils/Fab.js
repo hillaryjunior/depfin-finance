@@ -8,7 +8,7 @@ function Fab() {
     <div className={styles.float}>
       <Link href='https://api.whatsapp.com/send?phone=27604601979'>
         <a title='whatsapp' name='whatsapp' className={styles.myfloat}>
-          <FontAwesomeIcon icon={faWhatsapp} size="lg" />
+          <FontAwesomeIcon icon={faWhatsapp} size="lg" color="white" />
         </a>
       </Link>
     </div>

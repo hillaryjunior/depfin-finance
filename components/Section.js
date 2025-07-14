@@ -20,18 +20,17 @@ function Section() {
           <Image
             src='/Images/herobgimg_73_80.webp'
             alt='Depfin Finance background'
-            layout='fill'
-            sizes='(max-width: 768px) 100vw, 1250px'
+            width={1250}
+            height={340}
             priority
             placeholder='blur'
             blurDataURL='/Images/herobgimg-small.webp'
             className={styles.backgroundImage}
           />
           <h2>
-            Need a <span>loan?</span>Think <span>Depfin Finance</span>
+            Need a <span>loan?</span> Think <span>Depfin Finance</span>
           </h2>
         </div>
-
         <div className={styles.introduction}>
           <p className={styles['lcp-text']}>
             At Depfin Finance we offer affordable and easy to manage loans of up
@@ -41,24 +40,20 @@ function Section() {
             to your loan account at any time. Our affordability assessment
             process also considers the best interests of our customers.
           </p>
-
           <h3>
             We are able to offer the best loans to match clients requirements.
           </h3>
-
           <p>
             24 hours approval on all applications. Simple online application
             takes less than 5 minutes to complete. Give us a try and see how
             satisfied you will be with our fast flexible approval process.
           </p>
-
           <p>
             We offer loans at 6% Interest rate, Apply Now for any type of loans
             and you will be glad and be satisfied with our flexibility and fast
             services. Blacklisted and Clients under debt review are qualified to
             apply.
           </p>
-
           <div className={styles.requirements}>
             <h3>All You need to apply</h3>
             <div className={styles.required__items}>
@@ -80,7 +75,6 @@ function Section() {
             </div>
           </div>
         </div>
-
         {/* Code-split the stepper component */}
         <div className={styles.steper}>
           <h4>Why Choose Depfin Finance?</h4>

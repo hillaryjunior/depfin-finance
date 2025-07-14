@@ -9,10 +9,8 @@
     max-width: 1250px;
     width: 100%;
     margin: 0 auto;
-    height: 100%;
     position: relative;
     display: grid;
-    flex-direction: column;
 
     @media screen and (max-width: 769px) {
       height: auto;
@@ -20,45 +18,41 @@
 
     .container__content {
       position: relative;
-      // width: 100%;
-      height: 350px;
-      border-radius: 10px;
-      overflow: hidden;
+      width: 100%;
+      max-width: 1250px;
+      aspect-ratio: 1250 / 350;
+      margin: 0 auto;
+
+      .backgroundImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: brightness(0.5);
+        display: block;
+      }
 
       h2 {
-        position: relative;
-        z-index: 1;
-        font-size: 4.9rem;
-        width: 60%;
-        color: variables.$teal;
-
-        .lcp-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #063940;
-}
-
-
-        @media screen and (max-width: 769px) { 
-          font-size: 2.9rem;
-          width: 100%;
-        }
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        z-index: 2;
+        color: #01c5c4;
+        font-size: clamp(1.8rem, 4vw, 3.5rem);
+        width: 90%;
+        max-width: 600px;
+        line-height: 1.2;
 
         span {
           color: white;
         }
-      }
 
-      .backgroundImage {
-        width: 100%;
-        height: 350px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        filter: brightness(0.5);
-        z-index: 0;
+        @media screen and (max-width: 768px) {
+          font-size: 2rem;
+          top: 8%;
+          left: 5%;
+          width: 90%;
+        }
       }
     }
 
@@ -66,17 +60,15 @@
       max-width: 800px;
       width: 100%;
       padding: 20px;
-      height: autot;
-      font-family: variables.$PoppinsRegular ;
-
-      background-color: rgb(255, 255, 255);
+      font-family: variables.$PoppinsRegular;
+      background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
       border-radius: 10px;
       display: flex;
+      position: relative;
       flex-direction: column;
       justify-content: center;
-      margin-top: -90px;
+      margin-top: -40px;
       margin-left: 20px;
       gap: 20px;
 
@@ -84,11 +76,22 @@
         left: 5px;
       }
 
+      .lcp-text {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #063940;
+
+        @media screen and (min-width: 769px) {
+          font-family: 'Poppins', sans-serif !important;
+        }
+      }
+
       p {
         font-size: 1rem;
-         opacity: 1;
-        transition: none;
       }
+
       .requirements {
         display: grid;
 
@@ -101,6 +104,7 @@
           text-align: center;
         }
       }
+
       .required__items {
         display: grid;
         gap: 10px;
@@ -110,8 +114,9 @@
           align-items: center;
           gap: 3px;
         }
+
         .icon {
-          color: variables.$teal;
+          color: #01c5c4;
         }
       }
     }
@@ -119,25 +124,23 @@
     .steper {
       max-width: 800px;
       width: 100%;
-      height: 100%;
       padding: 30px;
       font-family: variables.$PoppinsRegular;
       border-radius: 10px;
       display: grid;
       gap: 10px;
       place-items: center;
-      background-color: rgb(255, 255, 255);
+      background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       position: relative;
       top: -100px;
-      right: 0;
       justify-self: flex-end;
 
       @media screen and (max-width: 769px) {
         top: -60px;
       }
 
-      h5 {
+      h4 {
         font-size: 1.6rem;
         font-family: variables.$PoppinsMedium;
         color: variables.$dark;
@@ -147,15 +150,11 @@
       }
     }
 
-
-
-
     .testimonials {
       display: grid;
       place-items: center;
       padding: 3rem 0;
 
-      h5,
       h4 {
         font-size: 2rem;
         font-family: variables.$PoppinsMedium;

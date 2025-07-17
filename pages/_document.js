@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { SITE_URL } from '../constants'
-import Fab from '../utils/Fab'
 import { CssBaseline } from '@nextui-org/react'
 
 class MyDocument extends Document {
@@ -82,13 +81,6 @@ class MyDocument extends Document {
             type='font/woff2'
             crossOrigin
           />
-          <link
-            rel='preload'
-            href='/fonts/Poppins-Bold.woff2'
-            as='font'
-            type='font/woff2'
-            crossOrigin
-          />
 
           {/* ✅ Async Font Awesome load to avoid render-blocking */}
           <link
@@ -122,7 +114,7 @@ class MyDocument extends Document {
             crossOrigin='anonymous'
           />
 
-          <link rel='preload' as='image' href='/Images/herobgimg_73_80.webp' />
+          <link rel='preload' as='image' href='/Images/heroimg.webp' />
 
           {/* ✅ Inject NextUI styles */}
           {CssBaseline.flush()}

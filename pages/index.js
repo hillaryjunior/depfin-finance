@@ -1,19 +1,13 @@
 import Head from 'next/head'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import dynamic from 'next/dynamic'
 import { SITE_URL } from '../constants'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase'
 import { login, logout } from '../redux/slices'
 import { getData } from '../services/Auth'
+import HomeLayout from '../Layouts/HomeLayout'
 
-// 🔹 Lazy load HomeLayout
-const HomeLayout = dynamic(() => import('../Layouts/HomeLayout'), {
-  loading: () => <p>Loading...</p>,
-})
-
-// ✅ JSON-LD Schema
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'BankOrCreditUnion',
@@ -36,36 +30,11 @@ const schema = {
     longitude: 18.4824277,
   },
   openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Monday',
-      opens: '08:00',
-      closes: '16:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Tuesday',
-      opens: '08:00',
-      closes: '16:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Wednesday',
-      opens: '08:00',
-      closes: '16:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Thursday',
-      opens: '08:00',
-      closes: '16:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Friday',
-      opens: '08:00',
-      closes: '16:00',
-    },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '08:00', closes: '16:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday', opens: '08:00', closes: '16:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '08:00', closes: '16:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '08:00', closes: '16:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '08:00', closes: '16:00' },
   ],
 }
 
@@ -95,7 +64,6 @@ export default function Home() {
   return (
     <div className='app'>
       <Head>
-        {/* ✅ SEO Title & Description */}
         <title>
           Instant Business Loans Services in South Africa - Depfin Finance
         </title>
@@ -103,22 +71,9 @@ export default function Home() {
           name='description'
           content='Depfin Finance offers personal loans and business loans in Cape Town, South Africa. Our financial advisors are always ready to assist you. Apply for a loan today!'
         />
-
-        {/* ✅ Viewport and Canonical */}
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <link rel='canonical' href={SITE_URL} />
         <link rel='icon' href='/favicon.ico' />
-
-        {/* ✅ Preload Hero Image */}
-        {/* <link
-          rel='preload'
-          as='image'
-          href='/your-hero.jpg'
-          fetchpriority='high'
-          imagesrcset='/your-hero.jpg 1x'
-        /> */}
-
-        {/* ✅ OpenGraph Tags */}
         <meta
           property='og:title'
           content='Instant Business Loans Services in South Africa - Depfin Finance'
@@ -134,15 +89,10 @@ export default function Home() {
         <meta property='og:url' content={SITE_URL} />
         <meta property='og:type' content='website' />
 
-        {/* ✅ Compressed JSON-LD Schema */}
         <script
           type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema).replace(/\s+/g, ''),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/\s+/g, '') }}
         />
-
-        {/* ✅ Facebook Pixel Fallback */}
         <noscript>
           <img
             height='1'

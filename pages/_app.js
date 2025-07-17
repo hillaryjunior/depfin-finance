@@ -1,14 +1,13 @@
-import '../sass/base/global.scss'
-import { useRouter } from 'next/router'
-import { Provider } from 'react-redux'
-import store from '../redux/store'
-import Head from 'next/head'
-import { useEffect } from 'react'
-import { NextUIProvider } from '@nextui-org/react'
-import { persistStore } from 'redux-persist'
-import * as fbPixel from '../lib/fbPixel'
-import * as gtm from '../lib/googleTagManager'
-import dynamic from 'next/dynamic'
+import '../sass/base/global.scss';
+import { useRouter } from 'next/router';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
+import { useEffect } from 'react';
+import { NextUIProvider } from '@nextui-org/react';
+import { persistStore } from 'redux-persist';
+import * as fbPixel from '../lib/fbPixel';
+import * as gtm from '../lib/googleTagManager';
+import dynamic from 'next/dynamic';
 
 // Dynamic import only for React components
 const PersistGate = dynamic(
@@ -39,13 +38,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <script
           src={`https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY`} // Replace key
           async
           defer
         />
-      </Head> */}
+      </Head>
 
       <NextUIProvider>
         <Provider store={store}>

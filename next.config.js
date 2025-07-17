@@ -9,7 +9,7 @@
     swcMinify: true,
 
     images: {
-        unoptimized: true, 
+        unoptimized: false, 
       domains: [
         'res.cloudinary.com',
         'firebasestorage.googleapis.com',

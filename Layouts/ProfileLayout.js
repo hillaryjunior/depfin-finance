@@ -1,8 +1,6 @@
-import React from 'react'
 import { useSelector } from 'react-redux';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
-import Queries from '../components/Queries';
 import Tabs from '../components/Tabs';
 import { selectUser } from '../redux/slices';
 import styles from '../sass/components/Profile.module.scss'

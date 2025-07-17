@@ -2,7 +2,6 @@ import '../sass/base/global.scss';
 import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { NextUIProvider } from '@nextui-org/react';
 import { persistStore } from 'redux-persist';

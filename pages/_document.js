@@ -21,6 +21,16 @@ class MyDocument extends Document {
     return (
       <Html lang='en' itemScope itemType='http://schema.org/Organization'>
         <Head>
+          {/* reCAPTCHA script added below */}
+          <script
+            src='https://www.google.com/recaptcha/api.js'
+            async
+            defer
+          ></script>
+
+          {/* Optional: Performance optimization */}
+          <link rel='preconnect' href='https://www.google.com' />
+          <link rel='preconnect' href='https://www.gstatic.com' />
           {/* ✅ Security */}
           <meta
             httpEquiv='Content-Security-Policy'
@@ -51,7 +61,7 @@ class MyDocument extends Document {
             content='o2c09wBxSEGBC_spdIgsJCtzSmxyeti2XTly5wM9pSc'
           />
 
-           <link
+          <link
             rel='preload'
             href='/fonts/Poppins-SemiBold.woff2'
             as='font'
@@ -104,8 +114,6 @@ class MyDocument extends Document {
             href='/Images/ezgif.com-webp-to-jpg-converter (1) (1) (1).webp'
           />
 
-          
-
           {/* ✅ Fonts Optimization */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
@@ -114,7 +122,7 @@ class MyDocument extends Document {
             crossOrigin='anonymous'
           />
 
-           <link rel='preload' as='image' href='/Images/herobgimg_73_80.webp' />
+          <link rel='preload' as='image' href='/Images/herobgimg_73_80.webp' />
 
           {/* ✅ Inject NextUI styles */}
           {CssBaseline.flush()}

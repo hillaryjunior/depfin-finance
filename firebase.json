@@ -1,4 +1,3 @@
-
 {
   "hosting": {
     "public": "out",
@@ -8,8 +7,12 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "function": "sendEmail"
       }
     ]
+  },
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs20"
   }
 }

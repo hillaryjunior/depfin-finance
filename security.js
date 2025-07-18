@@ -1,4 +1,4 @@
-// security.js
+const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = [
   {
@@ -15,7 +15,7 @@ module.exports = [
   },
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN', // This is fine unless someone else wants to iframe *your* site
+    value: 'SAMEORIGIN',
   },
   {
     key: 'X-XSS-Protection',

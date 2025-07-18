@@ -8,6 +8,7 @@ import { persistStore } from 'redux-persist';
 import * as fbPixel from '../lib/fbPixel';
 import * as gtm from '../lib/googleTagManager';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 // Dynamic import only for React components
 const PersistGate = dynamic(

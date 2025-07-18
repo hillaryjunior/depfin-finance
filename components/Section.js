@@ -34,7 +34,7 @@ function Section() {
             src='/Images/heroimg.webp'
             alt='Hero background'
             priority={true}
-            fill
+            layout='fill'
             sizes='100vw'
             className='hide-on-mobile'
             style={{

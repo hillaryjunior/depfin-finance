@@ -2,7 +2,6 @@ import '../sass/base/global.scss';
 import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { NextUIProvider } from '@nextui-org/react';
 import { persistStore } from 'redux-persist';
@@ -12,37 +11,41 @@ import dynamic from 'next/dynamic';
 
 // Dynamic import only for React components
 const PersistGate = dynamic(
-  () => import('redux-persist/integration/react').then(mod => mod.PersistGate),
+  () =>
+    import('redux-persist/integration/react').then((mod) => mod.PersistGate),
   { ssr: false, loading: () => null }
-);
+)
 
-const Fab = dynamic(() => import('../utils/Fab'), { ssr: false });
+const Fab = dynamic(() => import('../utils/Fab'), { ssr: false })
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
-    fbPixel.init();
-  }, []);
+    fbPixel.init()
+  }, [])
 
   useEffect(() => {
-    fbPixel.init();
+    fbPixel.init()
     const handleRouteChange = (url) => {
-      gtm.pageView(url);
-      fbPixel.pageView();
-    };
+      gtm.pageView(url)
+      fbPixel.pageView()
+    }
 
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => router.events.off('routeChangeComplete', handleRouteChange);
-  }, [router.events]);
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => router.events.off('routeChangeComplete', handleRouteChange)
+  }, [router.events])
 
   return (
     <>
+      <Head>
+        <script
+          src={`https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY`} // Replace key
+          async
+          defer
+        />
+      </Head>
 
-
-
-
-    
       <NextUIProvider>
         <Provider store={store}>
           <PersistGate persistor={persistStore(store)} loading={null}>
@@ -52,7 +55,7 @@ function MyApp({ Component, pageProps }) {
         </Provider>
       </NextUIProvider>
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

@@ -20,16 +20,28 @@
       position: relative;
       width: 100%;
       max-width: 1250px;
-      aspect-ratio: 1250 / 350;
       margin: 0 auto;
+      overflow: hidden;
+      min-height: 350px;
 
-      .backgroundImage {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        filter: brightness(0.5);
+      &::before {
+        content: '';
         display: block;
+        padding-top: 3%;
+      }
+
+      // 👇 Add this block here
+      .heroWrapper {
+        position: relative;
+        width: 100%;
+        max-width: 1250px;
+        margin: 0 auto;
+        overflow: hidden;
+        min-height: 400px; // Reserve space to reduce CLS
+
+        @media screen and (max-width: 769px) {
+          min-height: 300px; // Adjust for smaller screens
+        }
       }
 
       h2 {
@@ -48,7 +60,7 @@
         }
 
         @media screen and (max-width: 768px) {
-          font-size: 2rem;
+          font-size: 1rem;
           top: 8%;
           left: 5%;
           width: 90%;
@@ -60,7 +72,6 @@
       max-width: 800px;
       width: 100%;
       padding: 20px;
-      font-family: variables.$PoppinsRegular;
       background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
@@ -76,20 +87,10 @@
         left: 5px;
       }
 
-      .lcp-text {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, 'Helvetica Neue', Arial, sans-serif !important;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #063940;
-
-        @media screen and (min-width: 769px) {
-          font-family: 'Poppins', sans-serif !important;
+      @media screen and (max-width: 769px) {
+        .lcp-text {
+          font-size: 0.6rem;
         }
-      }
-
-      p {
-        font-size: 1rem;
       }
 
       .requirements {
@@ -97,8 +98,7 @@
 
         h3 {
           font-size: 1.6rem;
-          font-family: variables.$PoppinsMedium;
-          color: variables.$dark;
+          color: #063940;
           text-transform: uppercase;
           margin-bottom: 20px;
           text-align: center;
@@ -137,13 +137,13 @@
       justify-self: flex-end;
 
       @media screen and (max-width: 769px) {
-        top: -60px;
+        top: -20px;
       }
 
       h4 {
         font-size: 1.6rem;
         font-family: variables.$PoppinsMedium;
-        color: variables.$dark;
+        color: #063940;
         text-transform: uppercase;
         margin-bottom: 20px;
         text-align: center;
@@ -158,7 +158,7 @@
       h4 {
         font-size: 2rem;
         font-family: variables.$PoppinsMedium;
-        color: variables.$dark;
+        color: #063940;
         text-transform: uppercase;
         margin-bottom: 20px;
         text-align: center;
@@ -166,3 +166,4 @@
     }
   }
 }
+

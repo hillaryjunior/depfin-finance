@@ -38,7 +38,21 @@
     },
   })
 
+module.exports = withBundleAnalyzer({
+  reactStrictMode: true,
+  trailingSlash: false,
+  swcMinify: true,
+
+  images: {
+    unoptimized: false,
+    domains: [
+      "res.cloudinary.com",
+      "firebasestorage.googleapis.com",
+      "test.hallelujahgospel.org",
+      "hallelujahgospel.org",
+      "www.facebook.com",
+    ],
+  },
 
 
-
-
+})

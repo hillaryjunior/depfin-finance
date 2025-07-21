@@ -2,7 +2,10 @@
 
 import nodemailer from 'nodemailer'
 
+
 export default function handler(req, res) {
+
+  
   const {
     query: { email, type, repayment, amount, name, ref_no, method, rate, term },
   } = req

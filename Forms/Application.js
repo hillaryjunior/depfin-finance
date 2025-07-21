@@ -7,9 +7,16 @@ import { useSelector } from 'react-redux'
 import { selectUser } from '../redux/slices'
 import Link from 'next/link'
 import { applyForLoan } from '../services/Auth'
-import { ThreeCircles } from 'react-loader-spinner'
+import dynamic from 'next/dynamic'
 import ReCAPTCHA from 'react-google-recaptcha'
 import axios from 'axios'
+
+
+const ThreeCircles = dynamic(
+  () => import("react-loader-spinner").then((mod) => mod.ThreeCircles),
+  { ssr: false, loading: () => <div style={{ height: 60 }} /> }
+);
+
 
 function Application() {
   const userData = useSelector(selectUser)

@@ -34,13 +34,10 @@
       .lcpHeading {
         font-size: clamp(1.8rem, 6vw, 2.5rem);
         font-weight: 700;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, 'Helvetica Neue', Arial, sans-serif !important;
         color: #063940;
 
-        @media screen and (min-width: 769px) {
-          font-family: 'Poppins', sans-serif !important;
-          font-size: 2.5rem;
+        @media screen and (max-width: 769px) {
+          font-size: 1rem;
           color: variables.$dark;
 
           span {

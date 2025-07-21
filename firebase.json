@@ -1,7 +1,11 @@
 {
   "hosting": {
     "public": "out",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
@@ -12,7 +16,14 @@
     ]
   },
   "functions": {
-    "source": ".",
-    "runtime": "nodejs20"
+    "source": "functions",
+    "codebase": "default",
+    "endpoints": {
+      "sendEmail": {
+        "region": "us-central1",
+        "platform": "gcfv2",
+        "allowUnauthenticated": true
+      }
+    }
   }
 }

@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import styles from '../sass/components/Footer.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faFacebookF,
-  faTwitter,
-  faLinkedinIn,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons'
+"use client"
+
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import styles from "../sass/components/Footer.module.scss"
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 function Footer() {
   const [fontsLoaded, setFontsLoaded] = useState(false)
@@ -16,16 +12,14 @@ function Footer() {
     if (document?.fonts?.ready) {
       document.fonts.ready.then(() => setFontsLoaded(true))
     } else {
-      // Fallback in case document.fonts is not supported
       setFontsLoaded(true)
     }
   }, [])
 
   return (
-    <footer className={`${styles.footer} ${fontsLoaded ? styles.loaded : ''}`}>
+    <footer className={`${styles.footer} ${fontsLoaded ? styles.loaded : ""}`}>
       <h2>
-        Startup Business Loans | Blacklisted Loans & Short Term Loans Cape Town
-        | Instant Online Loans South Africa
+        Startup Business Loans | Blacklisted Loans & Short Term Loans Cape Town | Instant Online Loans South Africa
       </h2>
       <div className={styles.container}>
         <div>
@@ -35,33 +29,33 @@ function Footer() {
           <h5>Quick Links</h5>
           <ul>
             <li>
-              <Link href='/'>
-                <a title='Home'>Home</a>
+              <Link href="/">
+                <a title="Home">Home</a>
               </Link>
             </li>
             <li>
-              <Link href='/personal/business/loan/apply'>
-                <a title='Apply Online'>Apply online</a>
+              <Link href="/personal/business/loan/apply">
+                <a title="Apply Online">Apply online</a>
               </Link>
             </li>
             <li>
-              <Link href='/about'>
-                <a title='About Us'>About us</a>
+              <Link href="/about">
+                <a title="About Us">About us</a>
               </Link>
             </li>
             <li>
-              <Link href='/solutions'>
-                <a title='Solutions'>Solutions</a>
+              <Link href="/solutions">
+                <a title="Solutions">Solutions</a>
               </Link>
             </li>
             <li>
-              <Link href='/blogs'>
+              <Link href="/blogs">
                 <a>Blogs</a>
               </Link>
             </li>
             <li>
-              <Link href='/sitemap'>
-                <a title='sitemap'>Sitemap</a>
+              <Link href="/sitemap">
+                <a title="sitemap">Sitemap</a>
               </Link>
             </li>
           </ul>
@@ -70,73 +64,69 @@ function Footer() {
           <h5>Resources</h5>
           <ul>
             <li>
-              <Link href='/conflictofinterest'>
-                <a title='Conflict of interest management'>
-                  Conflict of Interest management
-                </a>
+              <Link href="/conflictofinterest">
+                <a title="Conflict of interest management">Conflict of Interest management</a>
               </Link>
             </li>
             <li>
-              <Link href='/terms'>
-                <a title='terms'>Terms & Conditions</a>
+              <Link href="/terms">
+                <a title="terms">Terms & Conditions</a>
               </Link>
             </li>
             <li>
-              <Link href='/faqs'>
-                <a title='faqs'>FAQs</a>
+              <Link href="/faqs">
+                <a title="faqs">FAQs</a>
               </Link>
             </li>
             <li>
-              <Link href='/privacypolicy'>
-                <a title='Privacy Policy'>Privacy Policy</a>
+              <Link href="/privacypolicy">
+                <a title="Privacy Policy">Privacy Policy</a>
               </Link>
             </li>
           </ul>
-          <div className='rounded-social-buttons'>
+          <div className="rounded-social-buttons">
             <a
-              title='facebook'
-              className='social-button facebook'
-              href='https://www.facebook.com/Depfin-Finance-Loans-100582409291663'
-              target='_blank'
-              rel='noreferrer'
+              title="facebook"
+              className="social-button facebook"
+              href="https://www.facebook.com/Depfin-Finance-Loans-100582409291663"
+              target="_blank"
+              rel="noreferrer"
             >
-              <FontAwesomeIcon icon={faFacebookF} />
+              <Facebook size={20} />
             </a>
             <a
-              title='twitter'
-              className='social-button twitter'
-              href='https://twitter.com/DepfinL'
-              target='_blank'
-              rel='noreferrer'
+              title="twitter"
+              className="social-button twitter"
+              href="https://twitter.com/DepfinL"
+              target="_blank"
+              rel="noreferrer"
             >
-              <FontAwesomeIcon icon={faTwitter} />
+              <Twitter size={20} />
             </a>
             <a
-              title='linkedin'
-              className='social-button linkedin'
-              href='https://www.linkedin.com/in/palesa-namhla-b19254236/'
-              target='_blank'
-              rel='noreferrer'
+              title="linkedin"
+              className="social-button linkedin"
+              href="https://www.linkedin.com/in/palesa-namhla-b19254236/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <FontAwesomeIcon icon={faLinkedinIn} />
+              <Linkedin size={20} />
             </a>
             <a
-              title='instagram'
-              className='social-button instagram'
-              href='https://www.instagram.com/kimlorna46/'
-              target='_blank'
-              rel='noreferrer'
+              title="instagram"
+              className="social-button instagram"
+              href="https://www.instagram.com/kimlorna46/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <FontAwesomeIcon icon={faInstagram} />
+              <Instagram size={20} />
             </a>
           </div>
         </div>
       </div>
       <div className={styles.copyright}>
         <small>
-          Copyright &copy;{' '}
-          <span className='year'>{new Date().getUTCFullYear()}</span> Depfin
-          Finance
+          Copyright &copy; <span className="year">{new Date().getUTCFullYear()}</span> Depfin Finance
         </small>
       </div>
     </footer>

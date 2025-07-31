@@ -24,19 +24,21 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.logo} onClick={() => router.push('/')}>
-          <Image
-            className={styles.image}
-            src='/Images/ezgif.com-webp-to-jpg-converter (1) (1) (1).webp'
-            width={250}
-            height={110}
-            alt='Depfin Logo'
-            quality={60}
-            priority
-            decoding='async'
-            objectFit='cover'
-          />
-        </div>
+        <Link href="/">
+          <a className={styles.logo}>
+            <Image
+              src='/Images/webLogo.webp'
+              width={250}
+              height={110}
+              alt='Depfin Logo'
+              priority
+              quality={60}
+              style={{
+                objectFit: 'cover'
+              }}
+            />
+          </a>
+        </Link>
 
         <nav>
           <ul>

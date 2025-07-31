@@ -1,27 +1,25 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import dynamic from "next/dynamic"
+import Header from "../components/Header"
+import Banner from '../components/Banner'
 
-// 🔄 Dynamically import components
-const Banner = dynamic(() => import('../components/Banner'), {
-  loading: () => <div>Loading banner...</div>,
-  ssr: true, // ✅ keep SSR for SEO
-});
-
-const Section = dynamic(() => import('../components/Section'), {
-  loading: () => <div>Loading section...</div>,
+const Section = dynamic(() => import("../components/Section"), {
+  loading: () => <div style={{ minHeight: "600px" }}>Loading section...</div>,
   ssr: false,
-});
+})
 
-const Queries = dynamic(() => import('../components/Queries'), {
-  loading: () => <div>Loading queries...</div>,
-  ssr: true,
-});
+const Queries = dynamic(() => import("../components/Queries"), {
+  loading: () => <div style={{ minHeight: "400px" }}>Loading queries...</div>,
+  ssr: false,
+})
 
-const Fab = dynamic(() => import('../utils/Fab'), {
+const Fab = dynamic(() => import("../utils/Fab"), {
   ssr: false, // ❌ no need for SSR here; it's a floating button
-});
+})
+
+const Footer = dynamic(() => import("../components/Footer"), {
+  loading: () => <div>Loading footer...</div>,
+  ssr: false,
+})
 
 function HomeLayout() {
   return (

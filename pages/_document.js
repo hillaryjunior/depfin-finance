@@ -91,6 +91,14 @@ class MyDocument extends Document {
             integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
             crossOrigin="anonymous"
           />
+
+          <link
+            rel="preload"
+            as="image"
+            href="/Images/heroimg.webp"
+            type="image/webp"
+          />
+          
           <noscript>
             <link
               rel="stylesheet"
@@ -99,12 +107,6 @@ class MyDocument extends Document {
               crossOrigin="anonymous"
             />
           </noscript>
-
-          <link
-            rel="preload"
-            as="image"
-            href="/Images/ezgif.com-webp-to-jpg-converter (1) (1) (1).webp"
-          />
 
           {/* ✅ Fonts Optimization */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -115,6 +117,7 @@ class MyDocument extends Document {
           />
 
           <link rel="preload" as="image" href="/Images/heroimg.webp" />
+          <link rel="preload" as="image" href="/Images/webLogo.webp" />
 
           {/* ✅ Inject NextUI styles */}
           {CssBaseline.flush()}

@@ -5,12 +5,9 @@ import { getLoans } from '../services/Auth'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../redux/slices'
 
-const DataGrid = dynamic(
-  () => import('@mui/x-data-grid').then((mod) => mod.DataGrid),
-  {
-    ssr: false,
-    loading: () => <p>Loading table...</p>,
-  }
+const LazyDataGrid = dynamic(() =>
+  import('@mui/x-data-grid').then((mod) => mod.DataGrid),
+  { ssr: false, loading: () => <p>Loading table...</p> }
 )
 
 export default function LoansTable() {
@@ -257,7 +254,7 @@ export default function LoansTable() {
           <div className='table'>
             <h6>Business Loans</h6>
             <div style={{ height: 200, width: '100%' }}>
-              <DataGrid
+              <LazyDataGrid
                 rows={bRow}
                 columns={columns}
                 pageSize={5}
@@ -270,7 +267,7 @@ export default function LoansTable() {
           <div className='table'>
             <h6>Personal Loans</h6>
             <div style={{ height: 200, width: '100%' }}>
-              <DataGrid
+              <LazyDataGrid
                 rows={pRow}
                 columns={columns}
                 pageSize={5}
@@ -284,7 +281,7 @@ export default function LoansTable() {
           <div className='table'>
             <h6>Mortage Loans</h6>
             <div style={{ height: 200, width: '100%' }}>
-              <DataGrid
+              <LazyDataGrid
                 rows={mRow}
                 columns={columns}
                 pageSize={5}
@@ -304,7 +301,7 @@ export default function LoansTable() {
           <div className='table'>
             <h6>General Loans</h6>
             <div style={{ height: 200, width: '100%' }}>
-              <DataGrid
+              <LazyDataGrid
                 rows={gRow}
                 columns={columns}
                 pageSize={5}
@@ -317,7 +314,7 @@ export default function LoansTable() {
           <div className='table'>
             <h6>Consolidation Loans</h6>
             <div style={{ height: 200, width: '100%' }}>
-              <DataGrid
+              <LazyDataGrid
                 rows={cRow}
                 columns={columns}
                 pageSize={5}

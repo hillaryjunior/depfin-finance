@@ -69,7 +69,7 @@ function Header() {
             </li>
             <li>
               <Link href='/contact'>
-                <a title='contact us'>Contact us</a>
+                <a title='contact us'>Contact us</a><span style="display:none;">Testing</span>
               </Link>
             </li>
           </ul>

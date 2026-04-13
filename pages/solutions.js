@@ -1,4 +1,8 @@
 import Head from 'next/head'
+<Head>
+  <title>Business & Personal Loans South Africa | SME & Short Term Loans</title>
+  <meta name="description" content="Explore business funding, SME loans, personal loans and short term loans in South Africa. Fast, flexible and unsecured loan options for all credit types." />
+</Head>
 import React from 'react'
 import SolutionsLayout from '../Layouts/SolutionsLayout'
 

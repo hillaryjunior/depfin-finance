@@ -1,6 +1,10 @@
 // pages/blogs/[id].js
 import React from 'react'
 import Head from 'next/head'
+<Head>
+  <title>Loan Tips & Business Funding Advice South Africa</title>
+  <meta name="description" content="Read expert tips on loans in South Africa, improving credit score, business funding, and getting approved for loans with bad credit or blacklisted status." />
+</Head>
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import styles from '../../sass/components/BlogsDetails.module.scss'

@@ -41,18 +41,6 @@ class MyDocument extends Document {
           <meta property="og:url" content={SITE_URL} />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Depfin Finance" />
-          <meta
-            name="title"
-            content="Instant Business Loans Services South Africa | Personal Loans"
-          />
-          <meta
-            name="keywords"
-            content="Instant Business Loans Services, Business Loans Services, Personal Loans Services, Personal Loans Cape Town, Business Loans South Africa, Affordable Loans South Africa"
-          />
-          <meta
-            name="description"
-            content="Depfin Finance offers affordable personal & business loan services in Cape Town, South Africa. Our financial advisors are always ready to assist you. Apply today!"
-          />
 
           {/* ✅ Google Verification */}
           <meta

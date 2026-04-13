@@ -2,8 +2,8 @@ import { useState } from 'react'
 import styles from '../sass/components/Faq.module.scss'
 import Head from 'next/head'
 <Head>
-  <title>About Depfin Finance | Trusted Loan Provider South Africa</title>
-  <meta name="description" content="Learn about Depfin Finance, a trusted provider of online loans in South Africa offering fast approval, transparent terms and loans for bad credit clients." />
+  <title>Loan FAQs South Africa | Bad Credit & Blacklisted Loans Guide</title>
+  <meta name="description" content="Find answers about online loans, short term loans, loans for blacklisted and bad credit in South Africa including approval time, repayment and eligibility." />
 </Head>
 import Footer from '../components/Footer'
 import Header from '../components/Header'

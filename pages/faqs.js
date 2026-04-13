@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import styles from '../sass/components/Faq.module.scss'
 import Head from 'next/head'
+<Head>
+  <title>About Depfin Finance | Trusted Loan Provider South Africa</title>
+  <meta name="description" content="Learn about Depfin Finance, a trusted provider of online loans in South Africa offering fast approval, transparent terms and loans for bad credit clients." />
+</Head>
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'

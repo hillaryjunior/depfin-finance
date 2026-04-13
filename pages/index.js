@@ -1,4 +1,8 @@
 import Head from "next/head";
+<Head>
+  <title>Online Loans South Africa | Instant & Short Term Loans for Bad Credit</title>
+  <meta name="description" content="Apply for online loans in South Africa with fast approval. Get short term, personal & business loans, including loans for bad credit and blacklisted clients with same day payout." />
+</Head>
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { SITE_URL } from "../constants";

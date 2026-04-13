@@ -1,4 +1,8 @@
 import Head from 'next/head'
+<Head>
+  <title>About Depfin Finance | Trusted Loan Provider South Africa</title>
+  <meta name="description" content="Learn about Depfin Finance, a trusted provider of online loans in South Africa offering fast approval, transparent terms and loans for bad credit clients." />
+</Head>
 import AboutLayout from '../Layouts/AboutLayout'
 
 function about() {
